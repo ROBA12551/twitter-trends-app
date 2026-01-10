@@ -15,7 +15,7 @@ exports.handler = async (event) => {
     
     // ハードコード（デバッグ用）
     const owner = process.env.GITHUB_OWNER || 'ROBA12551';
-    const repo = process.env.GITHUB_REPO || 'Twittex2025';
+    const repo = process.env.GITHUB_REPO || 'twitter-trends-app';
     const filePath = process.env.GITHUB_FILE_PATH || 'gofile-urls.json';
     
     console.log('[CONFIG] Using:', { owner, repo, filePath });
