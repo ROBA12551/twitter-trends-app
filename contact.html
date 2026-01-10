@@ -363,14 +363,14 @@
     </header>
     
     <div class="info-box">
-      <h3>📋 このページについて</h3>
+      <h3>このページについて</h3>
       <p>不適切なコンテンツの報告やご質問がある場合は、このフォームから送信してください。報告内容は Discord を通じて管理者に通知されます。</p>
     </div>
     
     <div id="alert" class="alert"></div>
     
     <div class="card">
-      <h2>📝 報告フォーム</h2>
+      <h2>報告フォーム</h2>
       
       <form id="contactForm">
         <div class="form-group">
@@ -427,14 +427,14 @@
         </div>
         
         <div class="button-group">
-          <button type="submit" id="submitBtn">✉️ 報告を送信</button>
+          <button type="submit" id="submitBtn">報告を送信</button>
           <button type="reset">クリア</button>
         </div>
       </form>
     </div>
     
     <div class="card">
-      <h2>❓ よくある質問</h2>
+      <h2>よくある質問</h2>
       
       <h3>Q: 報告後、どのくらいで対応されますか？</h3>
       <p>通常、報告から24時間以内に確認します。内容によっては対応に時間がかかる場合があります。</p>
@@ -458,14 +458,14 @@
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
     if (isDarkMode) {
       document.body.classList.add('dark-mode');
-      darkModeToggle.textContent = '☀️';
+      darkModeToggle.textContent = '';
     }
     
     darkModeToggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
       const isNowDark = document.body.classList.contains('dark-mode');
       localStorage.setItem('darkMode', isNowDark);
-      darkModeToggle.textContent = isNowDark ? '☀️' : '🌙';
+      darkModeToggle.textContent = isNowDark ? '' : '';
     });
     
     // ファイルアップロード処理
