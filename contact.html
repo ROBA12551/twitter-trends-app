@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>お問い合わせ - Twitterトレンド保存ちゃん。</title>
+  <meta name="description" content="不適切なコンテンツの報告やお問い合わせはこちらから。">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary-color: #ff7f9c;
+      --primary-light: #ffa0b8;
+      --secondary-color: #b8d8e8;
+      --accent-dark: #2a2a2a;
+      --text-light: #7a7a7a;
+      --border-light: #e8e0e5;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --success-color: #66d9a8;
+      --error-color: #ff6b8f;
+    }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #ffffff;
+      color: var(--accent-dark);
+      line-height: 1.6;
+    }
+    
+    body.dark-mode {
+      background: #1a1a1a;
+      color: #e0e0e0;
+    }
+    
+    body.dark-mode .container,
+    body.dark-mode .card,
+    body.dark-mode textarea,
+    body.dark-mode input,
+    body.dark-mode select {
+      background: #2a2a2a;
+      color: #e0e0e0;
+      border-color: #444;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: white;
+      transition: background-color 0.3s ease;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    h1 {
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--primary-color);
+      flex: 1;
+    }
+    
+    .back-link {
+      padding: 10px 20px;
+      background: var(--secondary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+    
+    .back-link:hover {
+      background: #a0cce0;
+      transform: translateY(-2px);
+    }
+    
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1.5px solid var(--border-light);
+      margin-bottom: 30px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .card h2 {
+      font-size: 18px;
+      margin-bottom: 16px;
+      color: var(--primary-color);
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--accent-dark);
+    }
+    
+    label.required::after {
+      content: ' *';
+      color: var(--error-color);
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="tel"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border-light);
+      border-radius: 8px;
+      background: white;
+      color: var(--accent-dark);
+      font-size: 14px;
+      font-family: inherit;
+      transition: var(--transition);
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(255, 127, 156, 0.1);
+    }
+    
+    .file-upload {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      width: 100%;
+    }
+    
+    .file-upload input[type="file"] {
+      position: absolute;
+      left: -9999px;
+    }
+    
+    .file-upload-label {
+      display: block;
+      padding: 12px 16px;
+      background: white;
+      border: 2px dashed var(--border-light);
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      color: var(--text-light);
+    }
+    
+    .file-upload-label:hover {
+      background: #fafafa;
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+    }
+    
+    .file-list {
+      margin-top: 12px;
+      padding: 12px;
+      background: #f9f9f9;
+      border-radius: 6px;
+      font-size: 12px;
+    }
+    
+    .file-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+    
+    .file-item:last-child {
+      border-bottom: none;
+    }
+    
+    .file-remove {
+      background: none;
+      border: none;
+      color: var(--error-color);
+      cursor: pointer;
+      font-size: 14px;
+      padding: 0 8px;
+    }
+    
+    .button-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    
+    button[type="submit"],
+    button[type="reset"] {
+      padding: 11px 24px;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      min-height: 44px;
+    }
+    
+    button[type="submit"]:hover {
+      background: #ff6b8f;
+      transform: translateY(-2px);
+    }
+    
+    button[type="reset"] {
+      background: var(--text-light);
+    }
+    
+    button[type="reset"]:hover {
+      background: #6a6a6a;
+    }
+    
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    .alert {
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: none;
+    }
+    
+    .alert.show {
+      display: block;
+      animation: slideDown 0.3s ease;
+    }
+    
+    .alert.success {
+      background: #f0fdf4;
+      border: 1.5px solid var(--success-color);
+      color: #166534;
+    }
+    
+    .alert.error {
+      background: #fef2f2;
+      border: 1.5px solid var(--error-color);
+      color: #991b1b;
+    }
+    
+    .alert.warning {
+      background: #fff3cd;
+      border: 1.5px solid #ffc107;
+      color: #856404;
+    }
+    
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .info-box {
+      background: #e3f2fd;
+      border-left: 4px solid var(--secondary-color);
+      padding: 16px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+    
+    .info-box h3 {
+      color: var(--secondary-color);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    
+    .info-box p {
+      color: #1565c0;
+      font-size: 13px;
+      margin: 0;
+    }
+    
+    .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid var(--border-light);
+      border-top-color: var(--primary-color);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-right: 8px;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .loading {
+      display: flex;
+      align-items: center;
+    }
+    
+    .dark-mode-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 16px;
+      background: var(--secondary-color);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      font-size: 20px;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .dark-mode-toggle:hover {
+      transform: scale(1.1);
+    }
+    
+    @media (max-width: 768px) {
+      h1 { font-size: 28px; }
+      header { flex-direction: column; }
+      .button-group { flex-direction: column; }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>お問い合わせ</h1>
+      <button class="back-link" onclick="window.location.href='index.html'">← トップに戻る</button>
+    </header>
+    
+    <div class="info-box">
+      <h3>📋 このページについて</h3>
+      <p>不適切なコンテンツの報告やご質問がある場合は、このフォームから送信してください。報告内容は Discord を通じて管理者に通知されます。</p>
+    </div>
+    
+    <div id="alert" class="alert"></div>
+    
+    <div class="card">
+      <h2>📝 報告フォーム</h2>
+      
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="reportType" class="required">報告タイプ</label>
+          <select id="reportType" required>
+            <option value="">--- 選択してください ---</option>
+            <option value="inappropriate-content">不適切なコンテンツ</option>
+            <option value="copyright">著作権侵害</option>
+            <option value="spam">スパム</option>
+            <option value="illegal">違法コンテンツ</option>
+            <option value="other">その他</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="contentUrl">コンテンツのURL</label>
+          <input type="url" id="contentUrl" placeholder="https://example.com/video" />
+          <small style="color: var(--text-light); font-size: 12px;">報告対象のGofile URLまたは動画URL</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="description" class="required">詳細説明</label>
+          <textarea id="description" placeholder="不適切な理由を詳しく説明してください..." required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">メールアドレス（任意）</label>
+          <input type="email" id="email" placeholder="your@email.com" />
+          <small style="color: var(--text-light); font-size: 12px;">フォローアップが必要な場合に使用します</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="imageUpload">スクリーンショット（任意）</label>
+          <div class="file-upload">
+            <input type="file" id="imageUpload" accept="image/*" multiple />
+            <label for="imageUpload" class="file-upload-label">
+              📷 ここをクリックするか、ファイルをドラッグ &amp; ドロップ<br>
+              <small>(PNG, JPG, WebP - 最大5MB/ファイル)</small>
+            </label>
+          </div>
+          <div id="fileList" class="file-list" style="display: none;"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="reporterName">報告者名（任意）</label>
+          <input type="text" id="reporterName" placeholder="名前またはニックネーム" />
+        </div>
+        
+        <div class="form-group">
+          <input type="checkbox" id="agreePolicy" required />
+          <label for="agreePolicy" style="display: inline; margin-left: 8px;">
+            <a href="policy.html" target="_blank" style="color: var(--primary-color);">利用規約とコンテンツポリシー</a>に同意します
+          </label>
+        </div>
+        
+        <div class="button-group">
+          <button type="submit" id="submitBtn">✉️ 報告を送信</button>
+          <button type="reset">クリア</button>
+        </div>
+      </form>
+    </div>
+    
+    <div class="card">
+      <h2>❓ よくある質問</h2>
+      
+      <h3>Q: 報告後、どのくらいで対応されますか？</h3>
+      <p>通常、報告から24時間以内に確認します。内容によっては対応に時間がかかる場合があります。</p>
+      
+      <h3>Q: 個人情報は安全ですか？</h3>
+      <p>メールアドレスなどの個人情報は、報告対応のために使用され、他の目的には使用しません。Discord Webhook経由で安全に送信されます。</p>
+      
+      <h3>Q: 匿名で報告できますか？</h3>
+      <p>はい。メールアドレスと報告者名を入力しなければ、匿名で報告できます。</p>
+      
+      <h3>Q: 複数の画像をアップロードできますか？</h3>
+      <p>はい。複数の画像を選択できます。ただし、1ファイルあたり5MB以下である必要があります。</p>
+    </div>
+  </div>
+  
+  <button class="dark-mode-toggle" id="darkModeToggle" title="ダークモード">🌙</button>
+  
+  <script>
+    // ダークモード切り替え
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+      darkModeToggle.textContent = '☀️';
+    }
+    
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isNowDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isNowDark);
+      darkModeToggle.textContent = isNowDark ? '☀️' : '🌙';
+    });
+    
+    // ファイルアップロード処理
+    const imageUpload = document.getElementById('imageUpload');
+    const fileList = document.getElementById('fileList');
+    let uploadedFiles = [];
+    
+    imageUpload.addEventListener('change', (e) => {
+      const files = Array.from(e.target.files);
+      uploadedFiles = [];
+      fileList.innerHTML = '';
+      
+      if (files.length === 0) {
+        fileList.style.display = 'none';
+        return;
+      }
+      
+      files.forEach((file, index) => {
+        // ファイルサイズチェック（5MB）
+        if (file.size > 5 * 1024 * 1024) {
+          showAlert(`ファイル「${file.name}」は5MBを超えています`, 'error');
+          return;
+        }
+        
+        // ファイル型チェック
+        if (!['image/png', 'image/jpeg', 'image/webp'].includes(file.type)) {
+          showAlert(`ファイル「${file.name}」は対応していない形式です`, 'error');
+          return;
+        }
+        
+        uploadedFiles.push(file);
+        
+        // プレビュー追加
+        const fileItem = document.createElement('div');
+        fileItem.className = 'file-item';
+        fileItem.innerHTML = `
+          <span>📄 ${file.name} (${(file.size / 1024).toFixed(2)} KB)</span>
+          <button type="button" class="file-remove" onclick="removeFile(${uploadedFiles.length - 1})">削除</button>
+        `;
+        fileList.appendChild(fileItem);
+      });
+      
+      fileList.style.display = uploadedFiles.length > 0 ? 'block' : 'none';
+    });
+    
+    // ファイル削除
+    window.removeFile = (index) => {
+      uploadedFiles.splice(index, 1);
+      imageUpload.value = '';
+      
+      if (uploadedFiles.length === 0) {
+        fileList.style.display = 'none';
+      } else {
+        // ファイルリストを再表示
+        fileList.innerHTML = '';
+        uploadedFiles.forEach((file, idx) => {
+          const fileItem = document.createElement('div');
+          fileItem.className = 'file-item';
+          fileItem.innerHTML = `
+            <span>📄 ${file.name} (${(file.size / 1024).toFixed(2)} KB)</span>
+            <button type="button" class="file-remove" onclick="removeFile(${idx})">削除</button>
+          `;
+          fileList.appendChild(fileItem);
+        });
+      }
+    };
+    
+    // アラート表示
+    function showAlert(message, type = 'success') {
+      const alert = document.getElementById('alert');
+      alert.className = `alert show ${type}`;
+      alert.textContent = message;
+      setTimeout(() => alert.classList.remove('show'), 5000);
+    }
+    
+    // フォーム送信
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="spinner"></span>送信中...';
+      
+      try {
+        // フォームデータを取得
+        const formData = {
+          reportType: document.getElementById('reportType').value,
+          contentUrl: document.getElementById('contentUrl').value,
+          description: document.getElementById('description').value,
+          email: document.getElementById('email').value,
+          reporterName: document.getElementById('reporterName').value,
+          timestamp: new Date().toISOString()
+        };
+        
+        // 重複チェック（簡易版：localstorage）
+        const lastReport = localStorage.getItem('lastReport');
+        if (lastReport) {
+          const lastTime = new Date(lastReport).getTime();
+          const now = new Date().getTime();
+          if (now - lastTime < 60000) { // 60秒以内の重複報告は防止
+            showAlert('少し待ってから再度報告してください。（重複報告防止）', 'warning');
+            submitBtn.disabled = false;
+            submitBtn.textContent = '✉️ 報告を送信';
+            return;
+          }
+        }
+        
+        // Discord Webhook に送信（Netlify Function経由）
+        const webhookPayload = {
+          content: `**新しい報告が届きました**`,
+          embeds: [{
+            title: `報告タイプ: ${formData.reportType}`,
+            description: formData.description,
+            fields: [
+              {
+                name: 'コンテンツURL',
+                value: formData.contentUrl || '記入されていません',
+                inline: false
+              },
+              {
+                name: 'メールアドレス',
+                value: formData.email || '記入されていません',
+                inline: true
+              },
+              {
+                name: '報告者名',
+                value: formData.reporterName || '匿名',
+                inline: true
+              },
+              {
+                name: '報告日時',
+                value: new Date().toLocaleString('ja-JP'),
+                inline: false
+              }
+            ],
+            color: 16711680 // Red
+          }]
+        };
+        
+        // Netlify Function を使用して Discord に送信
+        const response = await fetch('/.netlify/functions/send-report', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(webhookPayload)
+        });
+        
+        if (response.ok) {
+          showAlert('✅ 報告を送信しました。ご協力ありがとうございます。', 'success');
+          localStorage.setItem('lastReport', new Date().toISOString());
+          document.getElementById('contactForm').reset();
+          fileList.style.display = 'none';
+          uploadedFiles = [];
+        } else {
+          throw new Error('送信に失敗しました');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        showAlert(`エラー: ${error.message}`, 'error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = '✉️ 報告を送信';
+      }
+    });
+    
+    // ドラッグ&ドロップ対応
+    const fileUploadLabel = document.querySelector('.file-upload-label');
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+      fileUploadLabel.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (eventName === 'dragover') {
+          fileUploadLabel.style.background = '#f0f0f0';
+          fileUploadLabel.style.borderColor = 'var(--primary-color)';
+        }
+        if (eventName === 'dragleave' || eventName === 'drop') {
+          fileUploadLabel.style.background = '';
+          fileUploadLabel.style.borderColor = '';
+        }
+      });
+    });
+    
+    fileUploadLabel.addEventListener('drop', (e) => {
+      const files = e.dataTransfer.files;
+      imageUpload.files = files;
+      imageUpload.dispatchEvent(new Event('change'));
+    });
+  </script>
+</body>
+</html>
