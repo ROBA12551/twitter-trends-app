@@ -1,8 +1,19 @@
 exports.handler = async (event) => {
   const headers = {
     'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
     'Content-Type': 'application/json'
   };
+
+  // OPTIONSリクエストへの対応
+  if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 200,
+      headers,
+      body: JSON.stringify({ status: 'ok' })
+    };
+  }
 
   try {
     console.log('[GET-URLS] ===== START =====');
@@ -40,6 +51,7 @@ exports.handler = async (event) => {
       console.error('[GET-URLS] Fetch failed with status:', response.status);
       console.error('[GET-URLS] URL was:', rawUrl);
       
+      // 404等の場合は空のデータを返す
       return {
         statusCode: 200,
         headers,
@@ -51,11 +63,7 @@ exports.handler = async (event) => {
             byPopular: []
           },
           total: 0,
-          debug: {
-            status: response.status,
-            url: rawUrl,
-            message: 'File not found'
-          }
+          message: 'File not found'
         })
       };
     }
@@ -109,6 +117,7 @@ exports.handler = async (event) => {
       };
     }
     
+    // データ構造のチェック
     if (!data.urls || !Array.isArray(data.urls)) {
       console.warn('[GET-URLS] Invalid data structure');
       console.warn('[GET-URLS] data.urls type:', typeof data.urls);

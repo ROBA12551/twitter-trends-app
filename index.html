@@ -5,8 +5,6 @@
   <title>Twitter保存ちゃん。</title>
   <meta name="description" content="Twitter保存ちゃん。は、リアルタイムランキング表示を提供するウェブアプリです。">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-adsense-account" content="ca-pub-9788086433456762"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9788086433456762"
-     crossorigin="anonymous"></script>
   
   <style>
     * {
@@ -1109,27 +1107,48 @@
       if (e.key === 'Escape') closeModal();
     });
     
-    async function fetchRanking() {
+async function fetchRanking() {
       try {
         state.isLoading = true;
+        console.log('[fetchRanking] Starting fetch...');
+        
         const response = await fetch('/.netlify/functions/get-urls-from-github');
-        if (!response.ok) throw new Error(`API Error: ${response.status}`);
-        const result = await response.json();
-        if (result.status === 'ok') {
+        console.log('[fetchRanking] Response status:', response.status);
+        console.log('[fetchRanking] Response ok:', response.ok);
+        
+        if (!response.ok) {
+          throw new Error(`HTTP Error: ${response.status}`);
+        }
+        
+        const text = await response.text();
+        console.log('[fetchRanking] Response text length:', text.length);
+        console.log('[fetchRanking] Response text:', text.substring(0, 500));
+        
+        const result = JSON.parse(text);
+        console.log('[fetchRanking] Parsed result:', result);
+        console.log('[fetchRanking] Result status:', result.status);
+        console.log('[fetchRanking] Result data:', result.data);
+        
+        if (result.status === 'ok' && result.data) {
           state.ranking = result.data;
           state.currentPage = 0;
           renderRanking();
           updateLastRefresh();
+          
           if (result.total > 0) {
+            console.log('[fetchRanking] Success - Total URLs:', result.total);
             showNotification(t('updated'), 'success');
           } else {
+            console.log('[fetchRanking] No URLs found');
             showNotification(t('addUrlMessage'), 'info');
           }
         } else {
-          throw new Error(result.error || 'Unknown error');
+          throw new Error(result.error || 'Unknown error from API');
         }
       } catch (error) {
-        console.error('Error:', error);
+        console.error('[fetchRanking] Error caught:', error);
+        console.error('[fetchRanking] Error message:', error.message);
+        console.error('[fetchRanking] Error stack:', error.stack);
         showNotification(`${t('error')} ${error.message}`);
       } finally {
         state.isLoading = false;
