@@ -1,0 +1,18 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "18"
+  SITE_NAME = "twitterchan"
+
+[context.production.environment]
+  API_BASE_URL = "https://twitterchan.netlify.app"
+  MODE = "production"
+
+[context.deploy-preview.environment]
+  API_BASE_URL = "https://deploy-preview-$DEPLOY_ID--twitterchan.netlify.app"
+  MODE = "preview"
+
+[context.branch-deploy.environment]
+  MODE = "branch"
