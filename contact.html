@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>お問い合わせ - Twitter保存ちゃん。</title>
-  <meta name="description" content="不適切なコンテンツの報告やお問い合わせはこちらから。">
+  <title>Report Issue - File Saver</title>
+  <meta name="description" content="Report inappropriate content, copyright issues, or contact File Saver team.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <style>
     * {
@@ -357,117 +357,136 @@
 <body>
   <div class="container">
     <header>
-      <h1>お問い合わせ</h1>
-      <button class="back-link" onclick="window.location.href='index.html'">← トップに戻る</button>
+      <h1>Report Issue</h1>
+      <button class="back-link" onclick="window.location.href='index.html'">← Back to Home</button>
     </header>
-    
+    <!-- JuicyAds v3.0 -->
+<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+<ins id="1109121" data-width="468" data-height="60"></ins>
+<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109121});</script>
+<!--JuicyAds END-->
     <div class="info-box">
-      <h3>このページについて</h3>
-      <p>不適切なコンテンツの報告やご質問がある場合は、このフォームから送信してください。報告内容は Discord を通じて管理者に通知されます。</p>
+      <h3>About This Page</h3>
+      <p>If you find inappropriate content or have an issue to report, please use this form. Your report will be sent to our moderation team via Discord webhook for review.</p>
     </div>
     
     <div id="alert" class="alert"></div>
     
     <div class="card">
-      <h2>報告フォーム</h2>
+      <h2>Report Form</h2>
       
-      <form id="contactForm">
+      <form id="reportForm">
         <div class="form-group">
-          <label for="reportType" class="required">報告タイプ</label>
+          <label for="reportType" class="required">Report Type</label>
           <select id="reportType" required>
-            <option value="">--- 選択してください ---</option>
-            <option value="inappropriate-content">不適切なコンテンツ</option>
-            <option value="copyright">著作権侵害</option>
-            <option value="spam">スパム</option>
-            <option value="illegal">違法コンテンツ</option>
-            <option value="other">その他</option>
+            <option value="">-- Select a report type --</option>
+            <option value="inappropriate-content">Inappropriate Content</option>
+            <option value="copyright">Copyright Infringement</option>
+            <option value="spam">Spam</option>
+            <option value="illegal">Illegal Content</option>
+            <option value="bug">Bug Report</option>
+            <option value="other">Other</option>
           </select>
         </div>
         
         <div class="form-group">
-          <label for="contentUrl">コンテンツのURL</label>
+          <label for="contentUrl">Content URL</label>
           <input type="url" id="contentUrl" placeholder="https://example.com/video" />
-          <small style="color: var(--text-light); font-size: 12px;">報告対象のGofile URLまたは動画URL</small>
+          <small style="color: var(--text-light); font-size: 12px;">URL of the file or content being reported</small>
         </div>
         
         <div class="form-group">
-          <label for="description" class="required">詳細説明</label>
-          <textarea id="description" placeholder="不適切な理由を詳しく説明してください..." required></textarea>
+          <label for="description" class="required">Detailed Description</label>
+          <textarea id="description" placeholder="Please explain why this content should be reported..." required></textarea>
         </div>
         
         <div class="form-group">
-          <label for="email">メールアドレス（任意）</label>
+          <label for="email">Email Address (Optional)</label>
           <input type="email" id="email" placeholder="your@email.com" />
-          <small style="color: var(--text-light); font-size: 12px;">フォローアップが必要な場合に使用します</small>
+          <small style="color: var(--text-light); font-size: 12px;">We may contact you if we need more information</small>
         </div>
         
         <div class="form-group">
-          <label for="imageUpload">スクリーンショット（任意）</label>
+          <label for="imageUpload">Screenshots (Optional)</label>
           <div class="file-upload">
             <input type="file" id="imageUpload" accept="image/*" multiple />
             <label for="imageUpload" class="file-upload-label">
-              📷 ここをクリックするか、ファイルをドラッグ &amp; ドロップ<br>
-              <small>(PNG, JPG, WebP - 最大5MB/ファイル)</small>
+              📷 Click to upload or drag & drop files<br>
+              <small>(PNG, JPG, WebP - Max 5MB per file)</small>
             </label>
           </div>
           <div id="fileList" class="file-list" style="display: none;"></div>
         </div>
         
         <div class="form-group">
-          <label for="reporterName">報告者名（任意）</label>
-          <input type="text" id="reporterName" placeholder="名前またはニックネーム" />
+          <label for="reporterName">Your Name (Optional)</label>
+          <input type="text" id="reporterName" placeholder="Your name or username" />
         </div>
         
         <div class="form-group">
           <input type="checkbox" id="agreePolicy" required />
           <label for="agreePolicy" style="display: inline; margin-left: 8px;">
-            <a href="policy.html" target="_blank" style="color: var(--primary-color);">利用規約とコンテンツポリシー</a>に同意します
+            I agree to the <a href="policy.html" target="_blank" style="color: var(--primary-color);">Terms of Service and Content Policy</a>
           </label>
         </div>
         
         <div class="button-group">
-          <button type="submit" id="submitBtn">報告を送信</button>
-          <button type="reset">クリア</button>
+          <button type="submit" id="submitBtn">Submit Report</button>
+          <button type="reset">Clear</button>
         </div>
       </form>
     </div>
-    
+    <!-- JuicyAds v3.0 -->
+<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+<ins id="1109121" data-width="468" data-height="60"></ins>
+<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109121});</script>
+<!--JuicyAds END-->
     <div class="card">
-      <h2>よくある質問</h2>
+      <h2>Frequently Asked Questions</h2>
       
-      <h3>Q: 報告後、どのくらいで対応されますか？</h3>
-      <p>通常、報告から24時間以内に確認します。内容によっては対応に時間がかかる場合があります。</p>
+      <h3>Q: How long does it take to respond to reports?</h3>
+      <p>We typically review reports within 24 hours. Depending on the severity and complexity, additional time may be needed.</p>
       
-      <h3>Q: 個人情報は安全ですか？</h3>
-      <p>メールアドレスなどの個人情報は、報告対応のために使用され、他の目的には使用しません。Discord Webhook経由で安全に送信されます。</p>
+      <h3>Q: Is my personal information safe?</h3>
+      <p>Yes, your personal information is only used to respond to your report and is not shared with third parties. It is transmitted securely via Discord Webhook.</p>
       
-      <h3>Q: 匿名で報告できますか？</h3>
-      <p>はい。メールアドレスと報告者名を入力しなければ、匿名で報告できます。</p>
+      <h3>Q: Can I report anonymously?</h3>
+      <p>Yes. You can submit a report without providing your email address or name if you prefer to remain anonymous.</p>
       
-      <h3>Q: 複数の画像をアップロードできますか？</h3>
-      <p>はい。複数の画像を選択できます。ただし、1ファイルあたり5MB以下である必要があります。</p>
+      <h3>Q: Can I upload multiple images?</h3>
+      <p>Yes, you can select and upload multiple images. Each file must be 5MB or smaller.</p>
+
+      <h3>Q: What types of content can I report?</h3>
+      <p>You can report inappropriate content, copyright violations, spam, illegal content, bugs, or other issues. Select the appropriate category in the form.</p>
+      
+      <h3>Q: What happens after I submit a report?</h3>
+      <p>Our moderation team will review your report and take appropriate action, which may include removing content, warning users, or reporting to authorities if necessary.</p>
     </div>
   </div>
-  
-  <button class="dark-mode-toggle" id="darkModeToggle" title="ダークモード">🌙</button>
+<!-- JuicyAds v3.0 -->
+<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+<ins id="1109124" data-width="300" data-height="250"></ins>
+<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109124});</script>
+<!--JuicyAds END-->
+  <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle dark mode">🌙</button>
   
   <script>
-    // ダークモード切り替え
+    // Dark mode toggle
     const darkModeToggle = document.getElementById('darkModeToggle');
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
     if (isDarkMode) {
       document.body.classList.add('dark-mode');
-      darkModeToggle.textContent = '';
+      darkModeToggle.textContent = '☀️';
     }
     
     darkModeToggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
       const isNowDark = document.body.classList.contains('dark-mode');
       localStorage.setItem('darkMode', isNowDark);
-      darkModeToggle.textContent = isNowDark ? '' : '';
+      darkModeToggle.textContent = isNowDark ? '☀️' : '🌙';
     });
     
-    // ファイルアップロード処理
+    // File upload handler
     const imageUpload = document.getElementById('imageUpload');
     const fileList = document.getElementById('fileList');
     let uploadedFiles = [];
@@ -483,26 +502,26 @@
       }
       
       files.forEach((file, index) => {
-        // ファイルサイズチェック（5MB）
+        // File size check (5MB)
         if (file.size > 5 * 1024 * 1024) {
-          showAlert(`ファイル「${file.name}」は5MBを超えています`, 'error');
+          showAlert(`File "${file.name}" exceeds 5MB limit`, 'error');
           return;
         }
         
-        // ファイル型チェック
+        // File type check
         if (!['image/png', 'image/jpeg', 'image/webp'].includes(file.type)) {
-          showAlert(`ファイル「${file.name}」は対応していない形式です`, 'error');
+          showAlert(`File "${file.name}" is not a supported format`, 'error');
           return;
         }
         
         uploadedFiles.push(file);
         
-        // プレビュー追加
+        // Add preview
         const fileItem = document.createElement('div');
         fileItem.className = 'file-item';
         fileItem.innerHTML = `
           <span>📄 ${file.name} (${(file.size / 1024).toFixed(2)} KB)</span>
-          <button type="button" class="file-remove" onclick="removeFile(${uploadedFiles.length - 1})">削除</button>
+          <button type="button" class="file-remove" onclick="removeFile(${uploadedFiles.length - 1})">Remove</button>
         `;
         fileList.appendChild(fileItem);
       });
@@ -510,7 +529,7 @@
       fileList.style.display = uploadedFiles.length > 0 ? 'block' : 'none';
     });
     
-    // ファイル削除
+    // Remove file
     window.removeFile = (index) => {
       uploadedFiles.splice(index, 1);
       imageUpload.value = '';
@@ -518,21 +537,21 @@
       if (uploadedFiles.length === 0) {
         fileList.style.display = 'none';
       } else {
-        // ファイルリストを再表示
+        // Refresh file list
         fileList.innerHTML = '';
         uploadedFiles.forEach((file, idx) => {
           const fileItem = document.createElement('div');
           fileItem.className = 'file-item';
           fileItem.innerHTML = `
             <span>📄 ${file.name} (${(file.size / 1024).toFixed(2)} KB)</span>
-            <button type="button" class="file-remove" onclick="removeFile(${idx})">削除</button>
+            <button type="button" class="file-remove" onclick="removeFile(${idx})">Remove</button>
           `;
           fileList.appendChild(fileItem);
         });
       }
     };
     
-    // アラート表示
+    // Show alert
     function showAlert(message, type = 'success') {
       const alert = document.getElementById('alert');
       alert.className = `alert show ${type}`;
@@ -540,16 +559,16 @@
       setTimeout(() => alert.classList.remove('show'), 5000);
     }
     
-    // フォーム送信
-    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    // Form submission
+    document.getElementById('reportForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       
       const submitBtn = document.getElementById('submitBtn');
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span class="spinner"></span>送信中...';
+      submitBtn.innerHTML = '<span class="spinner"></span>Submitting...';
       
       try {
-        // フォームデータを取得
+        // Get form data
         const formData = {
           reportType: document.getElementById('reportType').value,
           contentUrl: document.getElementById('contentUrl').value,
@@ -559,44 +578,44 @@
           timestamp: new Date().toISOString()
         };
         
-        // 重複チェック（簡易版：localstorage）
+        // Duplicate check (simple version using localStorage)
         const lastReport = localStorage.getItem('lastReport');
         if (lastReport) {
           const lastTime = new Date(lastReport).getTime();
           const now = new Date().getTime();
-          if (now - lastTime < 60000) { // 60秒以内の重複報告は防止
-            showAlert('少し待ってから再度報告してください。（重複報告防止）', 'warning');
+          if (now - lastTime < 60000) { // Prevent duplicate reports within 60 seconds
+            showAlert('Please wait before submitting another report. (Spam prevention)', 'warning');
             submitBtn.disabled = false;
-            submitBtn.textContent = '✉️ 報告を送信';
+            submitBtn.textContent = 'Submit Report';
             return;
           }
         }
         
-        // Discord Webhook に送信（Netlify Function経由）
+        // Send to Discord Webhook (via Netlify Function)
         const webhookPayload = {
-          content: `**新しい報告が届きました**`,
+          content: `**New Report Submitted**`,
           embeds: [{
-            title: `報告タイプ: ${formData.reportType}`,
+            title: `Report Type: ${formData.reportType}`,
             description: formData.description,
             fields: [
               {
-                name: 'コンテンツURL',
-                value: formData.contentUrl || '記入されていません',
+                name: 'Content URL',
+                value: formData.contentUrl || 'Not provided',
                 inline: false
               },
               {
-                name: 'メールアドレス',
-                value: formData.email || '記入されていません',
+                name: 'Email Address',
+                value: formData.email || 'Not provided',
                 inline: true
               },
               {
-                name: '報告者名',
-                value: formData.reporterName || '匿名',
+                name: 'Reporter Name',
+                value: formData.reporterName || 'Anonymous',
                 inline: true
               },
               {
-                name: '報告日時',
-                value: new Date().toLocaleString('ja-JP'),
+                name: 'Report Date/Time',
+                value: new Date().toLocaleString('en-US'),
                 inline: false
               }
             ],
@@ -604,7 +623,7 @@
           }]
         };
         
-        // Netlify Function を使用して Discord に送信
+        // Use Netlify Function to send to Discord
         const response = await fetch('/.netlify/functions/send-report', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -612,24 +631,24 @@
         });
         
         if (response.ok) {
-          showAlert('✅ 報告を送信しました。ご協力ありがとうございます。', 'success');
+          showAlert('✅ Report submitted successfully. Thank you for your contribution!', 'success');
           localStorage.setItem('lastReport', new Date().toISOString());
-          document.getElementById('contactForm').reset();
+          document.getElementById('reportForm').reset();
           fileList.style.display = 'none';
           uploadedFiles = [];
         } else {
-          throw new Error('送信に失敗しました');
+          throw new Error('Failed to submit report');
         }
       } catch (error) {
         console.error('Error:', error);
-        showAlert(`エラー: ${error.message}`, 'error');
+        showAlert(`Error: ${error.message}`, 'error');
       } finally {
         submitBtn.disabled = false;
-        submitBtn.textContent = '✉️ 報告を送信';
+        submitBtn.textContent = 'Submit Report';
       }
     });
     
-    // ドラッグ&ドロップ対応
+    // Drag & drop support
     const fileUploadLabel = document.querySelector('.file-upload-label');
     ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
       fileUploadLabel.addEventListener(eventName, (e) => {
