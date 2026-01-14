@@ -85,6 +85,37 @@
       border-color: #444;
     }
 
+    /* JuicyAds Container Styling */
+    .juicy-ad-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+      padding: 15px;
+      background: linear-gradient(135deg, #f8f8f8 0%, #fafafa 100%);
+      border-radius: 12px;
+      border: 1px solid #e8e8e8;
+      min-height: 60px;
+    }
+
+    .juicy-ad-container-large {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #f8f8f8 0%, #fafafa 100%);
+      border-radius: 12px;
+      border: 1px solid #e8e8e8;
+      min-height: 120px;
+    }
+
+    body.dark-mode .juicy-ad-container,
+    body.dark-mode .juicy-ad-container-large {
+      background: linear-gradient(135deg, #333 0%, #2a2a2a 100%);
+      border-color: #444;
+    }
+
     .container {
       max-width: 1400px;
       margin: 0 auto;
@@ -764,6 +795,12 @@
       .grid { grid-template-columns: 1fr; }
       header { flex-direction: column; }
       .language-selector { justify-content: center; }
+
+      .juicy-ad-container,
+      .juicy-ad-container-large {
+        margin: 15px 0;
+        padding: 12px;
+      }
     }
 
     /* Video Ad Container Styling */
@@ -779,15 +816,15 @@
   </style>
 </head>
 <body>
-<!-- JuicyAds v3.0 -->
-<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-<ins id="1109235" data-width="300" data-height="100"></ins>
-<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
-<!--JuicyAds END-->
+  <!-- JuicyAds Header - Premium Placement 1 -->
+  <div class="juicy-ad-container-large">
+    <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+    <ins id="1109235" data-width="300" data-height="100"></ins>
+    <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
+  </div>
+
   <div class="container">
     <header>
-
-
       <div class="header-content">
         <h1>TwiiterChan</h1>
         <p class="subtitle">Real-time Download Ranking</p>
@@ -797,11 +834,13 @@
         <button class="lang-btn" data-lang="ja">日本語</button>
       </div>
     </header>
-  <!-- JuicyAds v3.0 -->
-<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-<ins id="1109236" data-width="178" data-height="46"></ins>
-<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109236});</script>
-<!--JuicyAds END-->
+
+    <!-- JuicyAds Placement 2 -->
+    <div class="juicy-ad-container">
+      <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+      <ins id="1109236" data-width="728" data-height="90"></ins>
+      <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109236});</script>
+    </div>
 
     <div class="nav-tabs">
       <button class="nav-button active" data-mode="ranking">Ranking</button>
@@ -811,11 +850,14 @@
       <a href="policy.html" style="padding: 12px 28px; background: white; border: 1.5px solid var(--border-light); border-radius: 8px; text-decoration: none; color: var(--text-light); font-weight: 500; transition: var(--transition);" onmouseover="this.style.borderColor='var(--secondary-color)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='translateY(0)';">Policy</a>
       <a href="contact.html" style="padding: 12px 28px; background: white; border: 1.5px solid var(--border-light); border-radius: 8px; text-decoration: none; color: var(--text-light); font-weight: 500; transition: var(--transition);" onmouseover="this.style.borderColor='var(--secondary-color)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='translateY(0)';">Contact</a>
     </div>
-<!-- JuicyAds v3.0 -->
-<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-<ins id="1109236" data-width="178" data-height="46"></ins>
-<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109236});</script>
-<!--JuicyAds END-->
+
+    <!-- JuicyAds Placement 3 -->
+    <div class="juicy-ad-container">
+      <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+      <ins id="1109236" data-width="728" data-height="90"></ins>
+      <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109236});</script>
+    </div>
+
     <!-- Ranking Mode -->
     <div id="ranking-mode" class="mode-content">
       <div class="refresh-controls">
@@ -838,11 +880,12 @@
         <button class="sort-btn" data-sort="popular">Trending Now</button>
       </div>
 
-<!-- JuicyAds v3.0 -->
-<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-<ins id="1109235" data-width="300" data-height="100"></ins>
-<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
-<!--JuicyAds END-->
+      <!-- JuicyAds Placement 4 -->
+      <div class="juicy-ad-container-large">
+        <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+        <ins id="1109235" data-width="300" data-height="100"></ins>
+        <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
+      </div>
 
       <div class="status-bar">
         <div>Total <span id="total-count">0</span> URLs</div>
@@ -855,11 +898,14 @@
           <p>Loading ranking...</p>
         </div>
       </div>
-<!-- JuicyAds v3.0 -->
-<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-<ins id="1109236" data-width="178" data-height="46"></ins>
-<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109236});</script>
-<!--JuicyAds END-->
+
+      <!-- JuicyAds Placement 5 -->
+      <div class="juicy-ad-container">
+        <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+        <ins id="1109236" data-width="728" data-height="90"></ins>
+        <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109236});</script>
+      </div>
+
       <button class="load-more-btn" id="load-more-btn">Load More</button>
     </div>
     
@@ -891,6 +937,13 @@
         </div>
       </div>
 
+      <!-- JuicyAds Placement 6 -->
+      <div class="juicy-ad-container">
+        <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+        <ins id="1109235" data-width="300" data-height="100"></ins>
+        <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
+      </div>
+
       <div class="card">
         <h2>Web Scraping</h2>
         <form id="scrapeForm">
@@ -914,14 +967,27 @@
         </div>
       </div>
 
+      <!-- JuicyAds Placement 7 -->
+      <div class="juicy-ad-container">
+        <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+        <ins id="1109236" data-width="728" data-height="90"></ins>
+        <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109236});</script>
+      </div>
 
+    </div>
 
-<!-- JuicyAds v3.0 -->
-<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-<ins id="1109235" data-width="300" data-height="100"></ins>
-<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
-<!--JuicyAds END-->
+    <!-- Sites Mode -->
+    <div id="sites-mode" class="mode-content hidden">
+      <div class="grid" id="sites-grid"></div>
 
+      <!-- JuicyAds Placement 8 -->
+      <div class="juicy-ad-container-large">
+        <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+        <ins id="1109235" data-width="300" data-height="100"></ins>
+        <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
+      </div>
+    </div>
+    
     <!-- Settings Mode -->
     <div id="settings-mode" class="mode-content hidden">
       <div class="card">
@@ -932,6 +998,13 @@
         </label>
       </div>
     </div>
+  </div>
+
+  <!-- JuicyAds Footer - Premium Placement 9 -->
+  <div class="juicy-ad-container-large">
+    <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+    <ins id="1109236" data-width="728" data-height="90"></ins>
+    <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109236});</script>
   </div>
   
   <div id="notification" class="notification"></div>
@@ -1512,8 +1585,6 @@
 
 
 
-    // Then redirect every 5 minutes (300000 milliseconds)
-    setInterval(openAdTab, 300000);
   </script>
 </body>
 </html>
