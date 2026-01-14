@@ -15,6 +15,7 @@
       background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
       margin: 20px 0;
       border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
     .ad-wrapper {
@@ -22,6 +23,26 @@
       justify-content: center;
       align-items: center;
       min-height: 60px;
+    }
+
+    .ad-container-large {
+      display: flex;
+      justify-content: center;
+      padding: 30px;
+      background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+      margin: 30px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .ad-container-inline {
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     }
 
     * {
@@ -229,14 +250,27 @@
         margin: 15px 0;
         padding: 15px;
       }
+
+      .ad-container-large {
+        margin: 15px 0;
+        padding: 15px;
+      }
+
+      .ad-container-inline {
+        margin: 12px 0;
+        padding: 12px;
+      }
     }
   </style>
 </head>
 <body>
-<!-- admax -->
-<script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
-<script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-<!-- admax -->
+<!-- admax ヘッダー広告（高CPM配置） -->
+<div class="ad-container-large">
+  <div class="ad-wrapper">
+    <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
+    <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+  </div>
+</div>
 
   <div class="container">
     <header>
@@ -259,6 +293,15 @@
       <p>
         "File Saver" is a web application that allows users to register, manage, and display rankings of file URLs from various sources including video sharing platforms and file hosting services.
       </p>
+
+      <!-- admax スクエア広告1（高CPM配置） -->
+      <div class="ad-container-inline">
+        <div class="ad-wrapper">
+          <div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:300px;height:250px;"></div>
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+        </div>
+      </div>
       
       <h3>2. Agreement to Terms</h3>
       <p>
@@ -274,6 +317,14 @@
         <li>Tampering with or gaining unauthorized access to this service</li>
         <li>Placing excessive load on our servers</li>
       </ul>
+
+      <!-- admax インライン広告1 -->
+      <div class="ad-container-inline">
+        <div class="ad-wrapper">
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+        </div>
+      </div>
       
       <h3>4. Content Responsibility</h3>
       <p>
@@ -289,12 +340,7 @@
       <p>
         This service is provided "as-is." File Saver assumes no responsibility for any damages arising from the use of this service.
       </p>
-
-<!-- admax -->
-<div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:160px;height:600px;"></div>
-<script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
-<script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-<!-- admax -->
+    </div>
 
     <!-- Privacy Policy -->
     <div id="privacy" class="content">
@@ -304,6 +350,15 @@
       <p>
         File Saver does not intentionally collect personal information (such as email addresses) from users. However, you may voluntarily provide personal information when reporting inappropriate content.
       </p>
+
+      <!-- admax スクエア広告2（高CPM配置） -->
+      <div class="ad-container-inline">
+        <div class="ad-wrapper">
+          <div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:300px;height:250px;"></div>
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+        </div>
+      </div>
       
       <h3>2. Use of Cookies and Local Storage</h3>
       <p>
@@ -314,6 +369,14 @@
       <p>
         This service includes links to third-party services including video hosting platforms and file sharing services. Please review the privacy policies of these external services, as File Saver is not responsible for their practices.
       </p>
+
+      <!-- admax インライン広告2 -->
+      <div class="ad-container-inline">
+        <div class="ad-wrapper">
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+        </div>
+      </div>
       
       <h3>4. Information Sharing</h3>
       <p>
@@ -324,10 +387,8 @@
       <p>
         Report information is stored on Discord servers. Please refer to Discord's Privacy Policy for more details about data handling.
       </p>
-<!-- admax -->
-<script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
-<script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-<!-- admax -->
+    </div>
+
     <!-- Content Policy -->
     <div id="content" class="content">
       <h2>Content Policy</h2>
@@ -371,6 +432,15 @@
           </li>
         </ul>
       </div>
+
+      <!-- admax スクエア広告3（高CPM配置） -->
+      <div class="ad-container-inline">
+        <div class="ad-wrapper">
+          <div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:300px;height:250px;"></div>
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+        </div>
+      </div>
       
       <div class="warning-box">
         <h4>⚠️ Restricted Content (Warning Labels Required)</h4>
@@ -378,6 +448,14 @@
       </div>
       
       <p>When inappropriate content is discovered, users can report it through the contact page.</p>
+
+      <!-- admax インライン広告3 -->
+      <div class="ad-container-inline">
+        <div class="ad-wrapper">
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+        </div>
+      </div>
       
       <h3>International Legal Compliance</h3>
       <p>File Saver complies with applicable international laws including:</p>
@@ -388,11 +466,16 @@
         <li><strong>Data protection laws</strong> - Ensuring appropriate handling of personal information</li>
         <li><strong>Consumer protection laws</strong> - Prohibiting illegal commercial practices</li>
       </ul>
-      <!-- admax -->
-<div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:160px;height:600px;"></div>
-<script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
-<script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-<!-- admax -->
+
+      <!-- admax スクエア広告4（高CPM配置） -->
+      <div class="ad-container-large">
+        <div class="ad-wrapper">
+          <div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:300px;height:250px;"></div>
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+        </div>
+      </div>
+      
       <h3>How to Report Inappropriate Content</h3>
       <p>
         If you discover inappropriate content, please report it through the contact page.
@@ -404,6 +487,14 @@
         <li>Screenshot (optional)</li>
         <li>Email address for follow-up (optional)</li>
       </ul>
+
+      <!-- admax インライン広告4 -->
+      <div class="ad-container-inline">
+        <div class="ad-wrapper">
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+        </div>
+      </div>
       
       <h3>Response Policy</h3>
       <p>
@@ -415,17 +506,8 @@
         <li>Warning or suspension of user if appropriate</li>
         <li>Reporting to relevant authorities if illegal activity is confirmed</li>
       </ol>
-
-      <!-- Content Policy中央広告 -->
-      <div class="ad-container">
-        <div class="ad-wrapper">
-          <script async type="application/javascript" src="https://a.pemsrv.com/ad-provider.js"></script> 
-          <ins class="eas6a97888e35" data-zoneid="5828666"></ins> 
-          <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
-        </div>
-      </div>
     </div>
-    
+
     <!-- Disclaimer -->
     <div id="disclaimer" class="content">
       <h2>Disclaimer</h2>
@@ -434,6 +516,15 @@
       <p>
         This service is provided "as-is" without any express or implied warranties of any kind.
       </p>
+
+      <!-- admax スクエア広告5（高CPM配置） -->
+      <div class="ad-container-inline">
+        <div class="ad-wrapper">
+          <div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:300px;height:250px;"></div>
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+        </div>
+      </div>
       
       <h3>2. Limitation of Liability</h3>
       <p>
@@ -445,6 +536,14 @@
         <li>Business interruption</li>
         <li>Reputational damage</li>
       </ul>
+
+      <!-- admax インライン広告5 -->
+      <div class="ad-container-inline">
+        <div class="ad-wrapper">
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+        </div>
+      </div>
       
       <h3>3. External Links</h3>
       <p>
@@ -455,6 +554,15 @@
       <p>
         Copyright for all content registered on this service (video URLs, metadata) belongs to the respective copyright holders. File Saver is not responsible for copyright infringement. For copyright infringement reports, please contact the relevant service provider directly.
       </p>
+
+      <!-- admax スクエア広告6（高CPM配置） -->
+      <div class="ad-container-inline">
+        <div class="ad-wrapper">
+          <div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:300px;height:250px;"></div>
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+        </div>
+      </div>
       
       <h3>5. Service Availability</h3>
       <p>
@@ -468,12 +576,11 @@
         </p>
       </div>
 
-      <!-- Disclaimer下部広告 -->
-      <div class="ad-container">
+      <!-- admax フッター広告（高CPM配置） -->
+      <div class="ad-container-large">
         <div class="ad-wrapper">
-          <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
-          <ins class="eas6a97888e17" data-zoneid="5828678"></ins> 
-          <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
         </div>
       </div>
     </div>

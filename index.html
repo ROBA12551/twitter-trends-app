@@ -80,9 +80,32 @@
       background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
       margin: 20px 0;
       border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
-    body.dark-mode .ad-container {
+    .ad-container-large {
+      display: flex;
+      justify-content: center;
+      padding: 30px;
+      background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+      margin: 30px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .ad-container-inline {
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    body.dark-mode .ad-container,
+    body.dark-mode .ad-container-large,
+    body.dark-mode .ad-container-inline {
       background: linear-gradient(135deg, #333 0%, #2a2a2a 100%);
     }
 
@@ -835,16 +858,22 @@
         width: 95%;
         max-width: 100%;
       }
+
+      .ad-container,
+      .ad-container-large,
+      .ad-container-inline {
+        margin: 15px 0;
+        padding: 15px;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- 最下部広告 -->
-  <div class="ad-container">
+  <!-- admax ヘッダー広告（高CPM配置） -->
+  <div class="ad-container-large">
     <div class="ad-wrapper">
-      <script async type="application/javascript" src="https://a.pemsrv.com/ad-provider.js"></script> 
-      <ins class="eas6a97888e35" data-zoneid="5828666"></ins> 
-      <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+      <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
+      <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
     </div>
   </div>
 
@@ -868,9 +897,15 @@
       <a href="policy.html" style="padding: 12px 28px; background: white; border: 1.5px solid var(--border-light); border-radius: 8px; text-decoration: none; color: var(--text-light); font-weight: 500; transition: var(--transition);" onmouseover="this.style.borderColor='var(--secondary-color)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='translateY(0)';">Policy</a>
       <a href="contact.html" style="padding: 12px 28px; background: white; border: 1.5px solid var(--border-light); border-radius: 8px; text-decoration: none; color: var(--text-light); font-weight: 500; transition: var(--transition);" onmouseover="this.style.borderColor='var(--secondary-color)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='translateY(0)';">Contact</a>
     </div>
-    <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
- <ins class="eas6a97888e38" data-zoneid="5828700"></ins> 
- <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+
+    <!-- admax インライン広告1 -->
+    <div class="ad-container-inline">
+      <div class="ad-wrapper">
+        <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
+        <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+      </div>
+    </div>
+
     <!-- Ranking Mode -->
     <div id="ranking-mode" class="mode-content">
       <div class="refresh-controls">
@@ -887,10 +922,14 @@
         </div>
       </div>
       
-<!-- admax -->
-<script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
-<script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-<!-- admax -->>
+      <!-- admax スクエア広告1 -->
+      <div class="ad-container-inline">
+        <div class="ad-wrapper">
+          <div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:300px;height:250px;"></div>
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+        </div>
+      </div>
       
       <div class="sort-controls">
         <button class="sort-btn active" data-sort="downloads">Most Downloads</button>
@@ -909,18 +948,27 @@
           <p>Loading ranking...</p>
         </div>
       </div>
-<!-- admax -->
-<div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:160px;height:600px;"></div>
-<script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
-<script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-<!-- admax -->
+
+      <!-- admax インライン広告2 -->
+      <div class="ad-container-inline">
+        <div class="ad-wrapper">
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+        </div>
+      </div>
       
       <button class="load-more-btn" id="load-more-btn">Load More</button>
+
+      <!-- admax スクエア広告2 -->
+      <div class="ad-container-large">
+        <div class="ad-wrapper">
+          <div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:300px;height:250px;"></div>
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+        </div>
+      </div>
     </div>
-    <!-- admax -->
-<script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
-<script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-<!-- admax -->
+
     <!-- Upload Mode -->
     <div id="upload-mode" class="mode-content hidden">
       <div class="card">
@@ -949,6 +997,15 @@
         </div>
       </div>
 
+      <!-- admax スクエア広告3 -->
+      <div class="ad-container-inline">
+        <div class="ad-wrapper">
+          <div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:300px;height:250px;"></div>
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+        </div>
+      </div>
+
       <div class="card">
         <h2>Web Scraping</h2>
         <form id="scrapeForm">
@@ -971,10 +1028,29 @@
           </div>
         </div>
       </div>
+
+      <!-- admax インライン広告3 -->
+      <div class="ad-container-inline">
+        <div class="ad-wrapper">
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+        </div>
+      </div>
     </div>
 
     <!-- Sites Mode -->
     <div id="sites-mode" class="mode-content hidden">
+      <div class="grid" id="sites-grid"></div>
+
+      <!-- admax スクエア広告4 -->
+      <div class="ad-container-large">
+        <div class="ad-wrapper">
+          <div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:300px;height:250px;"></div>
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+        </div>
+      </div>
+    </div>
 
     <!-- Settings Mode -->
     <div id="settings-mode" class="mode-content hidden">
@@ -985,17 +1061,24 @@
           Dark Mode
         </label>
       </div>
+
+      <!-- admax インライン広告4 -->
+      <div class="ad-container-inline">
+        <div class="ad-wrapper">
+          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
+          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+        </div>
+      </div>
     </div>
   </div>
-    <!-- 最下部広告 -->
-  <div class="ad-container">
+
+  <!-- admax フッター広告 -->
+  <div class="ad-container-large">
     <div class="ad-wrapper">
-      <script async type="application/javascript" src="https://a.pemsrv.com/ad-provider.js"></script> 
-      <ins class="eas6a97888e35" data-zoneid="5828666"></ins> 
-      <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+      <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
+      <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
     </div>
   </div>
-  <div id="notification" class="notification"></div>
 
   <!-- Preview Modal -->
   <div id="previewModal" class="modal">
@@ -1012,10 +1095,6 @@
       </div>
     </div>
   </div>
-
-<script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
- <ins class="eas6a97888e37" data-zoneid="5828702"></ins> 
- <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
 
   <script>
     // Translations Data - English and Japanese Support
@@ -1175,31 +1254,6 @@
       { id: 5, name: () => 'twicoco', url: 'https://twicoco.com/?type=history', description: () => t('twidougaDesc'), image: 'https://twicoco.com/favicon.ico' },
     ];
     
-    // 動画広告機能
-    function playVideoAd() {
-      const modal = document.getElementById('videoAdModal');
-      const iframe = document.getElementById('ad-iframe');
-      const vastUrl = 'https://s.magsrv.com/v1/vast.php?idzone=5828674';
-      
-      iframe.src = vastUrl;
-      modal.classList.add('show');
-      
-      // スキップボタンイベント
-      document.getElementById('adSkipButton').addEventListener('click', closeVideoAd, { once: true });
-      
-      // バックグラウンドクリックで閉じる
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeVideoAd();
-      }, { once: true });
-    }
-
-    function closeVideoAd() {
-      const modal = document.getElementById('videoAdModal');
-      const iframe = document.getElementById('ad-iframe');
-      modal.classList.remove('show');
-      iframe.src = '';
-    }
-    
     // Modal Functionality - CORS Compatible
     function openModal(url, title) {
       const modal = document.getElementById('previewModal');
@@ -1333,7 +1387,7 @@
       const items = data.slice(start, start + state.itemsPerPage);
       grid.innerHTML = items.map((item, index) => `
         <div class="video-card">
-          <div class="video-thumbnail" onclick="playVideoAd()">
+          <div class="video-thumbnail">
             <div class="play-icon"></div>
           </div>
           <div class="video-info">
@@ -1362,10 +1416,11 @@
     }
     
     function showNotification(message, type = 'success') {
-      const notification = document.getElementById('notification');
-      notification.textContent = message;
+      const notification = document.createElement('div');
       notification.className = `notification show ${type}`;
-      setTimeout(() => notification.classList.remove('show'), 3000);
+      notification.textContent = message;
+      document.body.appendChild(notification);
+      setTimeout(() => notification.remove(), 3000);
     }
     
     function showStatus(elementId, message, type = 'success') {
@@ -1448,7 +1503,6 @@
       const newUrls = urlsText.split('\n')
         .map(u => u.trim())
         .filter(u => {
-          // Support Gofile URLs and Twitter video URLs
           return u.startsWith('https://gofile.io/d/') || 
                  u.startsWith('https://video.twimg.com/') ||
                  u.startsWith('https://pbs.twimg.com/');
@@ -1608,8 +1662,6 @@
     window.openGofile = openGofile;
     window.openModal = openModal;
     window.closeModal = closeModal;
-    window.playVideoAd = playVideoAd;
-    window.closeVideoAd = closeVideoAd;
   </script>
 </body>
 </html>
