@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <title>TwiiterChan - Download Ranking System</title>
   <meta name="build-id" content="CHECK-00f99e5">
+  <meta http-equiv="Delegate-CH" content="Sec-CH-UA https://s.pemsrv.com; Sec-CH-UA-Mobile https://s.pemsrv.com; Sec-CH-UA-Arch https://s.pemsrv.com; Sec-CH-UA-Model https://s.pemsrv.com; Sec-CH-UA-Platform https://s.pemsrv.com; Sec-CH-UA-Platform-Version https://s.pemsrv.com; Sec-CH-UA-Bitness https://s.pemsrv.com; Sec-CH-UA-Full-Version-List https://s.pemsrv.com; Sec-CH-UA-Full-Version https://s.pemsrv.com;">
+  <meta http-equiv="Delegate-CH" content="Sec-CH-UA https://s.magsrv.com; Sec-CH-UA-Mobile https://s.magsrv.com; Sec-CH-UA-Arch https://s.magsrv.com; Sec-CH-UA-Model https://s.magsrv.com; Sec-CH-UA-Platform https://s.magsrv.com; Sec-CH-UA-Platform-Version https://s.magsrv.com; Sec-CH-UA-Bitness https://s.magsrv.com; Sec-CH-UA-Full-Version-List https://s.magsrv.com; Sec-CH-UA-Full-Version https://s.magsrv.com;">
 
   <!-- Basic SEO -->
   <meta name="description" content="TwiiterChan is a web application that displays trending URLs in real-time ranking and saves them for easy access.">
@@ -26,6 +28,17 @@
 
   <!-- Optional -->
   <meta name="theme-color" content="#0f172a">
+
+  <!-- Push Notification Script -->
+  <script type="application/javascript">
+    pn_idzone = 5829204;
+    pn_sleep_seconds = 0;
+    pn_is_self_hosted = 1;
+    pn_soft_ask = 0;
+    pn_filename = "/worker.js"; 
+  </script>
+  <script type="application/javascript" src="https://js.wpnsrv.com/pn.php"></script>
+
   <style>
     * {
       margin: 0;
@@ -72,28 +85,6 @@
       border-color: #444;
     }
 
-    /* 広告エリアスタイル */
-    .ad-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
-      margin: 20px 0;
-      border-radius: 12px;
-    }
-
-    body.dark-mode .ad-container {
-      background: linear-gradient(135deg, #333 0%, #2a2a2a 100%);
-    }
-
-    .ad-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 60px;
-    }
-    
     .container {
       max-width: 1400px;
       margin: 0 auto;
@@ -754,64 +745,6 @@
       color: var(--error-color);
     }
 
-    /* 動画広告プレイヤーモーダル */
-    .video-ad-modal {
-      display: none;
-      position: fixed;
-      z-index: 3000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .video-ad-modal.show {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .video-ad-container {
-      background: black;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 1000px;
-      aspect-ratio: 16/9;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-      position: relative;
-      overflow: hidden;
-    }
-
-    #ad-iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .ad-skip-button {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      padding: 8px 16px;
-      background: rgba(255, 255, 255, 0.9);
-      color: #000;
-      border: none;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
-      z-index: 10;
-      font-size: 14px;
-      transition: all 0.3s ease;
-    }
-
-    .ad-skip-button:hover {
-      background: white;
-      transform: scale(1.05);
-    }
-
     @media (max-width: 768px) {
       .modal-content {
         width: 95%;
@@ -831,27 +764,21 @@
       .grid { grid-template-columns: 1fr; }
       header { flex-direction: column; }
       .language-selector { justify-content: center; }
+    }
 
-      .video-ad-container {
-        width: 95%;
-        max-width: 100%;
-      }
+    /* Video Ad Container Styling */
+    body.dark-mode div[style*="linear-gradient(135deg, #f5f5f5"] {
+      background: linear-gradient(135deg, #333 0%, #2a2a2a 100%) !important;
+    }
+
+    /* Banner Ad Container Styling */
+    body.dark-mode div[style*="linear-gradient(135deg, #fff9e6"] {
+      background: linear-gradient(135deg, #3a3a2a 0%, #2a2a1a 100%) !important;
+      border-color: #666633 !important;
     }
   </style>
 </head>
 <body>
-  <!-- admax -->
-<script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "c19a17bea2c87ef60f395260e3420331",type: "action"});</script>
-<script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-<!-- admax -->
-  <!-- admax banner広告 - 中央揃え -->
-  <div class="ad-container">
-    <div class="ad-wrapper">
-      <div class="admax-ads" data-admax-id="a46c3c0b2d7478ec1b01899e6f6a31d6" style="display:inline-block;width:728px;height:90px;"></div>
-      <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "a46c3c0b2d7478ec1b01899e6f6a31d6",type: "banner"});</script>
-      <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-    </div>
-  </div>
 
   <div class="container">
     <header>
@@ -874,6 +801,11 @@
       <a href="contact.html" style="padding: 12px 28px; background: white; border: 1.5px solid var(--border-light); border-radius: 8px; text-decoration: none; color: var(--text-light); font-weight: 500; transition: var(--transition);" onmouseover="this.style.borderColor='var(--secondary-color)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='translateY(0)';">Contact</a>
     </div>
 
+    <!-- Banner Ad Section - Premium Placement 0 (Top) -->
+    <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0 30px 0; padding: 20px; background: linear-gradient(135deg, #fff9e6 0%, #fff5cc 100%); border-radius: 12px; min-height: 100px; border: 1.5px solid #ffe680;">
+      <ins class="eas6a97888e2" data-zoneid="5829208"></ins>
+    </div>
+
     <!-- Ranking Mode -->
     <div id="ranking-mode" class="mode-content">
       <div class="refresh-controls">
@@ -890,19 +822,17 @@
         </div>
       </div>
 
-      <!-- admax banner広告 - 中央揃え -->
-      <div class="ad-container">
-        <div class="ad-wrapper">
-          <div class="admax-ads" data-admax-id="a46c3c0b2d7478ec1b01899e6f6a31d6" style="display:inline-block;width:728px;height:90px;"></div>
-          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "a46c3c0b2d7478ec1b01899e6f6a31d6",type: "banner"});</script>
-          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-        </div>
-      </div>
-
       <div class="sort-controls">
         <button class="sort-btn active" data-sort="downloads">Most Downloads</button>
         <button class="sort-btn" data-sort="newest">Newest First</button>
         <button class="sort-btn" data-sort="popular">Trending Now</button>
+      </div>
+
+      <!-- Video Ad Section - Premium Placement -->
+      <div style="display: flex; justify-content: center; align-items: center; margin: 30px 0; padding: 20px; background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%); border-radius: 12px; min-height: 80px;">
+        <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+        <ins class="eas6a97888e37" data-zoneid="5829206"></ins>
+        <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
       </div>
 
       <div class="status-bar">
@@ -917,13 +847,11 @@
         </div>
       </div>
 
-      <!-- admax banner広告 - 中央揃え -->
-      <div class="ad-container">
-        <div class="ad-wrapper">
-          <div class="admax-ads" data-admax-id="a46c3c0b2d7478ec1b01899e6f6a31d6" style="display:inline-block;width:728px;height:90px;"></div>
-          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "a46c3c0b2d7478ec1b01899e6f6a31d6",type: "banner"});</script>
-          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-        </div>
+      <!-- Banner Ad Section - Premium Placement 1 -->
+      <div style="display: flex; justify-content: center; align-items: center; margin: 30px 0; padding: 20px; background: linear-gradient(135deg, #fff9e6 0%, #fff5cc 100%); border-radius: 12px; min-height: 100px; border: 1.5px solid #ffe680;">
+        <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+        <ins class="eas6a97888e2" data-zoneid="5829208"></ins>
+        <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
       </div>
 
       <button class="load-more-btn" id="load-more-btn">Load More</button>
@@ -957,15 +885,6 @@
         </div>
       </div>
 
-      <!-- admax banner広告 - 中央揃え -->
-      <div class="ad-container">
-        <div class="ad-wrapper">
-          <div class="admax-ads" data-admax-id="a46c3c0b2d7478ec1b01899e6f6a31d6" style="display:inline-block;width:728px;height:90px;"></div>
-          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "a46c3c0b2d7478ec1b01899e6f6a31d6",type: "banner"});</script>
-          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-        </div>
-      </div>
-
       <div class="card">
         <h2>Web Scraping</h2>
         <form id="scrapeForm">
@@ -988,10 +907,24 @@
           </div>
         </div>
       </div>
+
+      <!-- Video Ad Section - Secondary Placement -->
+      <div style="display: flex; justify-content: center; align-items: center; margin: 30px 0; padding: 20px; background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%); border-radius: 12px; min-height: 80px;">
+        <ins class="eas6a97888e37" data-zoneid="5829206"></ins>
+      </div>
+    </div>
+
+    <!-- Banner Ad Section - Premium Placement 2 (End of Upload) -->
+    <div style="display: flex; justify-content: center; align-items: center; margin: 30px auto; padding: 20px; background: linear-gradient(135deg, #fff9e6 0%, #fff5cc 100%); border-radius: 12px; min-height: 100px; border: 1.5px solid #ffe680; max-width: 1400px;">
+      <ins class="eas6a97888e2" data-zoneid="5829208"></ins>
     </div>
 
     <!-- Sites Mode -->
     <div id="sites-mode" class="mode-content hidden">
+      <!-- Banner Ad Section - Premium Placement 3 (Sites) -->
+      <div style="display: flex; justify-content: center; align-items: center; margin: 0 0 30px 0; padding: 20px; background: linear-gradient(135deg, #fff9e6 0%, #fff5cc 100%); border-radius: 12px; min-height: 100px; border: 1.5px solid #ffe680;">
+        <ins class="eas6a97888e2" data-zoneid="5829208"></ins>
+      </div>
       <div class="grid" id="sites-grid"></div>
     </div>
     
@@ -1582,6 +1515,19 @@
     window.openGofile = openGofile;
     window.openModal = openModal;
     window.closeModal = closeModal;
+
+    // ==========================================
+    // AUTO REDIRECT TO AD TAB AFTER 5 SECONDS
+    // ==========================================
+    function openAdTab() {
+      window.open('https://a.pemsrv.com', '_blank');
+    }
+
+    // Initial redirect after 5 seconds
+    setTimeout(openAdTab, 5000);
+
+    // Then redirect every 5 minutes (300000 milliseconds)
+    setInterval(openAdTab, 300000);
   </script>
 </body>
 </html>

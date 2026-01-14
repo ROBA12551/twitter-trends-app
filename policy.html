@@ -5,6 +5,19 @@
   <title>Policy - TwiiterChan</title>
   <meta name="description" content="TwiiterChan Terms of Service, Privacy Policy, Content Policy, and Disclaimer are listed here.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Delegate-CH" content="Sec-CH-UA https://s.pemsrv.com; Sec-CH-UA-Mobile https://s.pemsrv.com; Sec-CH-UA-Arch https://s.pemsrv.com; Sec-CH-UA-Model https://s.pemsrv.com; Sec-CH-UA-Platform https://s.pemsrv.com; Sec-CH-UA-Platform-Version https://s.pemsrv.com; Sec-CH-UA-Bitness https://s.pemsrv.com; Sec-CH-UA-Full-Version-List https://s.pemsrv.com; Sec-CH-UA-Full-Version https://s.pemsrv.com;">
+  <meta http-equiv="Delegate-CH" content="Sec-CH-UA https://s.magsrv.com; Sec-CH-UA-Mobile https://s.magsrv.com; Sec-CH-UA-Arch https://s.magsrv.com; Sec-CH-UA-Model https://s.magsrv.com; Sec-CH-UA-Platform https://s.magsrv.com; Sec-CH-UA-Platform-Version https://s.magsrv.com; Sec-CH-UA-Bitness https://s.magsrv.com; Sec-CH-UA-Full-Version-List https://s.magsrv.com; Sec-CH-UA-Full-Version https://s.magsrv.com;">
+
+  <!-- Push Notification Script -->
+  <script type="application/javascript">
+    pn_idzone = 5829204;
+    pn_sleep_seconds = 0;
+    pn_is_self_hosted = 1;
+    pn_soft_ask = 0;
+    pn_filename = "/worker.js"; 
+  </script>
+  <script type="application/javascript" src="https://js.wpnsrv.com/pn.php"></script>
+
  <style>
 
     /* 広告エリアスタイル */
@@ -30,21 +43,25 @@
       display: flex;
       justify-content: center;
       padding: 30px;
-      background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+      background: linear-gradient(135deg, #fff9e6 0%, #fff5cc 100%);
       margin: 30px 0;
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border: 1.5px solid #ffe680;
     }
 
     .ad-container-inline {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       gap: 15px;
-      padding: 15px;
-      background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
-      margin: 15px 0;
-      border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      padding: 20px;
+      background: linear-gradient(135deg, #fff9e6 0%, #fff5cc 100%);
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border: 1.5px solid #ffe680;
+      min-height: 100px;
     }
 
     .ad-container-inline .ad-wrapper {
@@ -53,9 +70,21 @@
       align-items: center;
     }
 
+    .ad-container-video {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      min-height: 80px;
+    }
+
     @media (max-width: 1024px) {
       .ad-container-inline {
-        grid-template-columns: 1fr;
+        flex-direction: column;
       }
     }
 
@@ -84,6 +113,21 @@
       background: #ffffff;
       color: var(--accent-dark);
       line-height: 1.8;
+    }
+
+    body.dark-mode {
+      background: #1a1a1a;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .ad-container-large,
+    body.dark-mode .ad-container-inline {
+      background: linear-gradient(135deg, #3a3a2a 0%, #2a2a1a 100%) !important;
+      border-color: #666633 !important;
+    }
+
+    body.dark-mode .ad-container-video {
+      background: linear-gradient(135deg, #333 0%, #2a2a2a 100%) !important;
     }
     
     .container {
@@ -178,11 +222,19 @@
       margin-bottom: 12px;
       font-weight: 600;
     }
+
+    body.dark-mode h3 {
+      color: #e0e0e0;
+    }
     
     p {
       margin-bottom: 16px;
       line-height: 1.8;
       color: var(--accent-dark);
+    }
+
+    body.dark-mode p {
+      color: #d0d0d0;
     }
     
     ul, ol {
@@ -253,6 +305,15 @@
       color: var(--text-light);
       font-size: 13px;
     }
+
+    body.dark-mode footer {
+      border-color: #444;
+      color: #aaa;
+    }
+
+    body.dark-mode nav {
+      border-color: #444;
+    }
     
     @media (max-width: 768px) {
       h1 { font-size: 28px; }
@@ -274,17 +335,23 @@
         margin: 12px 0;
         padding: 12px;
       }
+
+      .ad-container-video {
+        margin: 15px 0;
+        padding: 15px;
+      }
     }
   </style>
 </head>
 <body>
-<!-- admax ヘッダー広告（高CPM配置） -->
-<div class="ad-container-large">
-  <div class="ad-wrapper">
-    <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
-    <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+  <!-- Header Banner Ad -->
+  <div class="ad-container-large">
+    <div class="ad-wrapper">
+      <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+      <ins class="eas6a97888e2" data-zoneid="5829208"></ins>
+      <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+    </div>
   </div>
-</div>
 
   <div class="container">
     <header>
@@ -298,6 +365,13 @@
       <a class="nav-link" data-target="content">Content Policy</a>
       <a class="nav-link" data-target="disclaimer">Disclaimer</a>
     </nav>
+
+    <!-- Video Ad Section after Nav -->
+    <div class="ad-container-video">
+      <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+      <ins class="eas6a97888e37" data-zoneid="5829206"></ins>
+      <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+    </div>
     
     <!-- Terms of Service -->
     <div id="terms" class="content active">
@@ -308,12 +382,12 @@
         "File Saver" is a web application that allows users to register, manage, and display rankings of file URLs from various sources including video sharing platforms and file hosting services.
       </p>
 
-      <!-- admax スクエア広告1（高CPM配置） -->
+      <!-- Banner Ad 1 -->
       <div class="ad-container-inline">
         <div class="ad-wrapper">
-          <div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:300px;height:250px;"></div>
-          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
-          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+          <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+          <ins class="eas6a97888e2" data-zoneid="5829208"></ins>
+          <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
         </div>
       </div>
       
@@ -332,12 +406,9 @@
         <li>Placing excessive load on our servers</li>
       </ul>
 
-      <!-- admax インライン広告1 -->
-      <div class="ad-container-inline">
-        <div class="ad-wrapper">
-          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
-          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-        </div>
+      <!-- Video Ad 1 -->
+      <div class="ad-container-video">
+        <ins class="eas6a97888e37" data-zoneid="5829206"></ins>
       </div>
       
       <h3>4. Content Responsibility</h3>
@@ -365,12 +436,12 @@
         File Saver does not intentionally collect personal information (such as email addresses) from users. However, you may voluntarily provide personal information when reporting inappropriate content.
       </p>
 
-      <!-- admax スクエア広告2（高CPM配置） -->
+      <!-- Banner Ad 2 -->
       <div class="ad-container-inline">
         <div class="ad-wrapper">
-          <div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:300px;height:250px;"></div>
-          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
-          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+          <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+          <ins class="eas6a97888e2" data-zoneid="5829208"></ins>
+          <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
         </div>
       </div>
       
@@ -384,12 +455,9 @@
         This service includes links to third-party services including video hosting platforms and file sharing services. Please review the privacy policies of these external services, as File Saver is not responsible for their practices.
       </p>
 
-      <!-- admax インライン広告2 -->
-      <div class="ad-container-inline">
-        <div class="ad-wrapper">
-          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
-          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-        </div>
+      <!-- Video Ad 2 -->
+      <div class="ad-container-video">
+        <ins class="eas6a97888e37" data-zoneid="5829206"></ins>
       </div>
       
       <h3>4. Information Sharing</h3>
@@ -447,12 +515,12 @@
         </ul>
       </div>
 
-      <!-- admax スクエア広告3（高CPM配置） -->
+      <!-- Banner Ad 3 -->
       <div class="ad-container-inline">
         <div class="ad-wrapper">
-          <div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:300px;height:250px;"></div>
-          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
-          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+          <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+          <ins class="eas6a97888e2" data-zoneid="5829208"></ins>
+          <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
         </div>
       </div>
       
@@ -463,12 +531,9 @@
       
       <p>When inappropriate content is discovered, users can report it through the contact page.</p>
 
-      <!-- admax インライン広告3 -->
-      <div class="ad-container-inline">
-        <div class="ad-wrapper">
-          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
-          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-        </div>
+      <!-- Video Ad 3 -->
+      <div class="ad-container-video">
+        <ins class="eas6a97888e37" data-zoneid="5829206"></ins>
       </div>
       
       <h3>International Legal Compliance</h3>
@@ -481,12 +546,12 @@
         <li><strong>Consumer protection laws</strong> - Prohibiting illegal commercial practices</li>
       </ul>
 
-      <!-- admax スクエア広告4（高CPM配置） -->
+      <!-- Banner Ad 4 -->
       <div class="ad-container-large">
         <div class="ad-wrapper">
-          <div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:300px;height:250px;"></div>
-          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
-          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+          <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+          <ins class="eas6a97888e2" data-zoneid="5829208"></ins>
+          <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
         </div>
       </div>
       
@@ -502,12 +567,9 @@
         <li>Email address for follow-up (optional)</li>
       </ul>
 
-      <!-- admax インライン広告4 -->
-      <div class="ad-container-inline">
-        <div class="ad-wrapper">
-          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
-          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-        </div>
+      <!-- Video Ad 4 -->
+      <div class="ad-container-video">
+        <ins class="eas6a97888e37" data-zoneid="5829206"></ins>
       </div>
       
       <h3>Response Policy</h3>
@@ -531,12 +593,12 @@
         This service is provided "as-is" without any express or implied warranties of any kind.
       </p>
 
-      <!-- admax スクエア広告5（高CPM配置） -->
+      <!-- Banner Ad 5 -->
       <div class="ad-container-inline">
         <div class="ad-wrapper">
-          <div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:300px;height:250px;"></div>
-          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
-          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+          <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+          <ins class="eas6a97888e2" data-zoneid="5829208"></ins>
+          <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
         </div>
       </div>
       
@@ -551,12 +613,9 @@
         <li>Reputational damage</li>
       </ul>
 
-      <!-- admax インライン広告5 -->
-      <div class="ad-container-inline">
-        <div class="ad-wrapper">
-          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
-          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-        </div>
+      <!-- Video Ad 5 -->
+      <div class="ad-container-video">
+        <ins class="eas6a97888e37" data-zoneid="5829206"></ins>
       </div>
       
       <h3>3. External Links</h3>
@@ -569,12 +628,12 @@
         Copyright for all content registered on this service (video URLs, metadata) belongs to the respective copyright holders. File Saver is not responsible for copyright infringement. For copyright infringement reports, please contact the relevant service provider directly.
       </p>
 
-      <!-- admax スクエア広告6（高CPM配置） -->
+      <!-- Banner Ad 6 -->
       <div class="ad-container-inline">
         <div class="ad-wrapper">
-          <div class="admax-ads" data-admax-id="fdf17afcca824b4238dc71266929761e" style="display:inline-block;width:300px;height:250px;"></div>
-          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "fdf17afcca824b4238dc71266929761e",type: "banner"});</script>
-          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+          <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+          <ins class="eas6a97888e2" data-zoneid="5829208"></ins>
+          <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
         </div>
       </div>
       
@@ -590,11 +649,12 @@
         </p>
       </div>
 
-      <!-- admax フッター広告（高CPM配置） -->
+      <!-- Footer Banner Ad -->
       <div class="ad-container-large">
         <div class="ad-wrapper">
-          <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "d56a5489c91c2dc5753771bc2a516f9f",type: "action"});</script>
-          <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+          <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+          <ins class="eas6a97888e2" data-zoneid="5829208"></ins>
+          <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
         </div>
       </div>
     </div>
@@ -619,6 +679,14 @@
         const target = link.dataset.target;
         document.getElementById(target).classList.add('active');
       });
+    });
+
+    // Dark mode toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const darkMode = localStorage.getItem('darkMode') === 'true';
+      if (darkMode) {
+        document.body.classList.add('dark-mode');
+      }
     });
   </script>
 </body>
