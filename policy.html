@@ -36,13 +36,26 @@
     }
 
     .ad-container-inline {
-      display: flex;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
       padding: 15px;
       background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
       margin: 15px 0;
       border-radius: 8px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    .ad-container-inline .ad-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (max-width: 1024px) {
+      .ad-container-inline {
+        grid-template-columns: 1fr;
+      }
     }
 
     * {
