@@ -18,6 +18,37 @@
   </script>
   <script type="application/javascript" src="https://js.wpnsrv.com/pn.php"></script>
 
+  <!-- Desktop Fullpage Interstitial Ad -->
+  <script async type="application/javascript" src="https://a.pemsrv.com/ad-provider.js"></script>
+  <ins class="eas6a97888e35" data-zoneid="5829220"></ins>
+  <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+
+  <!-- Popunder Script -->
+  <script type="application/javascript">
+(function() {
+    var adConfig = {
+    "ads_host": "a.pemsrv.com",
+    "syndication_host": "s.pemsrv.com",
+    "idzone": 5829218,
+    "popup_fallback": false,
+    "popup_force": false,
+    "chrome_enabled": true,
+    "new_tab": false,
+    "frequency_period": 720,
+    "frequency_count": 1,
+    "trigger_method": 3,
+    "trigger_class": "",
+    "trigger_delay": 0,
+    "capping_enabled": true,
+    "tcf_enabled": true,
+    "only_inline": false
+};
+
+var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,browser:null,venor_loaded:!1,venor:!1,tcfData:null,configTpl:{ads_host:"",syndication_host:"",idzone:"",frequency_period:720,frequency_count:1,trigger_method:1,trigger_class:"",popup_force:!1,popup_fallback:!1,chrome_enabled:!0,new_tab:!1,cat:"",tags:"",el:"",sub:"",sub2:"",sub3:"",only_inline:!1,trigger_delay:0,capping_enabled:!0,tcf_enabled:!1,cookieconsent:!0,should_fire:function(){return!0},on_redirect:null},init:function(e){if(void 0!==e.idzone&&e.idzone){void 0===e.customTargeting&&(e.customTargeting=[]),window.customTargeting=e.customTargeting||null;var o=Object.keys(e.customTargeting).filter(function(e){return e.search("ex_")>=0});for(var t in o.length&&o.forEach(function(e){return this.configTpl[e]=null}.bind(this)),this.configTpl)Object.prototype.hasOwnProperty.call(this.configTpl,t)&&(void 0!==e[t]?this.config[t]=e[t]:this.config[t]=this.configTpl[t]);if(void 0!==this.config.idzone&&""!==this.config.idzone){!0!==this.config.only_inline&&this.loadHosted();var i=this;this.checkTCFConsent(function(){"complete"===document.readyState?i.preparePopWait():i.addEventToElement(window,"load",i.preparePop)})}}},loadHosted:function(){var e=document.createElement("script");for(var o in e.type="application/javascript",e.async=!0,e.src="//"+this.config.ads_host+"/popunder1000.js",e.id="popmagicldr",this.config)Object.prototype.hasOwnProperty.call(this.config,o)&&"ads_host"!==o&&"syndication_host"!==o&&e.setAttribute("data-exo-"+o,this.config[o]);var t=document.getElementsByTagName("body").item(0);t.firstChild?t.insertBefore(e,t.firstChild):t.appendChild(e)},preparePopWait:function(){setTimeout(popMagic.preparePop,400)},preparePop:function(){popMagic.buildUrl();var e=document.createElement("script");e.type="application/javascript",e.async=!0,e.src="//"+popMagic.config.ads_host+"/popunder1000.js",document.getElementsByTagName("body")[0].appendChild(e)},buildUrl:function(){var e="https:"!==document.location.protocol?"https:":document.location.protocol,o=top===self?document.URL:document.referrer;this.url=e+"//"+this.config.syndication_host+"/v1/link.php?idzone="+this.config.idzone+"&p="+encodeURIComponent(o)},checkTCFConsent:function(e){e()}};
+    popMagic.init(adConfig);
+})();
+  </script>
+
  <style>
 
     /* 広告エリアスタイル */
@@ -689,5 +720,15 @@
       }
     });
   </script>
+
+  <!-- Sticky Banner Ad -->
+  <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+  <ins class="eas6a97888e17" data-zoneid="5829214"></ins>
+  <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+
+  <!-- Video Ad -->
+  <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+  <ins class="eas6a97888e37" data-zoneid="5829216"></ins>
+  <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
 </body>
 </html>
