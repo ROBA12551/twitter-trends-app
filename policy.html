@@ -7,6 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <style>
 
+    /* 広告エリアスタイル */
+    .ad-container {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+      margin: 20px 0;
+      border-radius: 12px;
+    }
+
+    .ad-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 60px;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -207,10 +224,23 @@
       header { flex-direction: column; }
       nav { flex-direction: column; }
       nav a { width: 100%; text-align: center; }
+      
+      .ad-container {
+        margin: 15px 0;
+        padding: 15px;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- トップ広告エリア（中央配置） -->
+  <div class="ad-container">
+    <div class="ad-wrapper">
+      <script async type="application/javascript" src="https://a.pemsrv.com/ad-provider.js"></script> 
+      <ins class="eas6a97888e35" data-zoneid="5828666"></ins> 
+      <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+    </div>
+  </div>
 
   <div class="container">
     <header>
@@ -263,6 +293,15 @@
       <p>
         This service is provided "as-is." File Saver assumes no responsibility for any damages arising from the use of this service.
       </p>
+
+      <!-- Terms中央広告 -->
+      <div class="ad-container">
+        <div class="ad-wrapper">
+          <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
+          <ins class="eas6a97888e2" data-zoneid="5828662"></ins> 
+          <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+        </div>
+      </div>
     </div>
 
     <!-- Privacy Policy -->
@@ -293,8 +332,17 @@
       <p>
         Report information is stored on Discord servers. Please refer to Discord's Privacy Policy for more details about data handling.
       </p>
+
+      <!-- Privacy中央広告 -->
+      <div class="ad-container">
+        <div class="ad-wrapper">
+          <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
+          <ins class="eas6a97888e17" data-zoneid="5828672"></ins> 
+          <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+        </div>
+      </div>
     </div>
-    
+
     <!-- Content Policy -->
     <div id="content" class="content">
       <h2>Content Policy</h2>
@@ -378,6 +426,15 @@
         <li>Warning or suspension of user if appropriate</li>
         <li>Reporting to relevant authorities if illegal activity is confirmed</li>
       </ol>
+
+      <!-- Content Policy中央広告 -->
+      <div class="ad-container">
+        <div class="ad-wrapper">
+          <script async type="application/javascript" src="https://a.pemsrv.com/ad-provider.js"></script> 
+          <ins class="eas6a97888e35" data-zoneid="5828666"></ins> 
+          <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+        </div>
+      </div>
     </div>
     
     <!-- Disclaimer -->
@@ -421,17 +478,22 @@
           This policy may be changed without notice. Please review it periodically.
         </p>
       </div>
+
+      <!-- Disclaimer下部広告 -->
+      <div class="ad-container">
+        <div class="ad-wrapper">
+          <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
+          <ins class="eas6a97888e17" data-zoneid="5828678"></ins> 
+          <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+        </div>
+      </div>
     </div>
   </div>
   
   <footer>
     <p>&copy; 2025 File Saver. All rights reserved.</p>
   </footer>
-<!-- JuicyAds v3.0 -->
-<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-<ins id="1109124" data-width="300" data-height="250"></ins>
-<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109124});</script>
-<!--JuicyAds END-->
+
   <script>
     // Tab switching functionality
     document.querySelectorAll('.nav-link').forEach(link => {

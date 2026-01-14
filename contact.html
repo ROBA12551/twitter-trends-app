@@ -6,6 +6,28 @@
   <meta name="description" content="Report inappropriate content, copyright issues, or contact File Saver team.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <style>
+
+    /* 広告エリアスタイル */
+    .ad-container {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+      margin: 20px 0;
+      border-radius: 12px;
+    }
+
+    body.dark-mode .ad-container {
+      background: linear-gradient(135deg, #333 0%, #2a2a2a 100%);
+    }
+
+    .ad-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 60px;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -351,10 +373,24 @@
       header { flex-direction: column; }
       .button-group { flex-direction: column; }
       button { width: 100%; }
+      
+      .ad-container {
+        margin: 15px 0;
+        padding: 15px;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- トップ広告エリア（中央配置） -->
+  <div class="ad-container">
+    <div class="ad-wrapper">
+      <script async type="application/javascript" src="https://a.pemsrv.com/ad-provider.js"></script> 
+      <ins class="eas6a97888e35" data-zoneid="5828666"></ins> 
+      <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+    </div>
+  </div>
+
   <div class="container">
     <header>
       <h1>Report Issue</h1>
@@ -433,6 +469,15 @@
       </form>
     </div>
 
+    <!-- フォーム下部広告 -->
+    <div class="ad-container">
+      <div class="ad-wrapper">
+        <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
+        <ins class="eas6a97888e2" data-zoneid="5828662"></ins> 
+        <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+      </div>
+    </div>
+ 
     <div class="card">
       <h2>Frequently Asked Questions</h2>
       
@@ -454,12 +499,26 @@
       <h3>Q: What happens after I submit a report?</h3>
       <p>Our moderation team will review your report and take appropriate action, which may include removing content, warning users, or reporting to authorities if necessary.</p>
     </div>
+
+    <!-- FAQ下部広告 -->
+    <div class="ad-container">
+      <div class="ad-wrapper">
+        <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
+        <ins class="eas6a97888e17" data-zoneid="5828678"></ins> 
+        <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+      </div>
+    </div>
   </div>
-<!-- JuicyAds v3.0 -->
-<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-<ins id="1109124" data-width="300" data-height="250"></ins>
-<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109124});</script>
-<!--JuicyAds END-->
+
+  <!-- 最下部広告 -->
+  <div class="ad-container">
+    <div class="ad-wrapper">
+      <script async type="application/javascript" src="https://a.pemsrv.com/ad-provider.js"></script> 
+      <ins class="eas6a97888e35" data-zoneid="5828666"></ins> 
+      <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+    </div>
+  </div>
+
   <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle dark mode">🌙</button>
   
   <script>

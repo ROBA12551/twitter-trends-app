@@ -71,6 +71,27 @@
       color: #e0e0e0;
       border-color: #444;
     }
+
+    /* 広告エリアスタイル */
+    .ad-container {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+      margin: 20px 0;
+      border-radius: 12px;
+    }
+
+    body.dark-mode .ad-container {
+      background: linear-gradient(135deg, #333 0%, #2a2a2a 100%);
+    }
+
+    .ad-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 60px;
+    }
     
     .container {
       max-width: 1400px;
@@ -368,6 +389,7 @@
       justify-content: center;
       overflow: hidden;
       position: relative;
+      cursor: pointer;
     }
     
     .play-icon {
@@ -480,7 +502,7 @@
       color: white;
       text-decoration: none;
       border-radius: 6px;
-      font-weight: 500;
+      font-weight: 5000;
       font-size: 13px;
       text-align: center;
       border: none;
@@ -731,6 +753,64 @@
       color: var(--error-color);
     }
 
+    /* 動画広告プレイヤーモーダル */
+    .video-ad-modal {
+      display: none;
+      position: fixed;
+      z-index: 3000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .video-ad-modal.show {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-ad-container {
+      background: black;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 1000px;
+      aspect-ratio: 16/9;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #ad-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .ad-skip-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      z-index: 10;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .ad-skip-button:hover {
+      background: white;
+      transform: scale(1.05);
+    }
+
     @media (max-width: 768px) {
       .modal-content {
         width: 95%;
@@ -750,15 +830,24 @@
       .grid { grid-template-columns: 1fr; }
       header { flex-direction: column; }
       .language-selector { justify-content: center; }
+
+      .video-ad-container {
+        width: 95%;
+        max-width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-<!-- JuicyAds v3.0 -->
-<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-<ins id="1109125" data-width="728" data-height="90"></ins>
-<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109125});</script>
-<!--JuicyAds END-->
+  <!-- トップ広告エリア（中央配置） -->
+  <div class="ad-container">
+    <div class="ad-wrapper">
+      <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
+      <ins class="eas6a97888e2" data-zoneid="5828662"></ins> 
+      <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+    </div>
+  </div>
+
   <div class="container">
     <header>
       <div class="header-content">
@@ -796,6 +885,15 @@
         </div>
       </div>
       
+      <!-- ランキング中央広告 -->
+      <div class="ad-container">
+        <div class="ad-wrapper">
+          <script async type="application/javascript" src="https://a.pemsrv.com/ad-provider.js"></script> 
+          <ins class="eas6a97888e35" data-zoneid="5828666"></ins> 
+          <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+        </div>
+      </div>
+      
       <div class="sort-controls">
         <button class="sort-btn active" data-sort="downloads">Most Downloads</button>
         <button class="sort-btn" data-sort="newest">Newest First</button>
@@ -811,6 +909,15 @@
         <div class="loading">
           <div class="spinner"></div>
           <p>Loading ranking...</p>
+        </div>
+      </div>
+
+      <!-- ランキング下部広告 -->
+      <div class="ad-container" style="margin-top: 40px;">
+        <div class="ad-wrapper">
+          <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
+          <ins class="eas6a97888e17" data-zoneid="5828672"></ins> 
+          <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
         </div>
       </div>
       
@@ -845,6 +952,15 @@
         </div>
       </div>
 
+      <!-- アップロード中央広告 -->
+      <div class="ad-container">
+        <div class="ad-wrapper">
+          <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
+          <ins class="eas6a97888e2" data-zoneid="5828662"></ins> 
+          <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+        </div>
+      </div>
+
       <div class="card">
         <h2>Web Scraping</h2>
         <form id="scrapeForm">
@@ -868,9 +984,17 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Sites Mode -->
     <div id="sites-mode" class="mode-content hidden">
+      <!-- サイト表示前広告 -->
+      <div class="ad-container">
+        <div class="ad-wrapper">
+          <script async type="application/javascript" src="https://a.pemsrv.com/ad-provider.js"></script> 
+          <ins class="eas6a97888e35" data-zoneid="5828666"></ins> 
+          <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+        </div>
+      </div>
       <div class="grid" id="sites-grid"></div>
     </div>
     
@@ -904,6 +1028,13 @@
     </div>
   </div>
 
+  <!-- 動画広告プレイヤーモーダル -->
+  <div id="videoAdModal" class="video-ad-modal">
+    <div class="video-ad-container">
+      <button class="ad-skip-button" id="adSkipButton">Skip Ad</button>
+      <iframe id="ad-iframe" src="" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+    </div>
+  </div>
 
   <script>
     // Translations Data - English and Japanese Support
@@ -1063,6 +1194,31 @@
       { id: 5, name: () => 'twicoco', url: 'https://twicoco.com/?type=history', description: () => t('twidougaDesc'), image: 'https://twicoco.com/favicon.ico' },
     ];
     
+    // 動画広告機能
+    function playVideoAd() {
+      const modal = document.getElementById('videoAdModal');
+      const iframe = document.getElementById('ad-iframe');
+      const vastUrl = 'https://s.magsrv.com/v1/vast.php?idzone=5828674';
+      
+      iframe.src = vastUrl;
+      modal.classList.add('show');
+      
+      // スキップボタンイベント
+      document.getElementById('adSkipButton').addEventListener('click', closeVideoAd, { once: true });
+      
+      // バックグラウンドクリックで閉じる
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeVideoAd();
+      }, { once: true });
+    }
+
+    function closeVideoAd() {
+      const modal = document.getElementById('videoAdModal');
+      const iframe = document.getElementById('ad-iframe');
+      modal.classList.remove('show');
+      iframe.src = '';
+    }
+    
     // Modal Functionality - CORS Compatible
     function openModal(url, title) {
       const modal = document.getElementById('previewModal');
@@ -1196,7 +1352,7 @@
       const items = data.slice(start, start + state.itemsPerPage);
       grid.innerHTML = items.map((item, index) => `
         <div class="video-card">
-          <div class="video-thumbnail">
+          <div class="video-thumbnail" onclick="playVideoAd()">
             <div class="play-icon"></div>
           </div>
           <div class="video-info">
@@ -1471,6 +1627,8 @@
     window.openGofile = openGofile;
     window.openModal = openModal;
     window.closeModal = closeModal;
+    window.playVideoAd = playVideoAd;
+    window.closeVideoAd = closeVideoAd;
   </script>
 </body>
 </html>
