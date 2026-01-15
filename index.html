@@ -624,11 +624,10 @@
         </div>
       </div>
 
-      <div class="sort-controls">
-        <button class="sort-btn active" data-sort="downloads">ダウンロード数順</button>
-        <button class="sort-btn" data-sort="newest">新着順</button>
-        <button class="sort-btn" data-sort="popular">トレンド</button>
-      </div>
+<div class="sort-controls">
+  <button class="sort-btn active" data-sort="newest">新着順</button>
+  <button class="sort-btn" data-sort="popular">トレンド</button>
+</div>
 
       <!-- ★★★ 広告配置4: ランキング内1 (最高収益エリア) ★★★ -->
       <div class="ad-in-ranking">
@@ -713,15 +712,15 @@
   <div id="notification" class="notification"></div>
 
   <script>
-    const state = {
-      currentMode: 'ranking',
-      currentSort: 'downloads',
-      ranking: { byDownloads: [], byNewest: [], byPopular: [] },
-      itemsPerPage: 12,
-      currentPage: 0,
-      autoRefreshTimer: null,
-      isLoading: false
-    };
+const state = {
+  currentMode: 'ranking',
+  currentSort: 'newest', // デフォルトを新着順に変更
+  ranking: { byNewest: [], byPopular: [] }, // byDownloads を削除
+  itemsPerPage: 12,
+  currentPage: 0,
+  autoRefreshTimer: null,
+  isLoading: false
+};
     
     const sites = [
       { name: 'NSNN Gofile', url: 'https://nsnn.net/gofile.io?sort=new&page=1', description: 'Twitter最新ファイル一覧' },
@@ -732,65 +731,66 @@
       { name: 'twicoco', url: 'https://twicoco.com/?type=history', description: 'Twitter履歴検索' }
     ];
     
-    async function fetchRanking() {
-      try {
-        state.isLoading = true;
-        const response = await fetch('/.netlify/functions/get-urls-from-github');
-        if (!response.ok) throw new Error(`HTTPエラー: ${response.status}`);
-        
-        const result = JSON.parse(await response.text());
-        if (result.status === 'ok' && result.data) {
-          state.ranking = result.data;
-          state.currentPage = 0;
-          renderRanking();
-          updateLastRefresh();
-          showNotification(result.total > 0 ? 'ランキングを更新しました' : 'URLを追加してランキングを表示してください', 'success');
-        } else {
-          throw new Error(result.error || '不明なエラー');
-        }
-      } catch (error) {
-        console.error('エラー:', error);
-        showNotification(`エラー: ${error.message}`);
-      } finally {
-        state.isLoading = false;
-      }
-    }
+// fetchRanking 関数内を修正
+async function fetchRanking() {
+  try {
+    state.isLoading = true;
+    const response = await fetch('/.netlify/functions/get-urls-from-github');
+    if (!response.ok) throw new Error(`HTTPエラー: ${response.status}`);
     
-    function getCurrentRankingData() {
-      switch (state.currentSort) {
-        case 'newest': return state.ranking.byNewest;
-        case 'popular': return state.ranking.byPopular;
-        default: return state.ranking.byDownloads;
-      }
+    const result = JSON.parse(await response.text());
+    if (result.status === 'ok' && result.data) {
+      state.ranking = result.data;
+      state.currentPage = 0;
+      renderRanking();
+      updateLastRefresh();
+      showNotification(result.total > 0 ? 'ランキングを更新しました' : 'URLを追加してランキングを表示してください', 'success');
+    } else {
+      throw new Error(result.error || '不明なエラー');
     }
-    
-    function renderRanking() {
-      const grid = document.getElementById('ranking-grid');
-      const data = getCurrentRankingData();
-      if (!data || data.length === 0) {
-        grid.innerHTML = '<div class="loading"><div class="spinner"></div><p>ランキングを読み込んでいます...</p></div>';
-        return;
-      }
-      const start = state.currentPage * state.itemsPerPage;
-      const items = data.slice(start, start + state.itemsPerPage);
-      grid.innerHTML = items.map((item, index) => `
-        <div class="video-card">
-          <div class="video-thumbnail">
-            <div class="play-icon"></div>
-          </div>
-          <div class="video-info">
-            <div class="video-title">#${start + index + 1} ${item.name}</div>
-            <div class="video-meta">ID: ${item.id}</div>
-            <div class="video-actions">
-              <button class="video-btn" onclick="copyId('${item.id}')">コピー</button>
-              <button class="video-btn" onclick="openGofile('${item.id}')">開く</button>
-            </div>
-          </div>
+  } catch (error) {
+    console.error('エラー:', error);
+    showNotification(`エラー: ${error.message}`);
+  } finally {
+    state.isLoading = false;
+  }
+}
+function getCurrentRankingData() {
+  switch (state.currentSort) {
+    case 'popular': return state.ranking.byPopular;
+    default: return state.ranking.byNewest;
+  }
+}
+
+
+// renderRanking 関数内の total 表示部分を修正
+function renderRanking() {
+  const grid = document.getElementById('ranking-grid');
+  const data = getCurrentRankingData();
+  if (!data || data.length === 0) {
+    grid.innerHTML = '<div class="loading"><div class="spinner"></div><p>ランキングを読み込んでいます...</p></div>';
+    return;
+  }
+  const start = state.currentPage * state.itemsPerPage;
+  const items = data.slice(start, start + state.itemsPerPage);
+  grid.innerHTML = items.map((item, index) => `
+    <div class="video-card">
+      <div class="video-thumbnail">
+        <div class="play-icon"></div>
+      </div>
+      <div class="video-info">
+        <div class="video-title">#${start + index + 1} ${item.name}</div>
+        <div class="video-meta">追加: ${new Date(item.added_at).toLocaleString('ja-JP')}</div>
+        <div class="video-actions">
+          <button class="video-btn" onclick="copyId('${item.id}')">コピー</button>
+          <button class="video-btn" onclick="openGofile('${item.id}')">開く</button>
         </div>
-      `).join('');
-      document.getElementById('total-count').textContent = state.ranking.byDownloads.length;
-    }
-    
+      </div>
+    </div>
+  `).join('');
+  document.getElementById('total-count').textContent = state.ranking.byNewest.length;
+}
+
     function renderSites() {
       const grid = document.getElementById('sites-grid');
       grid.innerHTML = sites.map(site => `
