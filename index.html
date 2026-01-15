@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8">
   <title>Twitter保存ランキング | Gofileダウンロード数リアルタイム表示 - TwiiterChan</title>
-  <script type="text/javascript"> adroll_adv_id = "CYLXP62E7VFPJOMAKAHVTF"; adroll_pix_id = "TMFAK3PFDBDDZELP3VAAYV"; adroll_version = "2.0";  (function(w, d, e, o, a) { w.adroll_tag_source = w.adroll_tag_source || "manual"; w.__adroll_loaded = true; w.adroll = w.adroll || []; w.adroll.f = [ 'setProperties', 'identify', 'track', 'identify_email', 'get_cookie' ]; var roundtripUrl = "https://s.adroll.com/j/" + adroll_adv_id + "/roundtrip.js"; for (a = 0; a < w.adroll.f.length; a++) { w.adroll[w.adroll.f[a]] = w.adroll[w.adroll.f[a]] || (function(n) { return function() { w.adroll.push([ n, arguments ]) } })(w.adroll.f[a]) }  e = d.createElement('script'); o = d.getElementsByTagName('script')[0]; e.async = 1; e.src = roundtripUrl; o.parentNode.insertBefore(e, o); })(window, document); adroll.track("pageView"); </script> 
+  
+  <!-- ポップアンダー (サイト全体・高単価) -->
+  <script src="https://pl28484782.effectivegatecpm.com/14/29/79/142979e47a62210d83ef5275ac4060ca.js"></script>
+  
   <!-- SEO最適化 -->
   <meta name="description" content="Twitterで話題のGofileファイルをリアルタイムランキング表示。ダウンロード数順・新着順で簡単検索。Twitter動画・画像の保存ランキングサイト。">
   <meta name="keywords" content="Twitter保存,Gofileランキング,Twitter動画保存,ダウンロードランキング,リアルタイムランキング,Twitter画像保存,動画ランキング,人気動画,トレンド動画">
@@ -115,6 +118,7 @@
     /* ランキング内広告 (最高収益エリア) */
     .ad-in-ranking {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       margin: 30px auto;
@@ -153,12 +157,39 @@
       min-height: 110px;
     }
 
+    /* ソーシャルバー固定表示 */
+    .ad-social-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: white;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    /* スマートリンク用スタイル */
+    .ad-smartlink {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 25px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      min-height: 90px;
+    }
+
     /* ==================== レイアウト ==================== */
 
     .container {
       max-width: 1400px;
       margin: 0 auto;
       padding: 20px;
+      padding-bottom: 80px; /* ソーシャルバー用の余白 */
     }
     
     header {
@@ -437,6 +468,7 @@
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
+      line-clamp: 2;
       overflow: hidden;
     }
     
@@ -550,7 +582,7 @@
     /* ==================== レスポンシブ ==================== */
 
     @media (max-width: 768px) {
-      .container { padding: 16px; }
+      .container { padding: 16px; padding-bottom: 80px; }
       h1 { font-size: 32px; }
       .grid { 
         grid-template-columns: 1fr;
@@ -573,7 +605,6 @@
 </head>
 <body>
 
-
   <div class="container">
     <header>
       <h1>Twitter保存ランキング</h1>
@@ -587,8 +618,21 @@
       </div>
     </header>
 
+    <!-- 広告1: ヘッダー直下 - ネイティブバナー (高単価エリア) -->
+    <div class="ad-premium-top">
+      <script async="async" data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
+      <div id="container-c450e9b4b86a15429281d6d1bb83b6f2"></div>
+    </div>
 
-  
+    <!-- スマートリンク (クリック単価最高) -->
+    <div class="ad-smartlink">
+      <a href="https://www.effectivegatecpm.com/qst8wwse?key=385ee7d478d037878c615a8416a3507a" target="_blank" style="text-decoration: none; color: inherit; display: block; width: 100%; text-align: center;">
+        <div style="padding: 20px; background: linear-gradient(135deg, #ff7f9c 0%, #b8d8e8 100%); color: white; border-radius: 12px; font-weight: 600; font-size: 16px;">
+          🎯 おすすめコンテンツをチェック
+        </div>
+      </a>
+    </div>
+
     <div class="nav-tabs">
       <button class="nav-button active" data-mode="ranking">ランキング</button>
       <button class="nav-button" data-mode="upload">URL投稿</button>
@@ -596,7 +640,6 @@
       <a href="policy.html" class="nav-button" style="text-decoration: none;">利用規約</a>
       <a href="contact.html" class="nav-button" style="text-decoration: none;">お問い合わせ</a>
     </div>
-
 
     <!-- ランキングモード -->
     <div id="ranking-mode" class="mode-content">
@@ -613,14 +656,28 @@
         </div>
       </div>
 
-<div class="sort-controls">
-  <button class="sort-btn active" data-sort="newest">新着順</button>
-  <button class="sort-btn" data-sort="popular">トレンド</button>
-</div>
+      <div class="sort-controls">
+        <button class="sort-btn active" data-sort="newest">新着順</button>
+        <button class="sort-btn" data-sort="popular">トレンド</button>
+      </div>
 
       <div class="status-bar">
         <div>合計 <strong><span id="total-count">0</span></strong> 件のファイル</div>
         <div id="last-update">最終更新: 待機中...</div>
+      </div>
+
+      <!-- 広告2: ランキング前 - Banner (視認性高) -->
+      <div class="ad-content-between">
+        <script>
+          atOptions = {
+            'key' : '231e5c9092a3f60264c9edcc16e5374f',
+            'format' : 'iframe',
+            'height' : 50,
+            'width' : 320,
+            'params' : {}
+          };
+        </script>
+        <script src="https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js"></script>
       </div>
       
       <div class="grid" id="ranking-grid">
@@ -630,6 +687,11 @@
         </div>
       </div>
 
+      <!-- 広告3: ランキング中間 (スクロール後・高収益) -->
+      <div class="ad-in-ranking">
+        <script async="async" data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
+        <div id="container-c450e9b4b86a15429281d6d1bb83b6f2"></div>
+      </div>
 
       <button class="load-more-btn" id="load-more-btn">もっと見る (次の12件)</button>
     </div>
@@ -648,6 +710,19 @@
         <div id="uploadStatus" class="status-bar" style="display: none;"></div>
       </div>
 
+      <!-- 広告4: フォーム間 -->
+      <div class="ad-content-between">
+        <script>
+          atOptions = {
+            'key' : '231e5c9092a3f60264c9edcc16e5374f',
+            'format' : 'iframe',
+            'height' : 50,
+            'width' : 320,
+            'params' : {}
+          };
+        </script>
+        <script src="https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js"></script>
+      </div>
 
       <div class="card">
         <h2>Webスクレイピング</h2>
@@ -662,14 +737,18 @@
     <!-- 関連サイトモード -->
     <div id="sites-mode" class="mode-content hidden">
       <div class="grid" id="sites-grid"></div>
+    </div>
 
+    <!-- 広告5: フッター (離脱防止・最後の収益化) -->
+    <div class="ad-footer">
+      <script async="async" data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
+      <div id="container-c450e9b4b86a15429281d6d1bb83b6f2"></div>
+    </div>
   </div>
 
-  <!-- ★★★ 広告配置8: フッター (離脱防止) ★★★ -->
-  <div class="ad-footer">
-    <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-    <ins id="1109236" data-width="728" data-height="90"></ins>
-    <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109236});</script>
+  <!-- 広告6: ソーシャルバー (画面下固定・常時表示) -->
+  <div class="ad-social-bar">
+    <script src="https://pl28484808.effectivegatecpm.com/d2/d3/3b/d2d33b5038b795c6408dcadeef8784ba.js"></script>
   </div>
   
   <div id="notification" class="notification"></div>
@@ -677,29 +756,28 @@
   <script>
 const state = {
   currentMode: 'ranking',
-  currentSort: 'newest', // デフォルトを新着順に変更
-  ranking: { byNewest: [], byPopular: [] }, // byDownloads を削除
+  currentSort: 'newest',
+  ranking: { byNewest: [], byPopular: [] },
   itemsPerPage: 12,
   currentPage: 0,
   autoRefreshTimer: null,
   isLoading: false
 };
     
-    const sites = [
-      { name: 'NSNN Gofile', url: 'https://nsnn.net/gofile.io?sort=new&page=1', description: 'Twitter最新ファイル一覧' },
-      { name: 'twivideo.net', url: 'https://twivideo.net/?ranking', description: 'Twitterリアルタイムファイル一覧' },
-      { name: 'Twidouga', url: 'https://www.twidouga.net', description: 'Twitterランキング一覧' },
-      { name: 'TWIIGLE', url: 'https://twiigle.com/', description: 'Twitter検索エンジン' },
-      { name: 'monsnode', url: 'https://monsnode.com', description: 'Twitter動画保存' },
-      { name: 'twicoco', url: 'https://twicoco.com/?type=history', description: 'Twitter履歴検索' }
-    ];
+const sites = [
+  { name: 'NSNN Gofile', url: 'https://nsnn.net/gofile.io?sort=new&page=1', description: 'Twitter最新ファイル一覧' },
+  { name: 'twivideo.net', url: 'https://twivideo.net/?ranking', description: 'Twitterリアルタイムファイル一覧' },
+  { name: 'Twidouga', url: 'https://www.twidouga.net', description: 'Twitterランキング一覧' },
+  { name: 'TWIIGLE', url: 'https://twiigle.com/', description: 'Twitter検索エンジン' },
+  { name: 'monsnode', url: 'https://monsnode.com', description: 'Twitter動画保存' },
+  { name: 'twicoco', url: 'https://twicoco.com/?type=history', description: 'Twitter履歴検索' }
+];
     
-// fetchRanking 関数内を修正
 async function fetchRanking() {
   try {
     state.isLoading = true;
     const response = await fetch('/.netlify/functions/get-urls-from-github');
-    if (!response.ok) throw new Error(`HTTPエラー: ${response.status}`);
+    if (!response.ok) throw new Error('HTTPエラー: ' + response.status);
     
     const result = JSON.parse(await response.text());
     if (result.status === 'ok' && result.data) {
@@ -713,11 +791,12 @@ async function fetchRanking() {
     }
   } catch (error) {
     console.error('エラー:', error);
-    showNotification(`エラー: ${error.message}`);
+    showNotification('エラー: ' + error.message);
   } finally {
     state.isLoading = false;
   }
 }
+
 function getCurrentRankingData() {
   switch (state.currentSort) {
     case 'popular': return state.ranking.byPopular;
@@ -725,8 +804,6 @@ function getCurrentRankingData() {
   }
 }
 
-
-// renderRanking 関数内の total 表示部分を修正
 function renderRanking() {
   const grid = document.getElementById('ranking-grid');
   const data = getCurrentRankingData();
@@ -736,242 +813,233 @@ function renderRanking() {
   }
   const start = state.currentPage * state.itemsPerPage;
   const items = data.slice(start, start + state.itemsPerPage);
-  grid.innerHTML = items.map((item, index) => `
-    <div class="video-card">
-      <div class="video-thumbnail">
-        <div class="play-icon"></div>
-      </div>
-      <div class="video-info">
-        <div class="video-title">#${start + index + 1} ${item.name}</div>
-        <div class="video-meta">追加: ${new Date(item.added_at).toLocaleString('ja-JP')}</div>
-        <div class="video-actions">
-          <button class="video-btn" onclick="copyId('${item.id}')">コピー</button>
-          <button class="video-btn" onclick="openGofile('${item.id}')">開く</button>
-        </div>
-      </div>
-    </div>
-  `).join('');
+  
+  let html = '';
+  items.forEach((item, index) => {
+    html += '<div class="video-card"><div class="video-thumbnail"><div class="play-icon"></div></div><div class="video-info"><div class="video-title">#' + (start + index + 1) + ' ' + item.name + '</div><div class="video-meta">追加: ' + new Date(item.added_at).toLocaleString('ja-JP') + '</div><div class="video-actions"><button class="video-btn" onclick="copyId(\'' + item.id + '\')">コピー</button><button class="video-btn" onclick="openGofile(\'' + item.id + '\')">開く</button></div></div></div>';
+    
+    if (index === 3) {
+      html += '<div class="video-card" style="background: linear-gradient(135deg, #fff5f0 0%, #fff0f5 100%); border: 3px solid #ffd9e8;"><div style="padding: 30px; text-align: center;"><script async="async" data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"><\/script><div id="container-c450e9b4b86a15429281d6d1bb83b6f2"></div></div></div>';
+    }
+    
+    if (index === 7) {
+      html += '<div class="video-card" style="background: linear-gradient(135deg, #fff9f0 0%, #fff5f8 100%); border: 3px solid #ffe8ee;"><div style="padding: 30px; text-align: center;"><script>atOptions={\'key\':\'231e5c9092a3f60264c9edcc16e5374f\',\'format\':\'iframe\',\'height\':50,\'width\':320,\'params\':{};};<\/script><script src="https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js"><\/script></div></div>';
+    }
+  });
+  
+  grid.innerHTML = html;
   document.getElementById('total-count').textContent = state.ranking.byNewest.length;
 }
 
-    function renderSites() {
-      const grid = document.getElementById('sites-grid');
-      grid.innerHTML = sites.map(site => `
-        <div class="video-card" style="cursor: pointer;" onclick="window.open('${site.url}', '_blank')">
-          <div class="video-thumbnail"></div>
-          <div class="video-info">
-            <div class="video-title">${site.name}</div>
-            <div class="video-meta">${site.description}</div>
-            <div class="video-actions">
-              <button class="video-btn" style="width: 100%;">サイトへ移動</button>
-            </div>
-          </div>
-        </div>
-      `).join('');
-    }
+function renderSites() {
+  const grid = document.getElementById('sites-grid');
+  grid.innerHTML = sites.map(site => 
+    '<div class="video-card" style="cursor: pointer;" onclick="window.open(\'' + site.url + '\', \'_blank\')"><div class="video-thumbnail"></div><div class="video-info"><div class="video-title">' + site.name + '</div><div class="video-meta">' + site.description + '</div><div class="video-actions"><button class="video-btn" style="width: 100%;">サイトへ移動</button></div></div></div>'
+  ).join('');
+}
     
-    function showNotification(message, type = 'success') {
-      const notification = document.getElementById('notification');
-      notification.textContent = message;
-      notification.className = `notification show ${type}`;
-      setTimeout(() => notification.classList.remove('show'), 3000);
-    }
+function showNotification(message, type) {
+  type = type || 'success';
+  const notification = document.getElementById('notification');
+  notification.textContent = message;
+  notification.className = 'notification show ' + type;
+  setTimeout(function() { notification.classList.remove('show'); }, 3000);
+}
     
-    function showStatus(elementId, message, type = 'success') {
-      const element = document.getElementById(elementId);
-      element.className = `status-bar show ${type}`;
-      element.textContent = message;
-      element.style.display = 'flex';
-    }
+function showStatus(elementId, message, type) {
+  type = type || 'success';
+  const element = document.getElementById(elementId);
+  element.className = 'status-bar show ' + type;
+  element.textContent = message;
+  element.style.display = 'flex';
+}
     
-    function switchMode(mode) {
-      state.currentMode = mode;
-      document.querySelectorAll('.nav-button').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.mode === mode);
-      });
-      document.querySelectorAll('.mode-content').forEach(content => {
-        content.classList.add('hidden');
-      });
-      document.getElementById(`${mode}-mode`).classList.remove('hidden');
-      if (mode === 'sites') renderSites();
-    }
+function switchMode(mode) {
+  state.currentMode = mode;
+  document.querySelectorAll('.nav-button').forEach(function(btn) {
+    btn.classList.toggle('active', btn.dataset.mode === mode);
+  });
+  document.querySelectorAll('.mode-content').forEach(function(content) {
+    content.classList.add('hidden');
+  });
+  document.getElementById(mode + '-mode').classList.remove('hidden');
+  if (mode === 'sites') renderSites();
+}
     
-    function setSortMode(sort) {
-      state.currentSort = sort;
-      state.currentPage = 0;
-      document.querySelectorAll('.sort-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.sort === sort);
-      });
-      renderRanking();
-    }
+function setSortMode(sort) {
+  state.currentSort = sort;
+  state.currentPage = 0;
+  document.querySelectorAll('.sort-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.dataset.sort === sort);
+  });
+  renderRanking();
+}
     
-    function updateLastRefresh() {
-      const now = new Date().toLocaleTimeString('ja-JP');
-      document.getElementById('last-update').textContent = `最終更新: ${now}`;
-    }
+function updateLastRefresh() {
+  const now = new Date().toLocaleTimeString('ja-JP');
+  document.getElementById('last-update').textContent = '最終更新: ' + now;
+}
     
-    function copyId(id) {
-      navigator.clipboard.writeText(id);
-      showNotification('IDをコピーしました', 'success');
-    }
+function copyId(id) {
+  navigator.clipboard.writeText(id);
+  showNotification('IDをコピーしました', 'success');
+}
     
-    function openGofile(id) {
-      window.open(`https://gofile.io/d/${id}`, '_blank');
-    }
+function openGofile(id) {
+  window.open('https://gofile.io/d/' + id, '_blank');
+}
     
-    // イベントリスナー
-    document.querySelectorAll('.nav-button').forEach(btn => {
-      btn.addEventListener('click', () => switchMode(btn.dataset.mode));
-    });
+document.querySelectorAll('.nav-button').forEach(function(btn) {
+  btn.addEventListener('click', function() { switchMode(btn.dataset.mode); });
+});
     
-    document.querySelectorAll('.sort-btn').forEach(btn => {
-      btn.addEventListener('click', () => setSortMode(btn.dataset.sort));
-    });
+document.querySelectorAll('.sort-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() { setSortMode(btn.dataset.sort); });
+});
     
-    document.getElementById('refresh-btn').addEventListener('click', fetchRanking);
+document.getElementById('refresh-btn').addEventListener('click', fetchRanking);
     
-    document.getElementById('refresh-select').addEventListener('change', () => {
-      if (state.autoRefreshTimer) clearInterval(state.autoRefreshTimer);
-      const interval = parseInt(document.getElementById('refresh-select').value);
-      if (interval > 0) {
-        state.autoRefreshTimer = setInterval(fetchRanking, interval * 1000);
+document.getElementById('refresh-select').addEventListener('change', function() {
+  if (state.autoRefreshTimer) clearInterval(state.autoRefreshTimer);
+  const interval = parseInt(document.getElementById('refresh-select').value);
+  if (interval > 0) {
+    state.autoRefreshTimer = setInterval(fetchRanking, interval * 1000);
+  }
+});
+    
+document.getElementById('load-more-btn').addEventListener('click', function() {
+  state.currentPage++;
+  renderRanking();
+});
+    
+document.getElementById('uploadForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const urlsText = document.getElementById('gofileUrls').value;
+  const newUrls = urlsText.split('\n')
+    .map(function(u) { return u.trim(); })
+    .filter(function(u) { return u.startsWith('https://gofile.io/d/') || u.startsWith('https://video.twimg.com/') || u.startsWith('https://pbs.twimg.com/'); })
+    .map(function(url) {
+      let id, name;
+      if (url.startsWith('https://gofile.io/d/')) {
+        id = url.split('/d/')[1];
+        name = 'Gofile - ' + id;
+      } else if (url.startsWith('https://video.twimg.com/')) {
+        id = url.split('/').pop();
+        name = 'Twitter動画 - ' + id;
+      } else {
+        id = url.split('/').pop();
+        name = 'Twitter画像 - ' + id;
       }
+      return {
+        id: id,
+        url: url,
+        name: name,
+        downloads: 0,
+        size: 0,
+        added_at: new Date().toISOString()
+      };
     });
-    
-    document.getElementById('load-more-btn').addEventListener('click', () => {
-      state.currentPage++;
-      renderRanking();
+
+  if (newUrls.length === 0) {
+    showStatus('uploadStatus', '有効なURLを入力してください', 'error');
+    return;
+  }
+
+  document.getElementById('uploadBtn').disabled = true;
+  document.getElementById('uploadBtn').textContent = '処理中...';
+
+  try {
+    const response = await fetch('/.netlify/functions/save-urls-to-github', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ urls: newUrls })
     });
+
+    const result = await response.json();
+
+    if (result.status === 'success') {
+      const message = result.added + '件のURLを追加しました' + (result.duplicates > 0 ? ' (' + result.duplicates + '件は重複)' : '');
+      showStatus('uploadStatus', message, 'success');
+      document.getElementById('gofileUrls').value = '';
+      showNotification('URLを保存しました', 'success');
+      setTimeout(function() { fetchRanking(); }, 500);
+    } else {
+      throw new Error(result.error || '不明なエラー');
+    }
+  } catch (error) {
+    showStatus('uploadStatus', 'エラー: ' + error.message, 'error');
+    showNotification('エラー: ' + error.message);
+  } finally {
+    document.getElementById('uploadBtn').disabled = false;
+    document.getElementById('uploadBtn').textContent = 'URLを追加';
+  }
+});
     
-    // URL投稿フォーム
-    document.getElementById('uploadForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const urlsText = document.getElementById('gofileUrls').value;
-      const newUrls = urlsText.split('\n')
-        .map(u => u.trim())
-        .filter(u => u.startsWith('https://gofile.io/d/') || u.startsWith('https://video.twimg.com/') || u.startsWith('https://pbs.twimg.com/'))
-        .map(url => {
-          let id, name;
-          if (url.startsWith('https://gofile.io/d/')) {
-            id = url.split('/d/')[1];
-            name = `Gofile - ${id}`;
-          } else if (url.startsWith('https://video.twimg.com/')) {
-            id = url.split('/').pop();
-            name = `Twitter動画 - ${id}`;
-          } else {
-            id = url.split('/').pop();
-            name = `Twitter画像 - ${id}`;
-          }
-          return {
-            id: id,
-            url: url,
-            name: name,
-            downloads: 0,
-            size: 0,
-            added_at: new Date().toISOString()
-          };
-        });
-
-      if (newUrls.length === 0) {
-        showStatus('uploadStatus', '有効なURLを入力してください', 'error');
-        return;
-      }
-
-      document.getElementById('uploadBtn').disabled = true;
-      document.getElementById('uploadBtn').textContent = '処理中...';
-
-      try {
-        const response = await fetch('/.netlify/functions/save-urls-to-github', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ urls: newUrls })
-        });
-
-        const result = await response.json();
-
-        if (result.status === 'success') {
-          const message = `${result.added}件のURLを追加しました${result.duplicates > 0 ? ` (${result.duplicates}件は重複)` : ''}`;
-          showStatus('uploadStatus', message, 'success');
-          document.getElementById('gofileUrls').value = '';
-          showNotification('URLを保存しました', 'success');
-          setTimeout(() => fetchRanking(), 500);
-        } else {
-          throw new Error(result.error || '不明なエラー');
-        }
-      } catch (error) {
-        showStatus('uploadStatus', `エラー: ${error.message}`, 'error');
-        showNotification(`エラー: ${error.message}`);
-      } finally {
-        document.getElementById('uploadBtn').disabled = false;
-        document.getElementById('uploadBtn').textContent = 'URLを追加';
-      }
-    });
-    
-    // スクレイピングフォーム
-    document.getElementById('scrapeForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const websiteUrl = document.getElementById('websiteUrl').value;
-      document.getElementById('scrapeBtn').disabled = true;
-      document.getElementById('scrapeBtn').textContent = 'スクレイピング中...';
+document.getElementById('scrapeForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const websiteUrl = document.getElementById('websiteUrl').value;
+  document.getElementById('scrapeBtn').disabled = true;
+  document.getElementById('scrapeBtn').textContent = 'スクレイピング中...';
       
-      try {
-        const response = await fetch(websiteUrl);
-        if (!response.ok) throw new Error(`HTTPエラー: ${response.status}`);
-        const html = await response.text();
-        const gofileRegex = /https:\/\/gofile\.io\/d\/[a-zA-Z0-9]+/g;
-        const matches = html.match(gofileRegex) || [];
-        const uniqueUrls = [...new Set(matches)];
+  try {
+    const response = await fetch(websiteUrl);
+    if (!response.ok) throw new Error('HTTPエラー: ' + response.status);
+    const html = await response.text();
+    const gofileRegex = /https:\/\/gofile\.io\/d\/[a-zA-Z0-9]+/g;
+    const matches = html.match(gofileRegex) || [];
+    const uniqueUrls = Array.from(new Set(matches));
         
-        if (uniqueUrls.length === 0) throw new Error('Gofile URLが見つかりませんでした');
+    if (uniqueUrls.length === 0) throw new Error('Gofile URLが見つかりませんでした');
         
-        const newUrls = uniqueUrls.map(url => ({
-          id: url.split('/d/')[1],
-          url: url,
-          name: `Gofile - ${url.split('/d/')[1]}`,
-          downloads: 0,
-          size: 0,
-          source: websiteUrl,
-          added_at: new Date().toISOString()
-        }));
-        
-        const saveResponse = await fetch('/.netlify/functions/save-urls-to-github', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ urls: newUrls })
-        });
-        
-        const result = await saveResponse.json();
-        
-        if (result.status === 'success') {
-          const message = `${result.added}件のURLを追加しました (${uniqueUrls.length}件見つかり、${result.duplicates}件は重複)`;
-          showStatus('scrapeStatus', message, 'success');
-          document.getElementById('websiteUrl').value = '';
-          showNotification('スクレイピング完了', 'success');
-          setTimeout(() => fetchRanking(), 500);
-        } else {
-          throw new Error(result.error || '不明なエラー');
-        }
-      } catch (error) {
-        let errorMessage = error.message;
-        if (error.message.includes('Failed to fetch') || error.message.includes('CORS')) {
-          errorMessage = 'CORSエラー: このサイトはスクレイピングできません。直接URLを入力してください。';
-        }
-        showStatus('scrapeStatus', `エラー: ${errorMessage}`, 'error');
-        showNotification(`エラー: ${errorMessage}`);
-      } finally {
-        document.getElementById('scrapeBtn').disabled = false;
-        document.getElementById('scrapeBtn').textContent = 'スクレイピング開始';
-      }
+    const newUrls = uniqueUrls.map(function(url) {
+      return {
+        id: url.split('/d/')[1],
+        url: url,
+        name: 'Gofile - ' + url.split('/d/')[1],
+        downloads: 0,
+        size: 0,
+        source: websiteUrl,
+        added_at: new Date().toISOString()
+      };
     });
-    
-    // 初期化
-    window.addEventListener('DOMContentLoaded', () => {
-      fetchRanking();
-      document.getElementById('refresh-select').dispatchEvent(new Event('change'));
+        
+    const saveResponse = await fetch('/.netlify/functions/save-urls-to-github', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ urls: newUrls })
     });
+        
+    const result = await saveResponse.json();
+        
+    if (result.status === 'success') {
+      const message = result.added + '件のURLを追加しました (' + uniqueUrls.length + '件見つかり、' + result.duplicates + '件は重複)';
+      showStatus('scrapeStatus', message, 'success');
+      document.getElementById('websiteUrl').value = '';
+      showNotification('スクレイピング完了', 'success');
+      setTimeout(function() { fetchRanking(); }, 500);
+    } else {
+      throw new Error(result.error || '不明なエラー');
+    }
+  } catch (error) {
+    let errorMessage = error.message;
+    if (error.message.includes('Failed to fetch') || error.message.includes('CORS')) {
+      errorMessage = 'CORSエラー: このサイトはスクレイピングできません。直接URLを入力してください。';
+    }
+    showStatus('scrapeStatus', 'エラー: ' + errorMessage, 'error');
+    showNotification('エラー: ' + errorMessage);
+  } finally {
+    document.getElementById('scrapeBtn').disabled = false;
+    document.getElementById('scrapeBtn').textContent = 'スクレイピング開始';
+  }
+});
     
-    window.copyId = copyId;
-    window.openGofile = openGofile;
+window.addEventListener('DOMContentLoaded', function() {
+  fetchRanking();
+  document.getElementById('refresh-select').dispatchEvent(new Event('change'));
+});
+    
+window.copyId = copyId;
+window.openGofile = openGofile;
   </script>
 </body>
 </html>
