@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>Report Issue - TwiiterChan</title>
-  <meta name="description" content="Report inappropriate content, copyright issues, or contact File Saver team.">
+  <title>お問い合わせ・報告フォーム | Twitter保存ランキング - TwiiterChan</title>
+  <meta name="description" content="不適切なコンテンツの報告、著作権侵害の通報、バグ報告など、TwiiterChanへのお問い合わせはこちらから。24時間以内に対応いたします。">
+  <meta name="keywords" content="お問い合わせ,報告フォーム,不適切コンテンツ報告,著作権侵害,バグ報告,Twitter保存,Gofileランキング">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://twitchan.com/contact.html">
+  
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="お問い合わせ・報告フォーム - TwiiterChan">
+  <meta property="og:description" content="不適切なコンテンツの報告やお問い合わせはこちらから">
+  <meta property="og:url" content="https://twitchan.com/contact.html">
+  <meta property="og:site_name" content="TwiiterChan">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- 構造化データ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "お問い合わせ・報告フォーム",
+    "url": "https://twitchan.com/contact.html",
+    "description": "TwiiterChanへのお問い合わせ・不適切コンテンツの報告",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "TwiiterChan",
+      "url": "https://twitchan.com/"
+    }
+  }
+  </script>
+
   <meta http-equiv="Delegate-CH" content="Sec-CH-UA https://s.pemsrv.com; Sec-CH-UA-Mobile https://s.pemsrv.com; Sec-CH-UA-Arch https://s.pemsrv.com; Sec-CH-UA-Model https://s.pemsrv.com; Sec-CH-UA-Platform https://s.pemsrv.com; Sec-CH-UA-Platform-Version https://s.pemsrv.com; Sec-CH-UA-Bitness https://s.pemsrv.com; Sec-CH-UA-Full-Version-List https://s.pemsrv.com; Sec-CH-UA-Full-Version https://s.pemsrv.com;">
   <meta http-equiv="Delegate-CH" content="Sec-CH-UA https://s.magsrv.com; Sec-CH-UA-Mobile https://s.magsrv.com; Sec-CH-UA-Arch https://s.magsrv.com; Sec-CH-UA-Model https://s.magsrv.com; Sec-CH-UA-Platform https://s.magsrv.com; Sec-CH-UA-Platform-Version https://s.magsrv.com; Sec-CH-UA-Bitness https://s.magsrv.com; Sec-CH-UA-Full-Version-List https://s.magsrv.com; Sec-CH-UA-Full-Version https://s.magsrv.com;">
 
@@ -50,78 +78,31 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
   </script>
 
  <style>
-
-    /* 広告エリアスタイル */
-    .ad-container {
+    /* 広告エリア最適化 */
+    .ad-premium {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
-      background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
-      margin: 20px 0;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-
-    .ad-container-large {
-      display: flex;
-      justify-content: center;
-      padding: 30px;
-      background: linear-gradient(135deg, #fff9e6 0%, #fff5cc 100%);
+      padding: 25px;
+      background: linear-gradient(135deg, #fff9f0 0%, #fff5f8 100%);
       margin: 30px 0;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      border: 1.5px solid #ffe680;
+      border-radius: 16px;
+      border: 2px solid #ffe8ee;
+      min-height: 120px;
+      box-shadow: 0 4px 12px rgba(255, 127, 156, 0.1);
     }
 
-    .ad-container-inline {
+    .ad-content {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 15px;
       padding: 20px;
-      background: linear-gradient(135deg, #fff9e6 0%, #fff5cc 100%);
-      margin: 20px 0;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      border: 1.5px solid #ffe680;
+      background: linear-gradient(135deg, #fff 0%, #fff9fc 100%);
+      margin: 25px 0;
+      border-radius: 14px;
+      border: 2px solid #ffe8f0;
       min-height: 100px;
-    }
-
-    .ad-container-inline .ad-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .ad-container-video {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
-      margin: 20px 0;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      min-height: 80px;
-    }
-
-    body.dark-mode .ad-container,
-    body.dark-mode .ad-container-large,
-    body.dark-mode .ad-container-inline {
-      background: linear-gradient(135deg, #3a3a2a 0%, #2a2a1a 100%) !important;
-      border-color: #666633 !important;
-    }
-
-    body.dark-mode .ad-container-video {
-      background: linear-gradient(135deg, #333 0%, #2a2a2a 100%) !important;
-    }
-
-    .ad-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 60px;
+      box-shadow: 0 3px 10px rgba(255, 127, 156, 0.08);
     }
 
     * {
@@ -131,47 +112,29 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
     }
     
     :root {
-      --primary-color: #ff7f9c;
-      --primary-light: #ffa0b8;
-      --secondary-color: #b8d8e8;
-      --accent-dark: #2a2a2a;
+      --primary: #ff7f9c;
+      --primary-hover: #ff6b8f;
+      --secondary: #b8d8e8;
+      --dark: #2a2a2a;
       --text-light: #7a7a7a;
-      --border-light: #e8e0e5;
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      --success-color: #66d9a8;
-      --error-color: #ff6b8f;
+      --border: #e8e0e5;
+      --success: #66d9a8;
+      --error: #ff6b8f;
     }
     
     html { scroll-behavior: smooth; }
     
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #ffffff;
-      color: var(--accent-dark);
-      line-height: 1.6;
-    }
-    
-    body.dark-mode {
-      background: #1a1a1a;
-      color: #e0e0e0;
-    }
-    
-    body.dark-mode .container,
-    body.dark-mode .card,
-    body.dark-mode textarea,
-    body.dark-mode input,
-    body.dark-mode select {
-      background: #2a2a2a;
-      color: #e0e0e0;
-      border-color: #444;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+      background: #fff;
+      color: var(--dark);
+      line-height: 1.7;
     }
     
     .container {
       max-width: 900px;
       margin: 0 auto;
       padding: 40px 20px;
-      background: white;
-      transition: background-color 0.3s ease;
     }
     
     header {
@@ -186,19 +149,19 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
     
     h1 {
       font-size: 36px;
-      font-weight: 300;
-      color: var(--primary-color);
+      font-weight: 700;
+      color: var(--primary);
       flex: 1;
     }
     
     .back-link {
-      padding: 10px 20px;
-      background: var(--secondary-color);
+      padding: 12px 24px;
+      background: var(--secondary);
       color: white;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: 500;
-      transition: var(--transition);
+      border-radius: 10px;
+      font-weight: 600;
+      transition: all 0.3s ease;
       border: none;
       cursor: pointer;
     }
@@ -210,75 +173,67 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
     
     .card {
       background: white;
-      border-radius: 12px;
-      padding: 24px;
-      border: 1.5px solid var(--border-light);
+      border-radius: 16px;
+      padding: 28px;
+      border: 2px solid var(--border);
       margin-bottom: 30px;
-      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
     
     .card h2 {
-      font-size: 18px;
-      margin-bottom: 16px;
-      color: var(--primary-color);
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: var(--primary);
+      font-weight: 700;
     }
 
     .card h3 {
-      font-size: 16px;
-      margin-top: 20px;
-      margin-bottom: 12px;
-      color: var(--accent-dark);
-      font-weight: 600;
-    }
-
-    body.dark-mode .card h3 {
-      color: #e0e0e0;
+      font-size: 18px;
+      margin-top: 28px;
+      margin-bottom: 14px;
+      color: var(--dark);
+      font-weight: 700;
     }
 
     .card p {
-      margin-bottom: 12px;
-      line-height: 1.6;
+      margin-bottom: 16px;
+      line-height: 1.8;
     }
     
     .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
     
     label {
       display: block;
-      margin-bottom: 8px;
-      font-weight: 500;
-      color: var(--accent-dark);
-    }
-
-    body.dark-mode label {
-      color: #d0d0d0;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: var(--dark);
     }
     
     label.required::after {
       content: ' *';
-      color: var(--error-color);
+      color: var(--error);
     }
     
     input[type="text"],
     input[type="email"],
     input[type="url"],
-    input[type="tel"],
     textarea,
     select {
       width: 100%;
-      padding: 12px 16px;
-      border: 1.5px solid var(--border-light);
-      border-radius: 8px;
+      padding: 14px 18px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
       background: white;
-      color: var(--accent-dark);
-      font-size: 14px;
+      color: var(--dark);
+      font-size: 15px;
       font-family: inherit;
-      transition: var(--transition);
+      transition: all 0.3s ease;
     }
     
     textarea {
-      min-height: 120px;
+      min-height: 140px;
       resize: vertical;
     }
     
@@ -286,8 +241,8 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
     textarea:focus,
     select:focus {
       outline: none;
-      border-color: var(--primary-color);
-      box-shadow: 0 0 0 3px rgba(255, 127, 156, 0.1);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(255, 127, 156, 0.1);
     }
     
     .file-upload {
@@ -304,44 +259,36 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
     
     .file-upload-label {
       display: block;
-      padding: 12px 16px;
+      padding: 20px;
       background: white;
-      border: 2px dashed var(--border-light);
-      border-radius: 8px;
+      border: 3px dashed var(--border);
+      border-radius: 12px;
       text-align: center;
       cursor: pointer;
-      transition: var(--transition);
+      transition: all 0.3s ease;
       color: var(--text-light);
-    }
-
-    body.dark-mode .file-upload-label {
-      background: #333;
     }
     
     .file-upload-label:hover {
       background: #fafafa;
-      border-color: var(--primary-color);
-      color: var(--primary-color);
+      border-color: var(--primary);
+      color: var(--primary);
     }
     
     .file-list {
-      margin-top: 12px;
-      padding: 12px;
+      margin-top: 14px;
+      padding: 14px;
       background: #f9f9f9;
-      border-radius: 6px;
-      font-size: 12px;
-    }
-
-    body.dark-mode .file-list {
-      background: #333;
+      border-radius: 8px;
+      font-size: 13px;
     }
     
     .file-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--border-light);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
     }
     
     .file-item:last-child {
@@ -351,36 +298,38 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
     .file-remove {
       background: none;
       border: none;
-      color: var(--error-color);
+      color: var(--error);
       cursor: pointer;
       font-size: 14px;
-      padding: 0 8px;
+      padding: 0 10px;
+      font-weight: 600;
     }
     
     .button-group {
       display: flex;
-      gap: 10px;
+      gap: 12px;
       flex-wrap: wrap;
-      margin-top: 30px;
+      margin-top: 32px;
     }
     
     button[type="submit"],
     button[type="reset"] {
-      padding: 11px 24px;
-      background: var(--primary-color);
+      padding: 14px 32px;
+      background: var(--primary);
       color: white;
       border: none;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 500;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
       cursor: pointer;
-      transition: var(--transition);
-      min-height: 44px;
+      transition: all 0.3s ease;
+      min-height: 50px;
     }
     
     button[type="submit"]:hover {
-      background: #ff6b8f;
+      background: var(--primary-hover);
       transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 107, 143, 0.3);
     }
     
     button[type="reset"] {
@@ -398,10 +347,11 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
     }
     
     .alert {
-      padding: 16px;
-      border-radius: 8px;
-      margin-bottom: 20px;
+      padding: 18px 24px;
+      border-radius: 10px;
+      margin-bottom: 24px;
       display: none;
+      font-weight: 500;
     }
     
     .alert.show {
@@ -411,19 +361,19 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
     
     .alert.success {
       background: #f0fdf4;
-      border: 1.5px solid var(--success-color);
+      border: 2px solid var(--success);
       color: #166534;
     }
     
     .alert.error {
       background: #fef2f2;
-      border: 1.5px solid var(--error-color);
+      border: 2px solid var(--error);
       color: #991b1b;
     }
     
     .alert.warning {
-      background: #fff3cd;
-      border: 1.5px solid #ffc107;
+      background: #fff9e6;
+      border: 2px solid #ffc107;
       color: #856404;
     }
     
@@ -433,73 +383,40 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
     }
     
     .info-box {
-      background: #e3f2fd;
-      border-left: 4px solid var(--secondary-color);
-      padding: 16px;
-      border-radius: 6px;
-      margin-bottom: 20px;
-    }
-
-    body.dark-mode .info-box {
-      background: #1a3a52;
-      border-left-color: #64b5f6;
+      background: #f0f8ff;
+      border-left: 5px solid var(--secondary);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 24px;
     }
     
     .info-box h3 {
-      color: var(--secondary-color);
-      margin-bottom: 8px;
-      font-weight: 600;
+      color: var(--secondary);
+      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 16px;
     }
     
     .info-box p {
       color: #1565c0;
-      font-size: 13px;
+      font-size: 14px;
       margin: 0;
-    }
-
-    body.dark-mode .info-box p {
-      color: #90caf9;
+      line-height: 1.7;
     }
     
     .spinner {
       display: inline-block;
-      width: 16px;
-      height: 16px;
-      border: 2px solid var(--border-light);
-      border-top-color: var(--primary-color);
+      width: 18px;
+      height: 18px;
+      border: 3px solid var(--border);
+      border-top-color: var(--primary);
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
-      margin-right: 8px;
+      margin-right: 10px;
     }
     
     @keyframes spin {
       to { transform: rotate(360deg); }
-    }
-    
-    .loading {
-      display: flex;
-      align-items: center;
-    }
-    
-    .dark-mode-toggle {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 10px 16px;
-      background: var(--secondary-color);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-      font-size: 20px;
-      transition: var(--transition);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-    
-    .dark-mode-toggle:hover {
-      transform: scale(1.1);
     }
     
     @media (max-width: 768px) {
@@ -508,166 +425,155 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
       .button-group { flex-direction: column; }
       button { width: 100%; }
       
-      .ad-container,
-      .ad-container-large,
-      .ad-container-inline,
-      .ad-container-video {
+      .ad-premium,
+      .ad-content {
         margin: 15px 0;
         padding: 15px;
+        min-height: 80px;
       }
     }
   </style>
 </head>
 <body>
 
-<!-- JuicyAds v3.0 -->
-<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-<ins id="1109235" data-width="300" data-height="100"></ins>
-<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
-<!--JuicyAds END-->
+<!-- ヘッダー広告 -->
+<div class="ad-premium">
+  <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+  <ins id="1109235" data-width="300" data-height="100"></ins>
+  <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
+</div>
+
   <div class="container">
     <header>
-      <h1>Report Issue</h1>
-      <button class="back-link" onclick="window.location.href='index.html'">← Back to Home</button>
+      <h1>お問い合わせ・報告</h1>
+      <button class="back-link" onclick="window.location.href='index.html'">← ホームに戻る</button>
     </header>
 
     <div class="info-box">
-      <h3>About This Page</h3>
-      <p>If you find inappropriate content or have an issue to report, please use this form. Your report will be sent to our moderation team via Discord webhook for review.</p>
+      <h3>このページについて</h3>
+      <p>不適切なコンテンツを発見した場合や、報告したい問題がある場合は、このフォームをご利用ください。報告内容は、Discord Webhookを介してモデレーションチームに送信され、確認されます。</p>
     </div>
 
-<!-- JuicyAds v3.0 -->
-<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-<ins id="1109236" data-width="178" data-height="46"></ins>
-<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109236});</script>
-<!--JuicyAds END-->
+    <!-- 広告配置1 -->
+    <div class="ad-content">
+      <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+      <ins id="1109236" data-width="178" data-height="46"></ins>
+      <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109236});</script>
+    </div>
+
     <div id="alert" class="alert"></div>
     
     <div class="card">
-      <h2>Report Form</h2>
+      <h2>報告フォーム</h2>
       
       <form id="reportForm">
         <div class="form-group">
-          <label for="reportType" class="required">Report Type</label>
+          <label for="reportType" class="required">報告の種類</label>
           <select id="reportType" required>
-            <option value="">-- Select a report type --</option>
-            <option value="inappropriate-content">Inappropriate Content</option>
-            <option value="copyright">Copyright Infringement</option>
-            <option value="spam">Spam</option>
-            <option value="illegal">Illegal Content</option>
-            <option value="bug">Bug Report</option>
-            <option value="other">Other</option>
+            <option value="">-- 報告の種類を選択 --</option>
+            <option value="inappropriate-content">不適切なコンテンツ</option>
+            <option value="copyright">著作権侵害</option>
+            <option value="spam">スパム</option>
+            <option value="illegal">違法コンテンツ</option>
+            <option value="bug">バグ報告</option>
+            <option value="other">その他</option>
           </select>
         </div>
         
         <div class="form-group">
-          <label for="contentUrl">Content URL</label>
+          <label for="contentUrl">コンテンツURL</label>
           <input type="url" id="contentUrl" placeholder="https://example.com/video" />
-          <small style="color: var(--text-light); font-size: 12px;">URL of the file or content being reported</small>
+          <small style="color: var(--text-light); font-size: 13px;">報告するファイルまたはコンテンツのURL</small>
         </div>
         
         <div class="form-group">
-          <label for="description" class="required">Detailed Description</label>
-          <textarea id="description" placeholder="Please explain why this content should be reported..." required></textarea>
+          <label for="description" class="required">詳細説明</label>
+          <textarea id="description" placeholder="このコンテンツが報告されるべき理由を詳しく説明してください..." required></textarea>
         </div>
 
-
-<!-- JuicyAds v3.0 -->
-<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-<ins id="1109235" data-width="300" data-height="100"></ins>
-<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
-<!--JuicyAds END-->
+        <!-- 広告配置2 -->
+        <div class="ad-content">
+          <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+          <ins id="1109235" data-width="300" data-height="100"></ins>
+          <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
+        </div>
         
         <div class="form-group">
-          <label for="email">Email Address (Optional)</label>
+          <label for="email">メールアドレス（任意）</label>
           <input type="email" id="email" placeholder="your@email.com" />
-          <small style="color: var(--text-light); font-size: 12px;">We may contact you if we need more information</small>
+          <small style="color: var(--text-light); font-size: 13px;">追加情報が必要な場合にご連絡することがあります</small>
         </div>
         
         <div class="form-group">
-          <label for="imageUpload">Screenshots (Optional)</label>
+          <label for="imageUpload">スクリーンショット（任意）</label>
           <div class="file-upload">
             <input type="file" id="imageUpload" accept="image/*" multiple />
             <label for="imageUpload" class="file-upload-label">
-              📷 Click to upload or drag & drop files<br>
-              <small>(PNG, JPG, WebP - Max 5MB per file)</small>
+              クリックしてファイルをアップロード<br>
+              <small>（PNG, JPG, WebP - 1ファイル最大5MB）</small>
             </label>
           </div>
           <div id="fileList" class="file-list" style="display: none;"></div>
         </div>
-
         
         <div class="form-group">
-          <label for="reporterName">Your Name (Optional)</label>
-          <input type="text" id="reporterName" placeholder="Your name or username" />
+          <label for="reporterName">お名前（任意）</label>
+          <input type="text" id="reporterName" placeholder="お名前またはユーザー名" />
         </div>
         
         <div class="form-group">
-          <input type="checkbox" id="agreePolicy" required />
-          <label for="agreePolicy" style="display: inline; margin-left: 8px;">
-            I agree to the <a href="policy.html" target="_blank" style="color: var(--primary-color);">Terms of Service and Content Policy</a>
+          <input type="checkbox" id="agreePolicy" required style="width: auto; margin-right: 8px;" />
+          <label for="agreePolicy" style="display: inline;">
+            <a href="policy.html" target="_blank" style="color: var(--primary); text-decoration: underline;">利用規約とコンテンツポリシー</a>に同意します
           </label>
         </div>
         
         <div class="button-group">
-          <button type="submit" id="submitBtn">Submit Report</button>
-          <button type="reset">Clear</button>
+          <button type="submit" id="submitBtn">報告を送信</button>
+          <button type="reset">クリア</button>
         </div>
       </form>
     </div>
 
-<!-- JuicyAds v3.0 -->
-<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-<ins id="1109236" data-width="178" data-height="46"></ins>
-<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109236});</script>
-<!--JuicyAds END-->
-    <div class="card">
-      <h2>Frequently Asked Questions</h2>
-      
-      <h3>Q: How long does it take to respond to reports?</h3>
-      <p>We typically review reports within 24 hours. Depending on the severity and complexity, additional time may be needed.</p>
-      
-      <h3>Q: Is my personal information safe?</h3>
-      <p>Yes, your personal information is only used to respond to your report and is not shared with third parties. It is transmitted securely via Discord Webhook.</p>
-      
-      <h3>Q: Can I report anonymously?</h3>
-      <p>Yes. You can submit a report without providing your email address or name if you prefer to remain anonymous.</p>
-      
-      <h3>Q: Can I upload multiple images?</h3>
-      <p>Yes, you can select and upload multiple images. Each file must be 5MB or smaller.</p>
-
-      <h3>Q: What types of content can I report?</h3>
-      <p>You can report inappropriate content, copyright violations, spam, illegal content, bugs, or other issues. Select the appropriate category in the form.</p>
-      
-      <h3>Q: What happens after I submit a report?</h3>
-      <p>Our moderation team will review your report and take appropriate action, which may include removing content, warning users, or reporting to authorities if necessary.</p>
+    <!-- 広告配置3 -->
+    <div class="ad-content">
+      <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+      <ins id="1109236" data-width="178" data-height="46"></ins>
+      <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109236});</script>
     </div>
 
-<!-- JuicyAds v3.0 -->
-<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-<ins id="1109235" data-width="300" data-height="100"></ins>
-<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
-<!--JuicyAds END-->
+    <div class="card">
+      <h2>よくある質問</h2>
+      
+      <h3>Q: 報告への対応にはどのくらい時間がかかりますか？</h3>
+      <p>通常、報告は24時間以内に確認します。重大度や複雑さによっては、さらに時間が必要な場合があります。</p>
+      
+      <h3>Q: 個人情報は安全ですか？</h3>
+      <p>はい、個人情報は報告への対応にのみ使用され、第三者と共有されることはありません。Discord Webhookを介して安全に送信されます。</p>
+      
+      <h3>Q: 匿名で報告できますか？</h3>
+      <p>はい。メールアドレスや名前を提供せずに報告を送信できます。</p>
+      
+      <h3>Q: 複数の画像をアップロードできますか？</h3>
+      <p>はい、複数の画像を選択してアップロードできます。各ファイルは5MB以下である必要があります。</p>
 
-  <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle dark mode">🌙</button>
+      <h3>Q: どのような種類のコンテンツを報告できますか？</h3>
+      <p>不適切なコンテンツ、著作権侵害、スパム、違法コンテンツ、バグ、その他の問題を報告できます。フォームで適切なカテゴリを選択してください。</p>
+      
+      <h3>Q: 報告後、どうなりますか？</h3>
+      <p>モデレーションチームが報告を確認し、適切な措置を講じます。これには、コンテンツの削除、ユーザーへの警告、必要に応じて当局への通報などが含まれます。</p>
+    </div>
+
+    <!-- 広告配置4 -->
+    <div class="ad-premium">
+      <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+      <ins id="1109235" data-width="300" data-height="100"></ins>
+      <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
+    </div>
+  </div>
   
   <script>
-    // Dark mode toggle
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
-    if (isDarkMode) {
-      document.body.classList.add('dark-mode');
-      darkModeToggle.textContent = '☀️';
-    }
-    
-    darkModeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      const isNowDark = document.body.classList.contains('dark-mode');
-      localStorage.setItem('darkMode', isNowDark);
-      darkModeToggle.textContent = isNowDark ? '☀️' : '🌙';
-    });
-    
-    // File upload handler
+    // ファイルアップロード処理
     const imageUpload = document.getElementById('imageUpload');
     const fileList = document.getElementById('fileList');
     let uploadedFiles = [];
@@ -683,26 +589,26 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
       }
       
       files.forEach((file, index) => {
-        // File size check (5MB)
+        // ファイルサイズチェック（5MB）
         if (file.size > 5 * 1024 * 1024) {
-          showAlert(`File "${file.name}" exceeds 5MB limit`, 'error');
+          showAlert(`ファイル「${file.name}」は5MBを超えています`, 'error');
           return;
         }
         
-        // File type check
+        // ファイル形式チェック
         if (!['image/png', 'image/jpeg', 'image/webp'].includes(file.type)) {
-          showAlert(`File "${file.name}" is not a supported format`, 'error');
+          showAlert(`ファイル「${file.name}」はサポートされていない形式です`, 'error');
           return;
         }
         
         uploadedFiles.push(file);
         
-        // Add preview
+        // プレビュー追加
         const fileItem = document.createElement('div');
         fileItem.className = 'file-item';
         fileItem.innerHTML = `
-          <span>📄 ${file.name} (${(file.size / 1024).toFixed(2)} KB)</span>
-          <button type="button" class="file-remove" onclick="removeFile(${uploadedFiles.length - 1})">Remove</button>
+          <span>${file.name} (${(file.size / 1024).toFixed(2)} KB)</span>
+          <button type="button" class="file-remove" onclick="removeFile(${uploadedFiles.length - 1})">削除</button>
         `;
         fileList.appendChild(fileItem);
       });
@@ -710,7 +616,7 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
       fileList.style.display = uploadedFiles.length > 0 ? 'block' : 'none';
     });
     
-    // Remove file
+    // ファイル削除
     window.removeFile = (index) => {
       uploadedFiles.splice(index, 1);
       imageUpload.value = '';
@@ -718,21 +624,21 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
       if (uploadedFiles.length === 0) {
         fileList.style.display = 'none';
       } else {
-        // Refresh file list
+        // ファイルリスト更新
         fileList.innerHTML = '';
         uploadedFiles.forEach((file, idx) => {
           const fileItem = document.createElement('div');
           fileItem.className = 'file-item';
           fileItem.innerHTML = `
-            <span>📄 ${file.name} (${(file.size / 1024).toFixed(2)} KB)</span>
-            <button type="button" class="file-remove" onclick="removeFile(${idx})">Remove</button>
+            <span>${file.name} (${(file.size / 1024).toFixed(2)} KB)</span>
+            <button type="button" class="file-remove" onclick="removeFile(${idx})">削除</button>
           `;
           fileList.appendChild(fileItem);
         });
       }
     };
     
-    // Show alert
+    // アラート表示
     function showAlert(message, type = 'success') {
       const alert = document.getElementById('alert');
       alert.className = `alert show ${type}`;
@@ -740,16 +646,16 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
       setTimeout(() => alert.classList.remove('show'), 5000);
     }
     
-    // Form submission
+    // フォーム送信
     document.getElementById('reportForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       
       const submitBtn = document.getElementById('submitBtn');
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span class="spinner"></span>Submitting...';
+      submitBtn.innerHTML = '<span class="spinner"></span>送信中...';
       
       try {
-        // Get form data
+        // フォームデータ取得
         const formData = {
           reportType: document.getElementById('reportType').value,
           contentUrl: document.getElementById('contentUrl').value,
@@ -759,52 +665,52 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
           timestamp: new Date().toISOString()
         };
         
-        // Duplicate check (simple version using localStorage)
+        // 重複チェック（localStorageを使用した簡易版）
         const lastReport = localStorage.getItem('lastReport');
         if (lastReport) {
           const lastTime = new Date(lastReport).getTime();
           const now = new Date().getTime();
-          if (now - lastTime < 60000) { // Prevent duplicate reports within 60 seconds
-            showAlert('Please wait before submitting another report. (Spam prevention)', 'warning');
+          if (now - lastTime < 60000) { // 60秒以内の重複報告を防止
+            showAlert('別の報告を送信するまでしばらくお待ちください（スパム防止）', 'warning');
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Submit Report';
+            submitBtn.textContent = '報告を送信';
             return;
           }
         }
         
-        // Send to Discord Webhook (via Netlify Function)
+        // Discord Webhookに送信（Netlify Function経由）
         const webhookPayload = {
-          content: `**New Report Submitted**`,
+          content: `**新しい報告が送信されました**`,
           embeds: [{
-            title: `Report Type: ${formData.reportType}`,
+            title: `報告の種類: ${formData.reportType}`,
             description: formData.description,
             fields: [
               {
-                name: 'Content URL',
-                value: formData.contentUrl || 'Not provided',
+                name: 'コンテンツURL',
+                value: formData.contentUrl || '未提供',
                 inline: false
               },
               {
-                name: 'Email Address',
-                value: formData.email || 'Not provided',
+                name: 'メールアドレス',
+                value: formData.email || '未提供',
                 inline: true
               },
               {
-                name: 'Reporter Name',
-                value: formData.reporterName || 'Anonymous',
+                name: '報告者名',
+                value: formData.reporterName || '匿名',
                 inline: true
               },
               {
-                name: 'Report Date/Time',
-                value: new Date().toLocaleString('en-US'),
+                name: '報告日時',
+                value: new Date().toLocaleString('ja-JP'),
                 inline: false
               }
             ],
-            color: 16711680 // Red
+            color: 16711680 // 赤
           }]
         };
         
-        // Use Netlify Function to send to Discord
+        // Netlify Functionを使用してDiscordに送信
         const response = await fetch('/.netlify/functions/send-report', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -812,24 +718,24 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
         });
         
         if (response.ok) {
-          showAlert('✅ Report submitted successfully. Thank you for your contribution!', 'success');
+          showAlert('報告を正常に送信しました。ご協力ありがとうございます！', 'success');
           localStorage.setItem('lastReport', new Date().toISOString());
           document.getElementById('reportForm').reset();
           fileList.style.display = 'none';
           uploadedFiles = [];
         } else {
-          throw new Error('Failed to submit report');
+          throw new Error('報告の送信に失敗しました');
         }
       } catch (error) {
-        console.error('Error:', error);
-        showAlert(`Error: ${error.message}`, 'error');
+        console.error('エラー:', error);
+        showAlert(`エラー: ${error.message}`, 'error');
       } finally {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Submit Report';
+        submitBtn.textContent = '報告を送信';
       }
     });
     
-    // Drag & drop support
+    // ドラッグ＆ドロップサポート
     const fileUploadLabel = document.querySelector('.file-upload-label');
     ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
       fileUploadLabel.addEventListener(eventName, (e) => {
@@ -837,7 +743,7 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
         e.stopPropagation();
         if (eventName === 'dragover') {
           fileUploadLabel.style.background = '#f0f0f0';
-          fileUploadLabel.style.borderColor = 'var(--primary-color)';
+          fileUploadLabel.style.borderColor = 'var(--primary)';
         }
         if (eventName === 'dragleave' || eventName === 'drop') {
           fileUploadLabel.style.background = '';
@@ -852,7 +758,5 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
       imageUpload.dispatchEvent(new Event('change'));
     });
   </script>
-
-
 </body>
 </html>

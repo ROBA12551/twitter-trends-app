@@ -1,35 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-<meta name="clckd" content="86b4cf33709d61a765bacacb684d6df0" />
   <meta charset="utf-8">
-  <title>TwiiterChan - Download Ranking System</title>
-  <meta name="build-id" content="CHECK-00f99e5">
-  <meta http-equiv="Delegate-CH" content="Sec-CH-UA https://s.pemsrv.com; Sec-CH-UA-Mobile https://s.pemsrv.com; Sec-CH-UA-Arch https://s.pemsrv.com; Sec-CH-UA-Model https://s.pemsrv.com; Sec-CH-UA-Platform https://s.pemsrv.com; Sec-CH-UA-Platform-Version https://s.pemsrv.com; Sec-CH-UA-Bitness https://s.pemsrv.com; Sec-CH-UA-Full-Version-List https://s.pemsrv.com; Sec-CH-UA-Full-Version https://s.pemsrv.com;">
-  <meta http-equiv="Delegate-CH" content="Sec-CH-UA https://s.magsrv.com; Sec-CH-UA-Mobile https://s.magsrv.com; Sec-CH-UA-Arch https://s.magsrv.com; Sec-CH-UA-Model https://s.magsrv.com; Sec-CH-UA-Platform https://s.magsrv.com; Sec-CH-UA-Platform-Version https://s.magsrv.com; Sec-CH-UA-Bitness https://s.magsrv.com; Sec-CH-UA-Full-Version-List https://s.magsrv.com; Sec-CH-UA-Full-Version https://s.magsrv.com;">
-
-  <!-- Basic SEO -->
-  <meta name="description" content="TwiiterChan is a web application that displays trending URLs in real-time ranking and saves them for easy access.">
+  <title>Twitter保存ランキング | Gofileダウンロード数リアルタイム表示 - TwiiterChan</title>
+  
+  <!-- SEO最適化 -->
+  <meta name="description" content="Twitterで話題のGofileファイルをリアルタイムランキング表示。ダウンロード数順・新着順で簡単検索。Twitter動画・画像の保存ランキングサイト。">
+  <meta name="keywords" content="Twitter保存,Gofileランキング,Twitter動画保存,ダウンロードランキング,リアルタイムランキング,Twitter画像保存,動画ランキング,人気動画,トレンド動画">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://twitchan.com/">
+  
+  <!-- 構造化データ (SEO強化) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "TwiiterChan - Twitter保存ランキング",
+    "url": "https://twitchan.com/",
+    "description": "Twitterで話題のGofileファイルをリアルタイムでランキング表示",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://twitchan.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 
-  <!-- Open Graph (for URL sharing) -->
+  <!-- OGP (SNS共有最適化) -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="TwiiterChan | Real-time Download Ranking">
-  <meta property="og:description" content="Display and save trending files in real-time ranking. Never miss trending content again.">
-  <meta property="og:url" content="https://twitterchan.netlify.app/">
-  <meta property="og:image" content="https://twitterchan.netlify.app/images/gofile.png">
+  <meta property="og:title" content="Twitter保存ランキング | Gofileダウンロード数表示">
+  <meta property="og:description" content="Twitterで話題のGofileファイルをリアルタイムランキング表示。人気動画・画像を即座にチェック。">
+  <meta property="og:url" content="https://twitchan.com/">
+  <meta property="og:image" content="https://twitchan.com/images/ogp.png">
   <meta property="og:site_name" content="TwiiterChan">
+  <meta property="og:locale" content="ja_JP">
 
-  <!-- X (Twitter) Specific -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="TwiiterChan">
-  <meta name="twitter:description" content="Real-time ranking display and file management web application.">
-  <meta name="twitter:image" content="https://twitterchan.netlify.app/images/gofile.png">
+  <meta name="twitter:title" content="Twitter保存ランキング - TwiiterChan">
+  <meta name="twitter:description" content="Twitterで話題のGofileファイルをリアルタイムでランキング表示">
+  <meta name="twitter:image" content="https://twitchan.com/images/ogp.png">
 
-  <!-- Optional -->
-  <meta name="theme-color" content="#0f172a">
+  <meta name="theme-color" content="#ff7f9c">
 
-  <!-- Push Notification Script -->
+  <!-- JuicyAds Push通知 (収益最大化) -->
   <script type="application/javascript">
     pn_idzone = 5829204;
     pn_sleep_seconds = 0;
@@ -47,227 +62,232 @@
     }
     
     :root {
-      --primary-color: #ff7f9c;
-      --primary-light: #ffa0b8;
-      --secondary-color: #b8d8e8;
-      --accent-dark: #2a2a2a;
+      --primary: #ff7f9c;
+      --primary-hover: #ff6b8f;
+      --secondary: #b8d8e8;
+      --dark: #2a2a2a;
       --text-light: #7a7a7a;
-      --border-light: #e8e0e5;
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      --success-color: #66d9a8;
-      --error-color: #ff6b8f;
+      --border: #e8e0e5;
+      --success: #66d9a8;
+      --error: #ff6b8f;
+      --bg-light: #fafafa;
     }
     
     html { scroll-behavior: smooth; }
     
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #ffffff;
-      color: var(--accent-dark);
-      line-height: 1.6;
-      transition: background-color 0.3s ease;
-    }
-    
-    body.dark-mode {
-      background: #1a1a1a;
-      color: #e0e0e0;
-    }
-    
-    body.dark-mode .container,
-    body.dark-mode .nav-button,
-    body.dark-mode .video-card,
-    body.dark-mode .card,
-    body.dark-mode textarea,
-    body.dark-mode input,
-    body.dark-mode .status-bar {
-      background: #2a2a2a;
-      color: #e0e0e0;
-      border-color: #444;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+      background: #fff;
+      color: var(--dark);
+      line-height: 1.7;
     }
 
-    /* JuicyAds Container Styling */
-    .juicy-ad-container {
+    /* ==================== 広告コンテナ最適化 ==================== */
+    
+    /* ヘッダー直下広告 (最重要・高単価エリア) */
+    .ad-premium-top {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 20px 0;
-      padding: 15px;
-      background: linear-gradient(135deg, #f8f8f8 0%, #fafafa 100%);
-      border-radius: 12px;
-      border: 1px solid #e8e8e8;
-      min-height: 60px;
-    }
-
-    .juicy-ad-container-large {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 30px 0;
+      margin: 0 auto 30px;
       padding: 20px;
-      background: linear-gradient(135deg, #f8f8f8 0%, #fafafa 100%);
-      border-radius: 12px;
-      border: 1px solid #e8e8e8;
+      background: linear-gradient(135deg, #fff9f0 0%, #fff5f8 100%);
+      border-radius: 16px;
+      border: 2px solid #ffe8ee;
       min-height: 120px;
+      box-shadow: 0 4px 12px rgba(255, 127, 156, 0.1);
     }
 
-    body.dark-mode .juicy-ad-container,
-    body.dark-mode .juicy-ad-container-large {
-      background: linear-gradient(135deg, #333 0%, #2a2a2a 100%);
-      border-color: #444;
+    /* コンテンツ間広告 (高視認性) */
+    .ad-content-between {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 40px auto;
+      padding: 25px;
+      background: linear-gradient(135deg, #fff 0%, #fff9fc 100%);
+      border-radius: 14px;
+      border: 2px solid #ffe8f0;
+      min-height: 100px;
+      box-shadow: 0 3px 10px rgba(255, 127, 156, 0.08);
     }
+
+    /* ランキング内広告 (最高収益エリア) */
+    .ad-in-ranking {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px auto;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, #fff5f0 0%, #fff0f5 100%);
+      border-radius: 16px;
+      border: 3px solid #ffd9e8;
+      min-height: 130px;
+      box-shadow: 0 6px 16px rgba(255, 107, 143, 0.12);
+      position: relative;
+    }
+
+    .ad-in-ranking::before {
+      content: "おすすめ";
+      position: absolute;
+      top: 8px;
+      left: 16px;
+      font-size: 11px;
+      color: var(--primary);
+      font-weight: 600;
+      background: white;
+      padding: 3px 10px;
+      border-radius: 4px;
+    }
+
+    /* フッター広告 (離脱防止) */
+    .ad-footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 40px auto 20px;
+      padding: 25px;
+      background: linear-gradient(135deg, #fff8f0 0%, #fff0f8 100%);
+      border-radius: 14px;
+      border: 2px solid #ffe0e8;
+      min-height: 110px;
+    }
+
+    /* ==================== レイアウト ==================== */
 
     .container {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 40px 20px;
-      background: white;
-      transition: background-color 0.3s ease;
+      padding: 20px;
     }
     
     header {
       text-align: center;
-      margin-bottom: 40px;
-      animation: fadeInDown 0.8s ease-out;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+      margin-bottom: 30px;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, #fff 0%, #fff9fc 100%);
+      border-radius: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
     }
     
     h1 {
-      font-size: 48px;
-      font-weight: 300;
-      margin-bottom: 8px;
-      color: var(--primary-color);
-    }
-    
-    .header-content {
-      flex: 1;
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
     }
     
     .subtitle {
+      font-size: 16px;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    /* SEO用の隠しテキスト */
+    .seo-text {
       font-size: 14px;
-      color: var(--text-light);
+      color: #999;
+      margin-top: 15px;
+      line-height: 1.8;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
-    .language-selector {
-      display: flex;
-      gap: 8px;
-    }
-    
-    .lang-btn {
-      padding: 8px 16px;
-      background: var(--border-light);
-      border: 1.5px solid var(--border-light);
-      border-radius: 6px;
-      font-size: 12px;
-      cursor: pointer;
-      transition: var(--transition);
-      color: var(--text-light);
-    }
-    
-    .lang-btn.active {
-      background: var(--primary-color);
-      color: white;
-      border-color: var(--primary-color);
-    }
+    /* ==================== ナビゲーション ==================== */
     
     .nav-tabs {
       display: flex;
       justify-content: center;
-      gap: 8px;
-      margin-bottom: 40px;
+      gap: 10px;
+      margin-bottom: 30px;
       flex-wrap: wrap;
     }
     
     .nav-button {
-      padding: 12px 28px;
+      padding: 14px 32px;
       background: white;
-      border: 1.5px solid var(--border-light);
-      border-radius: 8px;
-      font-size: 15px;
-      font-weight: 500;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
       cursor: pointer;
-      transition: var(--transition);
+      transition: all 0.3s ease;
       color: var(--text-light);
     }
     
     .nav-button:hover {
-      border-color: var(--secondary-color);
-      transform: translateY(-2px);
+      border-color: var(--secondary);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(184, 216, 232, 0.3);
     }
     
     .nav-button.active {
-      background: var(--secondary-color);
+      background: var(--secondary);
       color: white;
-      border-color: var(--secondary-color);
+      border-color: var(--secondary);
     }
+    
+    /* ==================== カード ==================== */
     
     .card {
       background: white;
-      border-radius: 12px;
-      padding: 24px;
-      border: 1.5px solid var(--border-light);
+      border-radius: 16px;
+      padding: 28px;
+      border: 2px solid var(--border);
       margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
     
     .card h2 {
-      font-size: 18px;
-      margin-bottom: 16px;
-      color: var(--primary-color);
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: var(--primary);
+      font-weight: 700;
     }
     
     textarea, input[type="url"], input[type="text"] {
       width: 100%;
-      padding: 12px 16px;
-      border: 1.5px solid var(--border-light);
-      border-radius: 8px;
+      padding: 14px 18px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
       background: white;
-      color: var(--accent-dark);
-      font-size: 14px;
-      margin-bottom: 12px;
+      color: var(--dark);
+      font-size: 15px;
+      margin-bottom: 14px;
+      font-family: inherit;
     }
     
     textarea:focus, input:focus {
       outline: none;
-      border-color: var(--primary-color);
-      box-shadow: 0 0 0 3px rgba(255, 127, 156, 0.1);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(255, 127, 156, 0.1);
     }
     
     textarea {
-      min-height: 120px;
+      min-height: 140px;
       font-family: 'Courier New', monospace;
       resize: vertical;
     }
     
-    .button-group {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    
     button {
-      padding: 11px 24px;
-      background: var(--primary-color);
+      padding: 13px 28px;
+      background: var(--primary);
       color: white;
       border: none;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 500;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
       cursor: pointer;
-      transition: var(--transition);
-      min-height: 44px;
+      transition: all 0.3s ease;
+      min-height: 48px;
     }
     
     button:hover {
-      background: #ff6b8f;
+      background: var(--primary-hover);
       transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 107, 143, 0.3);
     }
     
     button:disabled {
@@ -276,141 +296,118 @@
       transform: none;
     }
     
+    /* ==================== ソート・フィルター ==================== */
+    
     .sort-controls {
       display: flex;
-      gap: 8px;
+      gap: 10px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
     
     .sort-btn {
-      padding: 8px 16px;
+      padding: 10px 20px;
       background: white;
-      border: 1.5px solid var(--border-light);
-      border-radius: 6px;
-      font-size: 13px;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
       cursor: pointer;
-      transition: var(--transition);
+      transition: all 0.3s ease;
       color: var(--text-light);
+      font-weight: 600;
     }
     
     .sort-btn.active {
-      background: var(--secondary-color);
+      background: var(--secondary);
       color: white;
-      border-color: var(--secondary-color);
+      border-color: var(--secondary);
     }
     
     .status-bar {
-      padding: 12px 16px;
-      background: #f9f9f9;
-      border-radius: 8px;
+      padding: 14px 20px;
+      background: var(--bg-light);
+      border-radius: 10px;
       margin-bottom: 20px;
-      font-size: 12px;
+      font-size: 14px;
       color: var(--text-light);
-      border: 1.5px solid var(--border-light);
+      border: 2px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-    
-    .status-bar.show {
-      display: flex;
-      animation: slideDown 0.3s ease;
+      font-weight: 500;
     }
     
     .status-bar.success {
       background: #f0fdf4;
-      border-color: var(--success-color);
+      border-color: var(--success);
       color: #166534;
     }
     
     .status-bar.error {
       background: #fef2f2;
-      border-color: var(--error-color);
+      border-color: var(--error);
       color: #991b1b;
-    }
-    
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
     }
     
     .refresh-controls {
       display: flex;
-      gap: 10px;
+      gap: 12px;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       flex-wrap: wrap;
     }
     
-    .refresh-btn, .search-button {
-      padding: 11px 24px;
-      background: var(--primary-color);
+    .refresh-btn {
+      padding: 13px 28px;
+      background: var(--primary);
       color: white;
       border: none;
-      border-radius: 8px;
-      font-weight: 500;
+      border-radius: 10px;
+      font-weight: 600;
       cursor: pointer;
-      transition: var(--transition);
-      font-size: 14px;
+      transition: all 0.3s ease;
+      font-size: 15px;
     }
     
-    .refresh-btn:hover, .search-button:hover {
-      background: #ff6b8f;
+    .refresh-btn:hover {
+      background: var(--primary-hover);
       transform: translateY(-2px);
     }
     
-    .refresh-interval {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-    
-    .refresh-interval select {
-      padding: 8px 12px;
-      border: 1.5px solid var(--border-light);
-      border-radius: 6px;
-      font-size: 13px;
-      background: white;
-      color: var(--accent-dark);
-    }
+    /* ==================== グリッド (ランキング表示) ==================== */
     
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 25px;
     }
     
     .video-card {
       background: white;
-      border-radius: 12px;
+      border-radius: 16px;
       overflow: hidden;
-      border: 1.5px solid var(--border-light);
-      transition: var(--transition);
+      border: 2px solid var(--border);
+      transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
       height: 100%;
     }
     
     .video-card:hover {
-      border-color: var(--secondary-color);
-      box-shadow: 0 12px 32px rgba(184, 216, 232, 0.15);
+      border-color: var(--secondary);
+      box-shadow: 0 8px 24px rgba(184, 216, 232, 0.25);
       transform: translateY(-6px);
     }
     
     .video-thumbnail {
       width: 100%;
-      height: 160px;
-      background: linear-gradient(135deg, rgba(245, 232, 240, 0.8) 0%, rgba(232, 239, 245, 0.8) 100%), url(/images/gofile.png);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      height: 180px;
+      background: linear-gradient(135deg, rgba(255, 127, 156, 0.1) 0%, rgba(184, 216, 232, 0.1) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
       position: relative;
       cursor: pointer;
     }
@@ -418,15 +415,13 @@
     .play-icon {
       width: 0;
       height: 0;
-      border-left: 24px solid var(--primary-color);
-      border-top: 14px solid transparent;
-      border-bottom: 14px solid transparent;
-      position: relative;
-      z-index: 1;
+      border-left: 28px solid var(--primary);
+      border-top: 16px solid transparent;
+      border-bottom: 16px solid transparent;
     }
     
     .video-info {
-      padding: 16px;
+      padding: 18px;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -434,11 +429,11 @@
     }
     
     .video-title {
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--primary-color);
-      line-height: 1.4;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--primary);
+      line-height: 1.5;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
@@ -446,113 +441,53 @@
     }
     
     .video-meta {
-      font-size: 11px;
+      font-size: 12px;
       color: var(--text-light);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      font-weight: 500;
     }
     
     .video-actions {
       display: flex;
-      gap: 8px;
+      gap: 10px;
     }
     
     .video-btn {
       flex: 1;
-      padding: 8px 12px;
-      font-size: 12px;
-      border: 1px solid var(--border-light);
-      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 13px;
+      border: 2px solid var(--border);
+      border-radius: 8px;
       background: white;
-      color: var(--primary-color);
+      color: var(--primary);
       cursor: pointer;
-      font-weight: 500;
-      transition: var(--transition);
+      font-weight: 600;
+      transition: all 0.3s ease;
     }
     
     .video-btn:hover {
-      background: var(--primary-color);
+      background: var(--primary);
       color: white;
+      border-color: var(--primary);
     }
     
-    .site-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1.5px solid var(--border-light);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      padding: 20px;
-      cursor: pointer;
-    }
-
-    .site-thumbnail {
-      width: 100%;
-      height: 140px;
-      background: linear-gradient(135deg, rgba(245, 232, 240, 0.9) 0%, rgba(232, 239, 245, 0.9) 100%), url(/images/gofile.png);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      border-radius: 8px;
-      margin-bottom: 12px;
-      overflow: hidden;
-    }
-    
-    .site-card:hover {
-      border-color: var(--primary-color);
-      transform: translateY(-6px);
-      box-shadow: 0 12px 32px rgba(255, 127, 156, 0.2);
-    }
-    
-    .site-name {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--primary-color);
-    }
-    
-    .site-description {
-      font-size: 12px;
-      color: var(--text-light);
-      margin-bottom: 16px;
-      flex: 1;
-    }
-    
-    .site-link {
-      padding: 10px 16px;
-      background: var(--primary-color);
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 5000;
-      font-size: 13px;
-      text-align: center;
-      border: none;
-      cursor: pointer;
-      display: inline-block;
-      width: 100%;
-    }
-    
-    .site-link:hover {
-      background: #ff6b8f;
-    }
+    /* ==================== ローディング ==================== */
     
     .loading {
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px;
       color: #bbb;
     }
     
     .spinner {
       display: inline-block;
-      width: 32px;
-      height: 32px;
-      border: 2px solid var(--border-light);
-      border-top-color: var(--secondary-color);
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--border);
+      border-top-color: var(--secondary);
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
     
     @keyframes spin {
@@ -563,14 +498,15 @@
       position: fixed;
       top: 24px;
       right: 24px;
-      padding: 14px 20px;
-      background: var(--primary-color);
+      padding: 16px 24px;
+      background: var(--primary);
       color: white;
-      border-radius: 8px;
-      font-size: 13px;
+      border-radius: 12px;
+      font-size: 14px;
       z-index: 1000;
       display: none;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      font-weight: 600;
     }
     
     .notification.show {
@@ -584,11 +520,7 @@
     }
     
     .notification.success {
-      background: var(--success-color);
-    }
-    
-    .notification.info {
-      background: var(--secondary-color);
+      background: var(--success);
     }
     
     .mode-content.hidden {
@@ -596,228 +528,53 @@
     }
     
     .load-more-btn {
-      padding: 14px 32px;
-      background: var(--secondary-color);
+      padding: 16px 40px;
+      background: var(--secondary);
       color: white;
       border: none;
-      border-radius: 8px;
-      font-weight: 600;
+      border-radius: 12px;
+      font-weight: 700;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 17px;
       display: block;
-      margin: 30px auto 0;
+      margin: 40px auto 0;
+      transition: all 0.3s ease;
     }
     
     .load-more-btn:hover {
       background: #a0cce0;
-      transform: translateY(-2px);
-    }
-    
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 12px;
-      margin-top: 16px;
-    }
-    
-    .stat-card {
-      background: #f9f9f9;
-      padding: 12px;
-      border-radius: 8px;
-      text-align: center;
-      border: 1.5px solid var(--border-light);
-    }
-    
-    .stat-number {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--primary-color);
-    }
-    
-    .stat-label {
-      font-size: 11px;
-      color: var(--text-light);
-      margin-top: 4px;
-      text-transform: uppercase;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(160, 204, 224, 0.4);
     }
 
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      animation: fadeIn 0.3s ease;
-    }
-
-    .modal.show {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .modal-content {
-      background: white;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 1200px;
-      height: 85vh;
-      max-height: 900px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      animation: slideUp 0.3s ease;
-    }
-
-    @keyframes slideUp {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    body.dark-mode .modal-content {
-      background: #2a2a2a;
-      color: #e0e0e0;
-    }
-
-    .modal-header {
-      padding: 20px;
-      border-bottom: 1.5px solid var(--border-light);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: white;
-    }
-
-    body.dark-mode .modal-header {
-      background: #2a2a2a;
-      border-color: #444;
-    }
-
-    .modal-title {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--primary-color);
-      margin: 0;
-    }
-
-    .modal-close {
-      background: none;
-      border: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: var(--text-light);
-      padding: 0;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-      min-height: auto;
-    }
-
-    .modal-close:hover {
-      background: var(--border-light);
-      border-radius: 6px;
-      transform: none;
-    }
-
-    body.dark-mode .modal-close:hover {
-      background: #444;
-    }
-
-    .modal-body {
-      flex: 1;
-      overflow: hidden;
-      background: white;
-    }
-
-    body.dark-mode .modal-body {
-      background: #2a2a2a;
-    }
-
-    .modal-iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 0 0 12px 12px;
-    }
-
-    .modal-loading {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      flex-direction: column;
-      color: var(--text-light);
-      background: white;
-    }
-
-    body.dark-mode .modal-loading {
-      background: #2a2a2a;
-    }
-
-    .modal-loading .spinner {
-      margin-bottom: 16px;
-    }
-
-    .modal-error {
-      text-align: center;
-      padding: 40px 20px;
-      color: var(--error-color);
-    }
+    /* ==================== レスポンシブ ==================== */
 
     @media (max-width: 768px) {
-      .modal-content {
-        width: 95%;
-        height: 90vh;
-      }
-      
-      .modal-header {
-        padding: 16px;
-      }
-
-      .modal-title {
-        font-size: 16px;
-      }
-
-      .container { padding: 24px 16px; }
+      .container { padding: 16px; }
       h1 { font-size: 32px; }
-      .grid { grid-template-columns: 1fr; }
-      header { flex-direction: column; }
-      .language-selector { justify-content: center; }
-
-      .juicy-ad-container,
-      .juicy-ad-container-large {
-        margin: 15px 0;
-        padding: 12px;
+      .grid { 
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
-    }
-
-    /* Video Ad Container Styling */
-    body.dark-mode div[style*="linear-gradient(135deg, #f5f5f5"] {
-      background: linear-gradient(135deg, #333 0%, #2a2a2a 100%) !important;
-    }
-
-    /* Banner Ad Container Styling */
-    body.dark-mode div[style*="linear-gradient(135deg, #fff9e6"] {
-      background: linear-gradient(135deg, #3a3a2a 0%, #2a2a1a 100%) !important;
-      border-color: #666633 !important;
+      .ad-premium-top,
+      .ad-content-between,
+      .ad-in-ranking,
+      .ad-footer {
+        margin: 20px auto;
+        padding: 16px;
+        min-height: 80px;
+      }
+      .nav-button {
+        padding: 12px 24px;
+        font-size: 14px;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- JuicyAds Header - Premium Placement 1 -->
-  <div class="juicy-ad-container-large">
+  
+  <!-- ★★★ 広告配置1: ヘッダー直下 (最重要・高単価エリア) ★★★ -->
+  <div class="ad-premium-top">
     <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
     <ins id="1109235" data-width="300" data-height="100"></ins>
     <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
@@ -825,182 +582,133 @@
 
   <div class="container">
     <header>
-      <div class="header-content">
-        <h1>TwiiterChan</h1>
-        <p class="subtitle">Real-time Download Ranking</p>
-      </div>
-      <div class="language-selector">
-        <button class="lang-btn active" data-lang="en">English</button>
-        <button class="lang-btn" data-lang="ja">日本語</button>
+      <h1>Twitter保存ランキング</h1>
+      <p class="subtitle">Gofileダウンロード数リアルタイム表示 | 人気動画・画像を即座にチェック</p>
+      
+      <!-- SEO最適化テキスト -->
+      <div class="seo-text">
+        Twitterで話題のGofileファイルを、ダウンロード数順・新着順でリアルタイムランキング表示。
+        人気の動画・画像を簡単に見つけられる日本最大級のTwitter保存ランキングサイトです。
+        トレンドの動画や画像をすぐに発見できます。
       </div>
     </header>
 
-    <!-- JuicyAds Placement 2 -->
-    <div class="juicy-ad-container">
+    <!-- ★★★ 広告配置2: ナビゲーション上 (高視認性) ★★★ -->
+    <div class="ad-content-between">
       <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
       <ins id="1109236" data-width="728" data-height="90"></ins>
       <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109236});</script>
     </div>
 
     <div class="nav-tabs">
-      <button class="nav-button active" data-mode="ranking">Ranking</button>
-      <button class="nav-button" data-mode="upload">Add URL</button>
-      <button class="nav-button" data-mode="sites">Sites</button>
-      <button class="nav-button" data-mode="settings">Settings</button>
-      <a href="policy.html" style="padding: 12px 28px; background: white; border: 1.5px solid var(--border-light); border-radius: 8px; text-decoration: none; color: var(--text-light); font-weight: 500; transition: var(--transition);" onmouseover="this.style.borderColor='var(--secondary-color)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='translateY(0)';">Policy</a>
-      <a href="contact.html" style="padding: 12px 28px; background: white; border: 1.5px solid var(--border-light); border-radius: 8px; text-decoration: none; color: var(--text-light); font-weight: 500; transition: var(--transition);" onmouseover="this.style.borderColor='var(--secondary-color)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='translateY(0)';">Contact</a>
+      <button class="nav-button active" data-mode="ranking">ランキング</button>
+      <button class="nav-button" data-mode="upload">URL投稿</button>
+      <button class="nav-button" data-mode="sites">関連サイト</button>
     </div>
 
-    <!-- JuicyAds Placement 3 -->
-    <div class="juicy-ad-container">
+    <!-- ★★★ 広告配置3: コンテンツ開始前 ★★★ -->
+    <div class="ad-content-between">
       <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
       <ins id="1109236" data-width="728" data-height="90"></ins>
       <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109236});</script>
     </div>
 
-    <!-- Ranking Mode -->
+    <!-- ランキングモード -->
     <div id="ranking-mode" class="mode-content">
       <div class="refresh-controls">
-        <button class="refresh-btn" id="refresh-btn">Refresh</button>
+        <button class="refresh-btn" id="refresh-btn">ランキング更新</button>
         <div class="refresh-interval">
-          <label>Auto Refresh:</label>
-          <select id="refresh-select">
-            <option value="0">Off</option>
-            <option value="30">30 seconds</option>
-            <option value="60" selected>1 minute</option>
-            <option value="300">5 minutes</option>
-            <option value="600">10 minutes</option>
+          <label>自動更新:</label>
+          <select id="refresh-select" style="padding: 10px 14px; border: 2px solid var(--border); border-radius: 8px; font-size: 14px;">
+            <option value="0">オフ</option>
+            <option value="30">30秒</option>
+            <option value="60" selected>1分</option>
+            <option value="300">5分</option>
           </select>
         </div>
       </div>
 
       <div class="sort-controls">
-        <button class="sort-btn active" data-sort="downloads">Most Downloads</button>
-        <button class="sort-btn" data-sort="newest">Newest First</button>
-        <button class="sort-btn" data-sort="popular">Trending Now</button>
+        <button class="sort-btn active" data-sort="downloads">ダウンロード数順</button>
+        <button class="sort-btn" data-sort="newest">新着順</button>
+        <button class="sort-btn" data-sort="popular">トレンド</button>
       </div>
 
-      <!-- JuicyAds Placement 4 -->
-      <div class="juicy-ad-container-large">
+      <!-- ★★★ 広告配置4: ランキング内1 (最高収益エリア) ★★★ -->
+      <div class="ad-in-ranking">
         <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
         <ins id="1109235" data-width="300" data-height="100"></ins>
         <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
       </div>
 
       <div class="status-bar">
-        <div>Total <span id="total-count">0</span> URLs</div>
-        <div id="last-update">Last Update: Waiting...</div>
+        <div>合計 <strong><span id="total-count">0</span></strong> 件のファイル</div>
+        <div id="last-update">最終更新: 待機中...</div>
       </div>
       
       <div class="grid" id="ranking-grid">
         <div class="loading">
           <div class="spinner"></div>
-          <p>Loading ranking...</p>
+          <p>ランキングを読み込んでいます...</p>
         </div>
       </div>
 
-<!-- JuicyAds v3.0 -->
-<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-<ins id="1109238" data-width="774" data-height="290"></ins>
-<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109238});</script>
-<!--JuicyAds END-->
+      <!-- ★★★ 広告配置5: ランキング内2 (スクロール後の高視認) ★★★ -->
+      <div class="ad-in-ranking">
+        <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+        <ins id="1109238" data-width="774" data-height="290"></ins>
+        <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109238});</script>
+      </div>
 
-      <button class="load-more-btn" id="load-more-btn">Load More</button>
+      <button class="load-more-btn" id="load-more-btn">もっと見る (次の12件)</button>
     </div>
     
-    <!-- Upload Mode -->
+    <!-- URL投稿モード -->
     <div id="upload-mode" class="mode-content hidden">
       <div class="card">
-        <h2>Direct Input</h2>
+        <h2>直接入力でURL追加</h2>
         <form id="uploadForm">
-          <textarea id="gofileUrls" placeholder="Example:&#10;https://gofile.io/d/bZqtMw&#10;https://video.twimg.com/amplify_video/2009272347623346177/vid/avc1/1080x1920/3ozr_l7l7lvSDipA.mp4" required></textarea>
-          <div class="button-group">
-            <button type="submit" id="uploadBtn">Add URLs</button>
-            <button type="reset">Clear</button>
+          <textarea id="gofileUrls" placeholder="例:&#10;https://gofile.io/d/bZqtMw&#10;https://video.twimg.com/amplify_video/1234567890/vid/avc1/1080x1920/video.mp4&#10;https://pbs.twimg.com/media/ABC123.jpg" required></textarea>
+          <div style="display: flex; gap: 10px;">
+            <button type="submit" id="uploadBtn">URLを追加</button>
+            <button type="reset" style="background: #ccc;">クリア</button>
           </div>
         </form>
         <div id="uploadStatus" class="status-bar" style="display: none;"></div>
-        <div id="uploadStats" class="stats-grid" style="display: none;">
-          <div class="stat-card">
-            <div class="stat-number" id="totalUpload">0</div>
-            <div class="stat-label">Input</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" id="addedUpload">0</div>
-            <div class="stat-label">Added</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" id="duplicateUpload">0</div>
-            <div class="stat-label">Duplicates</div>
-          </div>
-        </div>
       </div>
 
-      <!-- JuicyAds Placement 6 -->
-      <div class="juicy-ad-container">
+      <!-- ★★★ 広告配置6: フォーム間 ★★★ -->
+      <div class="ad-content-between">
         <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
         <ins id="1109235" data-width="300" data-height="100"></ins>
         <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
       </div>
 
       <div class="card">
-        <h2>Web Scraping</h2>
+        <h2>Webスクレイピング</h2>
         <form id="scrapeForm">
-          <input type="url" id="websiteUrl" placeholder="Example: https://example-video-site.com/" required>
-          <button type="submit" id="scrapeBtn">Start Scraping</button>
+          <input type="url" id="websiteUrl" placeholder="例: https://example-site.com/" required>
+          <button type="submit" id="scrapeBtn">スクレイピング開始</button>
         </form>
         <div id="scrapeStatus" class="status-bar" style="display: none;"></div>
-        <div id="scrapeStats" class="stats-grid" style="display: none;">
-          <div class="stat-card">
-            <div class="stat-number" id="foundScrape">0</div>
-            <div class="stat-label">Found</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" id="addedScrape">0</div>
-            <div class="stat-label">Added</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" id="duplicateScrape">0</div>
-            <div class="stat-label">Duplicates</div>
-          </div>
-        </div>
       </div>
-
-      <!-- JuicyAds Placement 7 -->
-      <div class="juicy-ad-container">
-        <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-        <ins id="1109236" data-width="728" data-height="90"></ins>
-        <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109236});</script>
-      </div>
-
     </div>
 
-    <!-- Sites Mode -->
+    <!-- 関連サイトモード -->
     <div id="sites-mode" class="mode-content hidden">
       <div class="grid" id="sites-grid"></div>
 
-      <!-- JuicyAds Placement 8 -->
-      <div class="juicy-ad-container-large">
+      <!-- ★★★ 広告配置7: サイト一覧後 ★★★ -->
+      <div class="ad-content-between">
         <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
         <ins id="1109235" data-width="300" data-height="100"></ins>
         <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
-      </div>
-    </div>
-    
-    <!-- Settings Mode -->
-    <div id="settings-mode" class="mode-content hidden">
-      <div class="card">
-        <h2>Settings</h2>
-        <label>
-          <input type="checkbox" id="dark-mode">
-          Dark Mode
-        </label>
       </div>
     </div>
   </div>
 
-  <!-- JuicyAds Footer - Premium Placement 9 -->
-  <div class="juicy-ad-container-large">
+  <!-- ★★★ 広告配置8: フッター (離脱防止) ★★★ -->
+  <div class="ad-footer">
     <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
     <ins id="1109236" data-width="728" data-height="90"></ins>
     <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109236});</script>
@@ -1008,161 +716,7 @@
   
   <div id="notification" class="notification"></div>
 
-  <!-- Preview Modal -->
-  <div id="previewModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title" id="modalTitle">Site Preview</h2>
-        <button class="modal-close" onclick="closeModal()">&times;</button>
-      </div>
-      <div class="modal-body" id="modalBody">
-        <div class="modal-loading">
-          <div class="spinner"></div>
-          <p>Loading...</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script>
-    // Translations Data - English and Japanese Support
-    const translations = {
-      en: {
-        title: 'TwiiterChan',
-        subtitle: 'Real-time Download Ranking',
-        ranking: 'Ranking',
-        upload: 'Add URL',
-        sites: 'Sites',
-        settings: 'Settings',
-        refresh: 'Refresh',
-        autoRefresh: 'Auto Refresh:',
-        off: 'Off',
-        downloads: 'Most Downloads',
-        newest: 'Newest First',
-        popular: 'Trending Now',
-        totalUrls: 'Total',
-        individualUrl: 'URLs',
-        lastUpdate: 'Last Update:',
-        loadMore: 'Load More',
-        directInput: 'Direct Input',
-        scraping: 'Web Scraping',
-        placeholder: 'Example:\nhttps://gofile.io/d/bZqtMw\nhttps://gofile.io/d/AfCq6H',
-        add: 'Add URLs',
-        clear: 'Clear',
-        input: 'Input',
-        added: 'Added',
-        duplicate: 'Duplicates',
-        websitePlaceholder: 'Example: https://example-video-site.com/',
-        startScraping: 'Start Scraping',
-        found: 'Found',
-        darkMode: 'Dark Mode',
-        copy: 'Copy ID',
-        visit: 'Visit',
-        loading: 'Loading ranking...',
-        copied: 'ID copied!',
-        updated: 'Ranking updated successfully',
-        addUrlMessage: 'Add URLs to display ranking',
-        noInputError: 'Please enter valid URLs',
-        saved: 'URLs saved successfully',
-        addedMessage: 'URLs added',
-        duplicateMessage: 'duplicates excluded',
-        scrapingProgress: 'Scraping in progress...',
-        notFound: 'No files found on this website',
-        scrapingComplete: 'Scraping completed successfully',
-        corsError: 'CORS Error: Cannot scrape this site. Please enter URLs directly.',
-        error: 'Error:',
-        nsnn: 'NSNN Files',
-        nsnnDesc: 'Latest trending files',
-        gofileOfficial: 'Gofile.io',
-        gofileOfficialDesc: 'Official file hosting site',
-        twidouga: 'Twidouga.net',
-        twidougaDesc: 'Trending video files'
-      },
-      ja: {
-        title: 'Twitterちゃん。',
-        subtitle: 'リアルタイムランキング表示',
-        ranking: 'ランキング',
-        upload: 'URL 投稿',
-        sites: 'サイト一覧',
-        settings: '設定',
-        refresh: '更新',
-        autoRefresh: '自動更新:',
-        off: 'オフ',
-        downloads: 'ダウンロード数',
-        newest: '新規順',
-        popular: 'リアルタイム人気',
-        totalUrls: '合計',
-        individualUrl: '個の URL',
-        lastUpdate: '最終更新:',
-        loadMore: '続きを読み込む',
-        directInput: '直接入力',
-        scraping: 'スクレイピング',
-        placeholder: '例:\nhttps://gofile.io/d/bZqtMw\nhttps://gofile.io/d/AfCq6H',
-        add: 'URL を追加',
-        clear: 'クリア',
-        input: '入力',
-        added: '追加',
-        duplicate: '重複',
-        websitePlaceholder: '例: https://orevideo.pythonanywhere.com/',
-        startScraping: 'スクレイピング開始',
-        found: '見つかった',
-        darkMode: 'ダークモード',
-        copy: 'コピー',
-        visit: '訪問',
-        loading: 'ランキングを読み込んでいます...',
-        copied: 'IDをコピーしました',
-        updated: 'ランキングを更新しました',
-        addUrlMessage: 'URL を追加してランキングを表示してください',
-        noInputError: 'Gofile URL を入力してください',
-        saved: 'URL を保存しました',
-        addedMessage: '個の URL を追加しました',
-        duplicateMessage: '個は重複',
-        scrapingProgress: 'スクレイピング中...',
-        notFound: 'このウェブサイトには Gofile URL が見つかりません',
-        scrapingComplete: 'スクレイピングが完了しました',
-        corsError: 'CORS エラー: このサイトはスクレイピングできません。直接 URL を入力してください。',
-        error: 'エラー:',
-        nsnn: 'NSNN Gofile',
-        nsnnDesc: 'Twitter最新ファイル一覧',
-        gofileOfficial: 'Gofile.io',
-        gofileOfficialDesc: 'Twitterリアルタイムファイル一覧',
-        twidouga: 'Twidouga.net',
-        twidougaDesc: 'Twitterランキング一覧'
-      }
-    };
-
-    let currentLanguage = 'en';
-
-    function t(key) {
-      return translations[currentLanguage]?.[key] || translations.en[key] || key;
-    }
-
-    function updateLanguage(lang) {
-      currentLanguage = lang;
-      document.querySelector('[data-mode="ranking"]').textContent = t('ranking');
-      document.querySelector('[data-mode="upload"]').textContent = t('upload');
-      document.querySelector('[data-mode="sites"]').textContent = t('sites');
-      document.querySelector('[data-mode="settings"]').textContent = t('settings');
-      document.querySelector('h1').textContent = t('title');
-      document.querySelector('.subtitle').textContent = t('subtitle');
-      document.getElementById('refresh-btn').textContent = t('refresh');
-      document.querySelector('.refresh-interval label').textContent = t('autoRefresh');
-      document.querySelector('[data-sort="downloads"]').textContent = t('downloads');
-      document.querySelector('[data-sort="newest"]').textContent = t('newest');
-      document.querySelector('[data-sort="popular"]').textContent = t('popular');
-      document.getElementById('load-more-btn').textContent = t('loadMore');
-      const uploadCards = document.querySelectorAll('#upload-mode .card');
-      uploadCards[0].querySelector('h2').textContent = t('directInput');
-      document.querySelector('#uploadForm button[type="submit"]').textContent = t('add');
-      document.querySelector('#uploadForm button[type="reset"]').textContent = t('clear');
-      uploadCards[1].querySelector('h2').textContent = t('scraping');
-      document.getElementById('scrapeBtn').textContent = t('startScraping');
-      document.querySelector('#settings-mode .card h2').textContent = t('settings');
-      document.querySelector('label[for="dark-mode"]').textContent = t('darkMode');
-      renderSites();
-      renderRanking();
-    }
-
     const state = {
       currentMode: 'ranking',
       currentSort: 'downloads',
@@ -1174,115 +728,33 @@
     };
     
     const sites = [
-      { id: 0, name: () => t('nsnn'), url: 'https://nsnn.net/gofile.io?sort=new&page=1', description: () => t('nsnnDesc'), image: 'https://nsnn.net/favicon.ico' },
-      { id: 1, name: () => 'twivideo.net', url: 'https://twivideo.net/?ranking', description: () => t('gofileOfficialDesc'), image: 'https://twivideo.net/favicon.ico' },
-      { id: 2, name: () => t('twidouga'), url: 'https://www.twidouga.net', description: () => t('twidougaDesc'), image: 'https://www.twidouga.net/favicon.ico' },
-      { id: 3, name: () => 'TWIIGLE', url: 'https://twiigle.com/', description: () => t('twidougaDesc'), image: 'https://twiigle.com/favicon.ico' },
-      { id: 4, name: () => 'monsnode', url: 'https://monsnode.com', description: () => t('twidougaDesc'), image: 'https://monsnode.com/favicon.ico' },
-      { id: 5, name: () => 'twicoco', url: 'https://twicoco.com/?type=history', description: () => t('twidougaDesc'), image: 'https://twicoco.com/favicon.ico' },
+      { name: 'NSNN Gofile', url: 'https://nsnn.net/gofile.io?sort=new&page=1', description: 'Twitter最新ファイル一覧' },
+      { name: 'twivideo.net', url: 'https://twivideo.net/?ranking', description: 'Twitterリアルタイムファイル一覧' },
+      { name: 'Twidouga', url: 'https://www.twidouga.net', description: 'Twitterランキング一覧' },
+      { name: 'TWIIGLE', url: 'https://twiigle.com/', description: 'Twitter検索エンジン' },
+      { name: 'monsnode', url: 'https://monsnode.com', description: 'Twitter動画保存' },
+      { name: 'twicoco', url: 'https://twicoco.com/?type=history', description: 'Twitter履歴検索' }
     ];
     
-    // Modal Functionality - CORS Compatible
-    function openModal(url, title) {
-      const modal = document.getElementById('previewModal');
-      const modalBody = document.getElementById('modalBody');
-      const modalTitle = document.getElementById('modalTitle');
-
-      modalTitle.textContent = title;
-
-      // Show loading state
-      modalBody.innerHTML = `
-        <div class="modal-loading">
-          <div class="spinner"></div>
-          <p>Loading...</p>
-        </div>
-      `;
-
-      // Create iframe (CORS compatible)
-      const iframe = document.createElement('iframe');
-      iframe.className = 'modal-iframe';
-      iframe.src = url;
-      iframe.sandbox.add('allow-same-origin', 'allow-scripts', 'allow-popups', 'allow-forms', 'allow-top-navigation');
-      
-      iframe.onload = () => {
-        modalBody.innerHTML = '';
-        modalBody.appendChild(iframe);
-      };
-
-      iframe.onerror = () => {
-        modalBody.innerHTML = `
-          <div class="modal-error">
-            <p>Sorry, this site could not be loaded.</p>
-            <p style="margin-top: 10px; font-size: 12px;">
-              <a href="${url}" target="_blank" style="color: var(--primary-color); text-decoration: underline;">
-                Open in new tab →
-              </a>
-            </p>
-          </div>
-        `;
-      };
-
-      // Timeout after 5 seconds if still loading
-      setTimeout(() => {
-        if (modalBody.querySelector('.modal-loading')) {
-          iframe.onerror();
-        }
-      }, 5000);
-
-      modal.classList.add('show');
-    }
-
-    function closeModal() {
-      const modal = document.getElementById('previewModal');
-      const modalBody = document.getElementById('modalBody');
-      modal.classList.remove('show');
-      modalBody.innerHTML = `
-        <div class="modal-loading">
-          <div class="spinner"></div>
-          <p>Loading...</p>
-        </div>
-      `;
-    }
-
-    document.getElementById('previewModal').addEventListener('click', (e) => {
-      if (e.target.id === 'previewModal') closeModal();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
-    });
-    
-    // Fetch ranking data from API
     async function fetchRanking() {
       try {
         state.isLoading = true;
-        
         const response = await fetch('/.netlify/functions/get-urls-from-github');
+        if (!response.ok) throw new Error(`HTTPエラー: ${response.status}`);
         
-        if (!response.ok) {
-          throw new Error(`HTTP Error: ${response.status}`);
-        }
-        
-        const text = await response.text();
-        const result = JSON.parse(text);
-        
+        const result = JSON.parse(await response.text());
         if (result.status === 'ok' && result.data) {
           state.ranking = result.data;
           state.currentPage = 0;
           renderRanking();
           updateLastRefresh();
-          
-          if (result.total > 0) {
-            showNotification(t('updated'), 'success');
-          } else {
-            showNotification(t('addUrlMessage'), 'info');
-          }
+          showNotification(result.total > 0 ? 'ランキングを更新しました' : 'URLを追加してランキングを表示してください', 'success');
         } else {
-          throw new Error(result.error || 'Unknown error from API');
+          throw new Error(result.error || '不明なエラー');
         }
       } catch (error) {
-        console.error('[fetchRanking] Error:', error);
-        showNotification(`${t('error')} ${error.message}`);
+        console.error('エラー:', error);
+        showNotification(`エラー: ${error.message}`);
       } finally {
         state.isLoading = false;
       }
@@ -1300,7 +772,7 @@
       const grid = document.getElementById('ranking-grid');
       const data = getCurrentRankingData();
       if (!data || data.length === 0) {
-        grid.innerHTML = `<div class="loading"><div class="spinner"></div><p>${t('loading')}</p></div>`;
+        grid.innerHTML = '<div class="loading"><div class="spinner"></div><p>ランキングを読み込んでいます...</p></div>';
         return;
       }
       const start = state.currentPage * state.itemsPerPage;
@@ -1314,8 +786,8 @@
             <div class="video-title">#${start + index + 1} ${item.name}</div>
             <div class="video-meta">ID: ${item.id}</div>
             <div class="video-actions">
-              <button class="video-btn" onclick="copyId('${item.id}')">${t('copy')}</button>
-              <button class="video-btn" onclick="openGofile('${item.id}')">${t('visit')}</button>
+              <button class="video-btn" onclick="copyId('${item.id}')">コピー</button>
+              <button class="video-btn" onclick="openGofile('${item.id}')">開く</button>
             </div>
           </div>
         </div>
@@ -1326,11 +798,15 @@
     function renderSites() {
       const grid = document.getElementById('sites-grid');
       grid.innerHTML = sites.map(site => `
-        <div class="site-card" onclick="openModal('${site.url}', '${site.name()}')">
-          <div class="site-thumbnail"></div>
-          <h3 class="site-name">${site.name()}</h3>
-          <p class="site-description">${site.description()}</p>
-          <button class="site-link">${t('visit')} →</button>
+        <div class="video-card" style="cursor: pointer;" onclick="window.open('${site.url}', '_blank')">
+          <div class="video-thumbnail"></div>
+          <div class="video-info">
+            <div class="video-title">${site.name}</div>
+            <div class="video-meta">${site.description}</div>
+            <div class="video-actions">
+              <button class="video-btn" style="width: 100%;">サイトへ移動</button>
+            </div>
+          </div>
         </div>
       `).join('');
     }
@@ -1371,20 +847,20 @@
     }
     
     function updateLastRefresh() {
-      const now = new Date().toLocaleTimeString();
-      document.getElementById('last-update').textContent = `${t('lastUpdate')} ${now}`;
+      const now = new Date().toLocaleTimeString('ja-JP');
+      document.getElementById('last-update').textContent = `最終更新: ${now}`;
     }
     
     function copyId(id) {
       navigator.clipboard.writeText(id);
-      showNotification(t('copied'), 'success');
+      showNotification('IDをコピーしました', 'success');
     }
     
     function openGofile(id) {
       window.open(`https://gofile.io/d/${id}`, '_blank');
     }
     
-    // Event Listeners
+    // イベントリスナー
     document.querySelectorAll('.nav-button').forEach(btn => {
       btn.addEventListener('click', () => switchMode(btn.dataset.mode));
     });
@@ -1392,16 +868,9 @@
     document.querySelectorAll('.sort-btn').forEach(btn => {
       btn.addEventListener('click', () => setSortMode(btn.dataset.sort));
     });
-
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        updateLanguage(btn.dataset.lang);
-      });
-    });
     
     document.getElementById('refresh-btn').addEventListener('click', fetchRanking);
+    
     document.getElementById('refresh-select').addEventListener('change', () => {
       if (state.autoRefreshTimer) clearInterval(state.autoRefreshTimer);
       const interval = parseInt(document.getElementById('refresh-select').value);
@@ -1415,17 +884,13 @@
       renderRanking();
     });
     
-    // Upload form handler
+    // URL投稿フォーム
     document.getElementById('uploadForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const urlsText = document.getElementById('gofileUrls').value;
       const newUrls = urlsText.split('\n')
         .map(u => u.trim())
-        .filter(u => {
-          return u.startsWith('https://gofile.io/d/') || 
-                 u.startsWith('https://video.twimg.com/') ||
-                 u.startsWith('https://pbs.twimg.com/');
-        })
+        .filter(u => u.startsWith('https://gofile.io/d/') || u.startsWith('https://video.twimg.com/') || u.startsWith('https://pbs.twimg.com/'))
         .map(url => {
           let id, name;
           if (url.startsWith('https://gofile.io/d/')) {
@@ -1433,12 +898,11 @@
             name = `Gofile - ${id}`;
           } else if (url.startsWith('https://video.twimg.com/')) {
             id = url.split('/').pop();
-            name = `Twitter Video - ${id}`;
-          } else if (url.startsWith('https://pbs.twimg.com/')) {
+            name = `Twitter動画 - ${id}`;
+          } else {
             id = url.split('/').pop();
-            name = `Twitter Image - ${id}`;
+            name = `Twitter画像 - ${id}`;
           }
-          
           return {
             id: id,
             url: url,
@@ -1450,13 +914,12 @@
         });
 
       if (newUrls.length === 0) {
-        showStatus('uploadStatus', t('noInputError'), 'error');
-        document.getElementById('uploadStatus').style.display = 'flex';
+        showStatus('uploadStatus', '有効なURLを入力してください', 'error');
         return;
       }
 
       document.getElementById('uploadBtn').disabled = true;
-      document.getElementById('uploadBtn').textContent = '⏳ ' + t('scrapingProgress');
+      document.getElementById('uploadBtn').textContent = '処理中...';
 
       try {
         const response = await fetch('/.netlify/functions/save-urls-to-github', {
@@ -1468,50 +931,39 @@
         const result = await response.json();
 
         if (result.status === 'success') {
-          const message = `${result.added} ${t('addedMessage')}${result.duplicates > 0 ? ` (${result.duplicates} ${t('duplicateMessage')})` : ''}`;
+          const message = `${result.added}件のURLを追加しました${result.duplicates > 0 ? ` (${result.duplicates}件は重複)` : ''}`;
           showStatus('uploadStatus', message, 'success');
-          document.getElementById('uploadStatus').style.display = 'flex';
-          document.getElementById('uploadStats').style.display = 'grid';
-          document.getElementById('totalUpload').textContent = newUrls.length;
-          document.getElementById('addedUpload').textContent = result.added;
-          document.getElementById('duplicateUpload').textContent = result.duplicates;
           document.getElementById('gofileUrls').value = '';
-          showNotification(t('saved'), 'success');
+          showNotification('URLを保存しました', 'success');
           setTimeout(() => fetchRanking(), 500);
         } else {
-          throw new Error(result.error || 'Unknown error');
+          throw new Error(result.error || '不明なエラー');
         }
       } catch (error) {
-        showStatus('uploadStatus', `${t('error')} ${error.message}`, 'error');
-        document.getElementById('uploadStatus').style.display = 'flex';
-        showNotification(`${t('error')} ${error.message}`);
+        showStatus('uploadStatus', `エラー: ${error.message}`, 'error');
+        showNotification(`エラー: ${error.message}`);
       } finally {
         document.getElementById('uploadBtn').disabled = false;
-        document.getElementById('uploadBtn').textContent = t('add');
+        document.getElementById('uploadBtn').textContent = 'URLを追加';
       }
     });
     
-    // Web scraping form handler
+    // スクレイピングフォーム
     document.getElementById('scrapeForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const websiteUrl = document.getElementById('websiteUrl').value;
       document.getElementById('scrapeBtn').disabled = true;
-      document.getElementById('scrapeBtn').textContent = '🔍 ' + t('scrapingProgress');
+      document.getElementById('scrapeBtn').textContent = 'スクレイピング中...';
       
       try {
-        const response = await fetch(websiteUrl, {
-          headers: {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-          }
-        });
-        
-        if (!response.ok) throw new Error(`${t('error')} ${response.status}`);
+        const response = await fetch(websiteUrl);
+        if (!response.ok) throw new Error(`HTTPエラー: ${response.status}`);
         const html = await response.text();
         const gofileRegex = /https:\/\/gofile\.io\/d\/[a-zA-Z0-9]+/g;
         const matches = html.match(gofileRegex) || [];
         const uniqueUrls = [...new Set(matches)];
         
-        if (uniqueUrls.length === 0) throw new Error(t('notFound'));
+        if (uniqueUrls.length === 0) throw new Error('Gofile URLが見つかりませんでした');
         
         const newUrls = uniqueUrls.map(url => ({
           id: url.split('/d/')[1],
@@ -1532,58 +984,35 @@
         const result = await saveResponse.json();
         
         if (result.status === 'success') {
-          const message = `${result.added} ${t('addedMessage')} (${uniqueUrls.length} ${t('found')}, ${result.duplicates} ${t('duplicateMessage')})`;
+          const message = `${result.added}件のURLを追加しました (${uniqueUrls.length}件見つかり、${result.duplicates}件は重複)`;
           showStatus('scrapeStatus', message, 'success');
-          document.getElementById('scrapeStatus').style.display = 'flex';
-          document.getElementById('scrapeStats').style.display = 'grid';
-          document.getElementById('foundScrape').textContent = uniqueUrls.length;
-          document.getElementById('addedScrape').textContent = result.added;
-          document.getElementById('duplicateScrape').textContent = result.duplicates;
           document.getElementById('websiteUrl').value = '';
-          showNotification(t('scrapingComplete'), 'success');
+          showNotification('スクレイピング完了', 'success');
           setTimeout(() => fetchRanking(), 500);
         } else {
-          throw new Error(result.error || 'Unknown error');
+          throw new Error(result.error || '不明なエラー');
         }
       } catch (error) {
         let errorMessage = error.message;
         if (error.message.includes('Failed to fetch') || error.message.includes('CORS')) {
-          errorMessage = t('corsError');
+          errorMessage = 'CORSエラー: このサイトはスクレイピングできません。直接URLを入力してください。';
         }
-        showStatus('scrapeStatus', `${t('error')} ${errorMessage}`, 'error');
-        document.getElementById('scrapeStatus').style.display = 'flex';
-        showNotification(`${t('error')} ${errorMessage}`);
+        showStatus('scrapeStatus', `エラー: ${errorMessage}`, 'error');
+        showNotification(`エラー: ${errorMessage}`);
       } finally {
         document.getElementById('scrapeBtn').disabled = false;
-        document.getElementById('scrapeBtn').textContent = '🔍 ' + t('startScraping');
+        document.getElementById('scrapeBtn').textContent = 'スクレイピング開始';
       }
     });
     
-    // Dark mode toggle
-    document.getElementById('dark-mode').addEventListener('change', (e) => {
-      document.body.classList.toggle('dark-mode', e.checked);
-      localStorage.setItem('darkMode', e.checked);
-    });
-    
-    // Initialize on page load
+    // 初期化
     window.addEventListener('DOMContentLoaded', () => {
-      const darkMode = localStorage.getItem('darkMode') === 'true';
-      if (darkMode) {
-        document.body.classList.add('dark-mode');
-        document.getElementById('dark-mode').checked = true;
-      }
       fetchRanking();
       document.getElementById('refresh-select').dispatchEvent(new Event('change'));
     });
     
-    // Make functions globally accessible
     window.copyId = copyId;
     window.openGofile = openGofile;
-    window.openModal = openModal;
-    window.closeModal = closeModal;
-
-
-
   </script>
 </body>
 </html>
