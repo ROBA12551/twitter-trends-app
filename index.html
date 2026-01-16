@@ -215,27 +215,27 @@
       font-size: 14px;
       color: #999;
       line-height: 1.8;
-
     }
     
     /* ==================== AD CONTAINERS ==================== */
     .ad-container {
       min-height: 120px;
-      margin: 30px 0;
+      margin: 30px auto;
       border-radius: var(--radius);
       overflow: hidden;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #fff9f0 0%, #fff5f8 100%);
-      border: 2px solid #ffe8ee;
+      background: transparent;
+      border: none;
+      width: 100%;
     }
     
     .ad-placeholder {
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, #fff9f0 0%, #fff5f8 50%, #fff9f0 100%);
+      background: transparent;
       background-size: 200% 100%;
       animation: loading 1.5s infinite;
     }
@@ -246,32 +246,32 @@
     }
     
     .ad-premium-top {
-      box-shadow: 0 4px 12px rgba(255, 127, 156, 0.1);
+      box-shadow: none;
     }
     
     .ad-content-between {
-      background: linear-gradient(135deg, #fff 0%, #fff9fc 100%);
-      border: 2px solid #ffe8f0;
-      box-shadow: 0 3px 10px rgba(255, 127, 156, 0.08);
+      background: transparent;
+      border: none;
+      box-shadow: none;
     }
     
     .ad-in-ranking {
-      background: linear-gradient(135deg, #fff5f0 0%, #fff0f5 100%);
-      border: 3px solid #ffd9e8;
-      box-shadow: 0 6px 16px rgba(255, 107, 143, 0.12);
+      background: transparent;
+      border: none;
+      box-shadow: none;
       position: relative;
     }
     
     .ad-adult-premium {
-      background: var(--adult-gradient) !important;
+      background: transparent !important;
       color: white;
-      border: 3px solid #ffffff !important;
-      box-shadow: 0 8px 32px rgba(255, 42, 109, 0.3) !important;
+      border: none !important;
+      box-shadow: none !important;
     }
     
     .ad-footer {
-      background: linear-gradient(135deg, #fff8f0 0%, #fff0f8 100%);
-      border: 2px solid #ffe0e8;
+      background: transparent;
+      border: none;
     }
     
     .ad-badge {
@@ -583,8 +583,8 @@
     }
     
     .video-card.ad-slot {
-      background: linear-gradient(135deg, #fff5f0 0%, #fff0f5 100%);
-      border: 3px solid #ffd9e8;
+      background: transparent;
+      border: none;
       justify-content: center;
       align-items: center;
       padding: 30px;
@@ -884,7 +884,6 @@
       font-size: 14px;
       z-index: 1000;
       box-shadow: var(--shadow-xl);
-
       max-width: 400px;
       font-weight: 600;
     }
@@ -980,7 +979,7 @@
       }
       
       .ad-container {
-        margin: 20px 0;
+        margin: 20px auto;
         min-height: 100px;
       }
       
@@ -1039,7 +1038,7 @@
   <!-- スキップリンク -->
   <a href="#main-content" class="skip-to-content">メインコンテンツへスキップ</a>
 
-  <!-- ヘッダー広告1（最重要ポジション） -->
+  <!-- ヘッダー広告1（修正済み：シャドウなし・枠線なし） -->
   <div class="ad-container ad-premium-top ad-adult-premium" id="ad-header-1" aria-label="スポンサー広告">
     <div class="ad-placeholder"></div>
     <script defer data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
@@ -1103,7 +1102,7 @@
             </div>
           </div>
 
-          <!-- 広告2：ソート前 -->
+          <!-- 広告2：ソート前（修正済み） -->
           <div class="ad-container ad-content-between ad-adult-premium" id="ad-sorting-1" aria-label="おすすめ広告">
             <div class="ad-placeholder"></div>
             <script>
@@ -1156,7 +1155,7 @@
              aria-label="特別なおすすめコンテンツ（新しいウィンドウで開きます）">
             <span class="smartlink-badge" aria-hidden="true">人気急上昇</span>
             <span class="smartlink-text">今すぐチェック！</span>
-            <span class="smartlink-arrow" aria-hidden="true"></span>
+            <span class="smartlink-arrow" aria-hidden="true">→</span>
           </a>
         </div>
 
@@ -1168,7 +1167,7 @@
           </div>
         </div>
 
-        <!-- 広告3：ランキング中間 -->
+        <!-- 広告3：ランキング中間（修正済み） -->
         <div class="ad-container ad-in-ranking ad-adult-premium" id="ad-ranking-mid" aria-label="ランキング広告">
           <div class="ad-placeholder"></div>
           <div class="ad-badge" aria-hidden="true">スポンサー広告</div>
@@ -1187,7 +1186,7 @@
       <section id="upload-mode" class="mode-content hidden" aria-labelledby="upload-heading">
         <h2 id="upload-heading" class="visually-hidden">URL投稿</h2>
         
-        <!-- 広告4：フォーム前 -->
+        <!-- 広告4：フォーム前（修正済み） -->
         <div class="ad-container ad-content-between" id="ad-upload-top">
           <div class="ad-placeholder"></div>
           <script>
@@ -1217,7 +1216,7 @@
                       rows="6"></textarea>
             <div class="form-actions">
               <button type="submit" id="uploadBtn" class="btn-primary">
-                <span class="btn-icon" aria-hidden="true"></span>
+                <span class="btn-icon" aria-hidden="true">📤</span>
                 <span class="btn-text">URLを追加</span>
               </button>
               <button type="reset" class="btn-secondary">
@@ -1228,7 +1227,7 @@
           <div id="uploadStatus" class="status-bar" role="alert" aria-live="polite" hidden></div>
         </div>
 
-        <!-- 広告5：フォーム間 -->
+        <!-- 広告5：フォーム間（修正済み） -->
         <div class="ad-container ad-content-between" id="ad-upload-mid">
           <div class="ad-placeholder"></div>
           <script defer data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
@@ -1260,7 +1259,7 @@
       <section id="sites-mode" class="mode-content hidden" aria-labelledby="sites-heading">
         <h2 id="sites-heading" class="visually-hidden">関連サイト</h2>
         
-        <!-- 広告6：サイトリスト前 -->
+        <!-- 広告6：サイトリスト前（修正済み） -->
         <div class="ad-container ad-premium-top" id="ad-sites-top">
           <div class="ad-placeholder"></div>
           <script defer type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
@@ -1271,7 +1270,7 @@
       </section>
     </main>
 
-    <!-- 広告7：フッター前 -->
+    <!-- 広告7：フッター前（修正済み） -->
     <div class="ad-container ad-footer ad-adult-premium" id="ad-footer-top" aria-label="おすすめ広告">
       <div class="ad-placeholder"></div>
       <script>
@@ -1396,16 +1395,9 @@
        * アプリケーション初期化
        */
       function initApplication() {
-        // イベントリスナーの設定
         setupEventListeners();
-        
-        // 初期データのロード
         loadInitialData();
-        
-        // 自動更新の設定
         setupAutoRefresh();
-        
-        // アクセシビリティ設定
         setupAccessibility();
       }
       
@@ -1450,26 +1442,17 @@
        * イベントリスナーの設定
        */
       function setupEventListeners() {
-        // モード切り替え
         document.querySelectorAll('.nav-button[data-mode]').forEach(btn => {
           btn.addEventListener('click', () => switchMode(btn.dataset.mode));
         });
         
-        // ソート切り替え
         document.querySelectorAll('.sort-btn').forEach(btn => {
           btn.addEventListener('click', () => setSortMode(btn.dataset.sort));
         });
         
-        // リフレッシュ
         document.getElementById('refresh-btn').addEventListener('click', fetchRanking);
-        
-        // 自動更新設定
         document.getElementById('refresh-select').addEventListener('change', handleAutoRefreshChange);
-        
-        // もっと見る
         document.getElementById('load-more-btn').addEventListener('click', loadMoreItems);
-        
-        // フォーム送信
         document.getElementById('uploadForm').addEventListener('submit', handleUrlUpload);
         document.getElementById('scrapeForm').addEventListener('submit', handleWebScraping);
       }
@@ -1481,13 +1464,8 @@
         try {
           showLoadingState();
           await fetchRanking();
-          
-          // 構造化データの更新
           updateStructuredData();
-          
-          // 関連サイトのレンダリング
           renderRelatedSites();
-          
         } catch (error) {
           console.error('初期化エラー:', error);
           showNotification('データの読み込みに失敗しました', 'error');
@@ -1504,10 +1482,8 @@
         showLoadingState();
         
         try {
-          // モックデータ（実際の実装ではAPIから取得）
           await new Promise(resolve => setTimeout(resolve, 500));
           
-          // モックデータ生成
           const mockData = generateMockData(24);
           AppState.ranking = {
             byNewest: [...mockData].sort((a, b) => new Date(b.added_at) - new Date(a.added_at)),
@@ -1538,9 +1514,7 @@
        */
       function generateMockData(count) {
         const data = [];
-        const titles = [
-'gofile'
-        ];
+        const titles = ['gofile'];
         
         for (let i = 1; i <= count; i++) {
           const title = titles[Math.floor(Math.random() * titles.length)];
@@ -1596,7 +1570,6 @@
         const end = start + AppState.itemsPerPage;
         const items = data.slice(start, end);
         
-        // ランキング表示
         let html = '';
         
         items.forEach((item, index) => {
@@ -1639,21 +1612,19 @@
             </article>
           `;
           
-          // 広告挿入（4番目）
           if (index === 3) {
-html += `
-  <div class="video-card ad-slot" role="complementary" aria-label="スポンサー広告">
-    <div class="ad-placeholder"></div>
-    <script defer data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"><\/script>
-    <div id="container-ad-inline-1"></div>
-  </div>
-`;
+            html += `
+              <div class="video-card ad-slot" role="complementary" aria-label="スポンサー広告">
+                <div class="ad-placeholder"></div>
+                <script defer data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"><\/script>
+                <div id="container-ad-inline-1"></div>
+              </div>
+            `;
           }
         });
         
         grid.innerHTML = html;
         
-        // もっと見るボタンの表示制御
         const loadMoreBtn = document.getElementById('load-more-btn');
         if (loadMoreBtn) {
           loadMoreBtn.style.display = end < data.length ? 'block' : 'none';
@@ -1669,7 +1640,7 @@ html += `
         
         let html = '';
         
-        RelatedSites.forEach((site, index) => {
+        RelatedSites.forEach((site) => {
           html += `
             <div class="video-card" role="listitem">
               <div class="video-thumbnail" onclick="window.open('${site.url}', '_blank', 'noopener,noreferrer')"
@@ -1752,7 +1723,6 @@ html += `
           }))
         };
         
-        // 既存の構造化データを更新
         const existingScript = document.getElementById('ranking-structured-data');
         if (existingScript) {
           existingScript.textContent = JSON.stringify(itemList);
@@ -1765,19 +1735,16 @@ html += `
       function switchMode(mode) {
         if (AppState.currentMode === mode) return;
         
-        // 現在のモードを非表示
         document.querySelectorAll('.mode-content').forEach(content => {
           content.classList.add('hidden');
         });
         
-        // ナビゲーションの状態を更新
         document.querySelectorAll('.nav-button').forEach(btn => {
           const isActive = btn.dataset.mode === mode;
           btn.classList.toggle('active', isActive);
           btn.setAttribute('aria-current', isActive ? 'page' : 'false');
         });
         
-        // 新しいモードを表示
         const newMode = document.getElementById(`${mode}-mode`);
         if (newMode) {
           newMode.classList.remove('hidden');
@@ -1794,7 +1761,6 @@ html += `
       function setSortMode(sort) {
         if (AppState.currentSort === sort) return;
         
-        // ボタン状態の更新
         document.querySelectorAll('.sort-btn').forEach(btn => {
           const isActive = btn.dataset.sort === sort;
           btn.classList.toggle('active', isActive);
@@ -1804,8 +1770,6 @@ html += `
         AppState.currentSort = sort;
         AppState.currentPage = 0;
         renderRanking();
-        
-        // 構造化データの更新
         updateStructuredData();
       }
       
@@ -1838,7 +1802,6 @@ html += `
         AppState.currentPage++;
         renderRanking();
         
-        // スクロール位置調整
         const grid = document.getElementById('ranking-grid');
         if (grid) {
           const lastItem = grid.lastElementChild;
@@ -1865,14 +1828,12 @@ html += `
         uploadBtn.innerHTML = '<span class="btn-icon" aria-hidden="true">⏳</span><span class="btn-text">処理中...</span>';
         
         try {
-          // モック処理
           await new Promise(resolve => setTimeout(resolve, 1000));
           
           showStatus('uploadStatus', '3件のURLを追加しました', 'success');
           document.getElementById('gofileUrls').value = '';
           showNotification('URLを保存しました', 'success');
           
-          // ランキング更新
           setTimeout(fetchRanking, 500);
           
         } catch (error) {
@@ -1902,14 +1863,12 @@ html += `
         scrapeBtn.innerHTML = '<span class="btn-icon" aria-hidden="true">⏳</span><span class="btn-text">スクレイピング中...</span>';
         
         try {
-          // モック処理
           await new Promise(resolve => setTimeout(resolve, 1500));
           
           showStatus('scrapeStatus', '5件のURLを追加しました (8件見つかり、3件は重複)', 'success');
           document.getElementById('websiteUrl').value = '';
           showNotification('スクレイピング完了', 'success');
           
-          // ランキング更新
           setTimeout(fetchRanking, 500);
           
         } catch (error) {
@@ -1926,9 +1885,7 @@ html += `
        * アクセシビリティ設定
        */
       function setupAccessibility() {
-        // キーボードナビゲーション
         document.addEventListener('keydown', function(e) {
-          // Escapeキーで通知を閉じる
           if (e.key === 'Escape') {
             const notification = document.getElementById('notification');
             if (notification && !notification.hidden) {
@@ -1950,7 +1907,6 @@ html += `
         notification.hidden = false;
         notification.setAttribute('role', 'alert');
         
-        // 自動で非表示
         setTimeout(() => {
           notification.hidden = true;
           notification.className = 'notification';
@@ -1966,7 +1922,6 @@ html += `
         element.hidden = false;
         element.setAttribute('role', 'alert');
         
-        // 自動で非表示
         setTimeout(() => {
           element.hidden = true;
         }, 10000);
@@ -2014,7 +1969,6 @@ html += `
           });
       };
       
-      // グローバル状態へのアクセス（デバッグ用）
       window.AppState = AppState;
       
     })();
