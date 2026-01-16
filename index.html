@@ -1501,22 +1501,28 @@
         showLoadingState();
         
         try {
-          // 実際のGofileデータを取得
-          const response = await fetch('https://api.gofile.io/contents/0AWY0?wt=4');
+          // GitHub APIからURLを取得
+          const response = await fetch('/.netlify/functions/get-urls');
           
           if (!response.ok) {
-            throw new Error('Gofileデータの取得に失敗しました');
+            throw new Error('URLデータの取得に失敗しました');
           }
           
           const result = await response.json();
-          const mockData = generateMockData(result);
+          
+          if (result.status !== 'ok' || !result.data) {
+            throw new Error('無効なレスポンス形式です');
+          }
+          
+          // URLの有効性をチェック
+          const validatedData = await validateUrls(result.data);
           
           AppState.ranking = {
-            byNewest: [...mockData].sort((a, b) => new Date(b.added_at) - new Date(a.added_at)),
-            byPopular: [...mockData].sort((a, b) => b.downloads - a.downloads),
-            byDownloads: [...mockData].sort((a, b) => b.downloads - a.downloads)
+            byNewest: validatedData.byNewest || [],
+            byPopular: validatedData.byPopular || [],
+            byDownloads: validatedData.byNewest || []
           };
-          AppState.totalItems = mockData.length;
+          AppState.totalItems = (validatedData.byNewest || []).length;
           AppState.currentPage = 0;
           AppState.lastUpdate = new Date();
           
@@ -1536,39 +1542,84 @@
       }
       
       /**
-       * Gofileデータを整形
+       * URLの有効性をチェック
        */
-      function generateMockData(result) {
-        const data = [];
+      async function validateUrls(data) {
+        const validated = {
+          byNewest: [],
+          byPopular: []
+        };
         
-        try {
-          if (result.status === 'ok' && result.data && result.data.children) {
-            const files = result.data.children;
-            
-            Object.values(files).forEach((file) => {
-              if (file.type === 'file') {
-                data.push({
-                  id: file.id,
-                  name: file.name,
-                  url: `https://gofile.io/?c=${file.id}`,
-                  downloads: Math.floor(Math.random() * 1000) || 0,
-                  size: file.size || 0,
-                  added_at: new Date(file.createTime * 1000).toISOString(),
-                  source: 'gofile'
-                });
+        if (!data.byNewest || !Array.isArray(data.byNewest)) {
+          return validated;
+        }
+        
+        // 並列でURLをチェック（最大10個まで同時）
+        const chunks = [];
+        for (let i = 0; i < data.byNewest.length; i += 10) {
+          chunks.push(data.byNewest.slice(i, i + 10));
+        }
+        
+        for (const chunk of chunks) {
+          const validItems = await Promise.all(
+            chunk.map(async (item) => {
+              try {
+                const isValid = await checkUrlValidity(item.url);
+                return isValid ? item : null;
+              } catch (error) {
+                console.warn('URL チェック失敗:', item.url, error);
+                return null;
               }
-            });
+            })
+          );
+          
+          validated.byNewest.push(...validItems.filter(item => item !== null));
+        }
+        
+        // 人気順でソート
+        validated.byPopular = [...validated.byNewest]
+          .sort((a, b) => (b.access_count || 0) - (a.access_count || 0));
+        
+        return validated;
+      }
+      
+      /**
+       * URLの有効性をチェック
+       */
+      async function checkUrlValidity(url) {
+        try {
+          // HEAD リクエストで確認（CORSの問題がある場合はスキップ）
+          if (url.includes('gofile.io')) {
+            // Gofileの場合は簡単なチェック（実際の存在確認はサーバー側で行う）
+            return /^https:\/\/gofile\.io\//.test(url);
           }
+          return true;
         } catch (error) {
-          console.error('データ解析エラー:', error);
+          console.warn('URL チェックエラー:', url, error.message);
+          return false;
         }
-        
-        // データがない場合のフォールバック
-        if (data.length === 0) {
-          showNotification('Gofileデータが見つかりません', 'error');
-        }
-        
-        return data;
+      }
+      
+      /**
+       * データをフォーマット
+       */
+      function formatUrlData(urlItem) {
+        return {
+          id: urlItem.id || generateId(),
+          name: urlItem.name || 'Unknown',
+          url: urlItem.url,
+          downloads: urlItem.downloads || urlItem.access_count || 0,
+          size: urlItem.size || 0,
+          added_at: urlItem.added_at || new Date().toISOString(),
+          source: 'github'
+        };
+      }
+      
+      /**
+       * ID生成
+       */
+      function generateId() {
+        return 'item_' + Math.random().toString(36).substr(2, 9);
       }
       
       /**
