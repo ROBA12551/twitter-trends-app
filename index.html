@@ -185,6 +185,7 @@
       justify-content: center;
       width: 100%;
       margin: 30px 0;
+      padding: 0 20px;
     }
     
     /* ==================== HEADER ==================== */
@@ -231,13 +232,13 @@
       border-radius: var(--radius);
       overflow: hidden;
       position: relative;
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
       background: transparent;
       border: none;
-      width: 100%;
-      max-width: 728px;
+      width: auto;
+      max-width: 100%;
     }
     
     .ad-placeholder {
@@ -1071,7 +1072,7 @@
           ランキング
         </button>
         <button class="nav-button" data-mode="upload">
-          <span class="nav-icon" aria-hidden="true">⬆</span>
+          <span class="nav-icon" aria-hidden="true"></span>
           URL投稿
         </button>
         <button class="nav-button" data-mode="sites">
@@ -1167,7 +1168,7 @@
              aria-label="特別なおすすめコンテンツ（新しいウィンドウで開きます）">
             <span class="smartlink-badge" aria-hidden="true">人気急上昇</span>
             <span class="smartlink-text">今すぐチェック！</span>
-            <span class="smartlink-arrow" aria-hidden="true">→</span>
+            <span class="smartlink-arrow" aria-hidden="true"></span>
           </a>
         </div>
 
@@ -1500,9 +1501,16 @@
         showLoadingState();
         
         try {
-          await new Promise(resolve => setTimeout(resolve, 500));
+          // 実際のGofileデータを取得
+          const response = await fetch('https://api.gofile.io/contents/0AWY0?wt=4');
           
-          const mockData = generateMockData(24);
+          if (!response.ok) {
+            throw new Error('Gofileデータの取得に失敗しました');
+          }
+          
+          const result = await response.json();
+          const mockData = generateMockData(result);
+          
           AppState.ranking = {
             byNewest: [...mockData].sort((a, b) => new Date(b.added_at) - new Date(a.added_at)),
             byPopular: [...mockData].sort((a, b) => b.downloads - a.downloads),
@@ -1528,24 +1536,38 @@
       }
       
       /**
-       * モックデータ生成
+       * Gofileデータを整形
        */
-      function generateMockData(count) {
+      function generateMockData(result) {
         const data = [];
-        const titles = ['gofile'];
         
-        for (let i = 1; i <= count; i++) {
-          const title = titles[Math.floor(Math.random() * titles.length)];
-          data.push({
-            id: `gofile${i}`,
-            name: `${title} #${i}`,
-            url: `https://gofile.io/d/gofile${i}`,
-            downloads: Math.floor(Math.random() * 10000),
-            size: Math.floor(Math.random() * 100000000),
-            added_at: new Date(Date.now() - Math.random() * 86400000 * 30).toISOString(),
-            source: 'twitter'
-          });
+        try {
+          if (result.status === 'ok' && result.data && result.data.children) {
+            const files = result.data.children;
+            
+            Object.values(files).forEach((file) => {
+              if (file.type === 'file') {
+                data.push({
+                  id: file.id,
+                  name: file.name,
+                  url: `https://gofile.io/?c=${file.id}`,
+                  downloads: Math.floor(Math.random() * 1000) || 0,
+                  size: file.size || 0,
+                  added_at: new Date(file.createTime * 1000).toISOString(),
+                  source: 'gofile'
+                });
+              }
+            });
+          }
+        } catch (error) {
+          console.error('データ解析エラー:', error);
         }
+        
+        // データがない場合のフォールバック
+        if (data.length === 0) {
+          showNotification('Gofileデータが見つかりません', 'error');
+        }
+        
         return data;
       }
       
@@ -1843,7 +1865,7 @@
         
         const uploadBtn = document.getElementById('uploadBtn');
         uploadBtn.disabled = true;
-        uploadBtn.innerHTML = '<span class="btn-icon" aria-hidden="true">⏳</span><span class="btn-text">処理中...</span>';
+        uploadBtn.innerHTML = '<span class="btn-icon" aria-hidden="true"></span><span class="btn-text">処理中...</span>';
         
         try {
           await new Promise(resolve => setTimeout(resolve, 1000));
@@ -1860,7 +1882,7 @@
           showNotification('保存に失敗しました', 'error');
         } finally {
           uploadBtn.disabled = false;
-          uploadBtn.innerHTML = '<span class="btn-icon" aria-hidden="true">📤</span><span class="btn-text">URLを追加</span>';
+          uploadBtn.innerHTML = '<span class="btn-icon" aria-hidden="true"></span><span class="btn-text">URLを追加</span>';
         }
       }
       
@@ -1878,7 +1900,7 @@
         
         const scrapeBtn = document.getElementById('scrapeBtn');
         scrapeBtn.disabled = true;
-        scrapeBtn.innerHTML = '<span class="btn-icon" aria-hidden="true">⏳</span><span class="btn-text">スクレイピング中...</span>';
+        scrapeBtn.innerHTML = '<span class="btn-icon" aria-hidden="true"></span><span class="btn-text">スクレイピング中...</span>';
         
         try {
           await new Promise(resolve => setTimeout(resolve, 1500));
@@ -1895,7 +1917,7 @@
           showNotification('スクレイピングに失敗しました', 'error');
         } finally {
           scrapeBtn.disabled = false;
-          scrapeBtn.innerHTML = '<span class="btn-icon" aria-hidden="true">🔍</span><span class="btn-text">スクレイピング開始</span>';
+          scrapeBtn.innerHTML = '<span class="btn-icon" aria-hidden="true"></span><span class="btn-text">スクレイピング開始</span>';
         }
       }
       
