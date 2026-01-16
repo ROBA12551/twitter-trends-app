@@ -1097,20 +1097,14 @@
         
         <!-- ランキングコントロール -->
         <div class="ranking-controls">
-          <div class="refresh-controls">
-            <button class="refresh-btn" id="refresh-btn" aria-label="ランキングを更新">
-              <span class="btn-icon" aria-hidden="true"></span>
-              ランキング更新
-            </button>
-            <div class="refresh-interval">
-              <label for="refresh-select" class="control-label">自動更新:</label>
-              <select id="refresh-select" aria-label="自動更新間隔">
-                <option value="0">オフ</option>
-                <option value="30">30秒</option>
-                <option value="60" selected>1分</option>
-                <option value="300">5分</option>
-              </select>
-            </div>
+          <div class="refresh-interval">
+            <label for="refresh-select" class="control-label">自動更新:</label>
+            <select id="refresh-select" aria-label="自動更新間隔">
+              <option value="0">オフ</option>
+              <option value="30">30秒</option>
+              <option value="60" selected>1分</option>
+              <option value="300">5分</option>
+            </select>
           </div>
 
           <!-- 広告2：ソート前（修正済み） -->
@@ -1170,6 +1164,23 @@
             <span class="smartlink-text">今すぐチェック！</span>
             <span class="smartlink-arrow" aria-hidden="true"></span>
           </a>
+        </div>
+
+        <!-- 広告：スマートリンク後 -->
+        <div class="ad-wrapper">
+          <div class="ad-container ad-content-between ad-adult-premium" id="ad-smartlink-after" aria-label="おすすめ広告">
+            <div class="ad-placeholder"></div>
+            <script>
+              atOptions = {
+                'key' : '231e5c9092a3f60264c9edcc16e5374f',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+              };
+            </script>
+            <script defer src="https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js"></script>
+          </div>
         </div>
 
         <!-- ランキンググリッド -->
@@ -1425,7 +1436,7 @@
        */
       function loadVisibleAds() {
         const adIds = [
-          'ad-header-1', 'ad-sorting-1', 'ad-ranking-mid',
+          'ad-header-1', 'ad-sorting-1', 'ad-smartlink-after', 'ad-ranking-mid',
           'ad-upload-top', 'ad-upload-mid', 'ad-sites-top',
           'ad-footer-top', 'ad-social-bar'
         ];
@@ -1469,7 +1480,6 @@
           btn.addEventListener('click', () => setSortMode(btn.dataset.sort));
         });
         
-        document.getElementById('refresh-btn').addEventListener('click', fetchRanking);
         document.getElementById('refresh-select').addEventListener('change', handleAutoRefreshChange);
         document.getElementById('load-more-btn').addEventListener('click', loadMoreItems);
         document.getElementById('uploadForm').addEventListener('submit', handleUrlUpload);
