@@ -179,6 +179,14 @@
       flex: 1;
     }
     
+    /* ==================== AD CONTAINER WRAPPER ==================== */
+    .ad-wrapper {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 30px 0;
+    }
+    
     /* ==================== HEADER ==================== */
     header[role="banner"] {
       padding: 40px 0 30px;
@@ -220,16 +228,16 @@
     /* ==================== AD CONTAINERS ==================== */
     .ad-container {
       min-height: 120px;
-      margin: 30px auto;
       border-radius: var(--radius);
       overflow: hidden;
       position: relative;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       background: transparent;
       border: none;
       width: 100%;
+      max-width: 728px;
     }
     
     .ad-placeholder {
@@ -1038,11 +1046,13 @@
   <!-- スキップリンク -->
   <a href="#main-content" class="skip-to-content">メインコンテンツへスキップ</a>
 
-  <!-- ヘッダー広告1（修正済み：シャドウなし・枠線なし） -->
-  <div class="ad-container ad-premium-top ad-adult-premium" id="ad-header-1" aria-label="スポンサー広告">
-    <div class="ad-placeholder"></div>
-    <script defer data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
-    <div id="container-c450e9b4b86a15429281d6d1bb83b6f2"></div>
+  <!-- ヘッダー広告1（修正済み：中央揃え） -->
+  <div class="ad-wrapper">
+    <div class="ad-container ad-premium-top ad-adult-premium" id="ad-header-1" aria-label="スポンサー広告">
+      <div class="ad-placeholder"></div>
+      <script defer data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
+      <div id="container-c450e9b4b86a15429281d6d1bb83b6f2"></div>
+    </div>
   </div>
 
   <div class="container">
@@ -1103,18 +1113,20 @@
           </div>
 
           <!-- 広告2：ソート前（修正済み） -->
-          <div class="ad-container ad-content-between ad-adult-premium" id="ad-sorting-1" aria-label="おすすめ広告">
-            <div class="ad-placeholder"></div>
-            <script>
-              atOptions = {
-                'key' : '231e5c9092a3f60264c9edcc16e5374f',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            </script>
-            <script defer src="https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js"></script>
+          <div class="ad-wrapper">
+            <div class="ad-container ad-content-between ad-adult-premium" id="ad-sorting-1" aria-label="おすすめ広告">
+              <div class="ad-placeholder"></div>
+              <script>
+                atOptions = {
+                  'key' : '231e5c9092a3f60264c9edcc16e5374f',
+                  'format' : 'iframe',
+                  'height' : 250,
+                  'width' : 300,
+                  'params' : {}
+                };
+              </script>
+              <script defer src="https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js"></script>
+            </div>
           </div>
 
           <div class="sort-controls">
@@ -1161,16 +1173,14 @@
 
         <!-- ランキンググリッド -->
         <div class="ranking-grid" id="ranking-grid" role="feed" aria-label="ランキングリスト">
-          <div class="loading-state" aria-live="polite">
-            <div class="spinner" aria-hidden="true"></div>
-            <p>ランキングを読み込んでいます...</p>
-          </div>
         </div>
 
         <!-- 広告3：ランキング中間（修正済み） -->
-        <div class="ad-container ad-in-ranking ad-adult-premium" id="ad-ranking-mid" aria-label="ランキング広告">
-          <div class="ad-placeholder"></div>
-          <div class="ad-badge" aria-hidden="true">スポンサー広告</div>
+        <div class="ad-wrapper">
+          <div class="ad-container ad-in-ranking ad-adult-premium" id="ad-ranking-mid" aria-label="ランキング広告">
+            <div class="ad-placeholder"></div>
+            <div class="ad-badge" aria-hidden="true">スポンサー広告</div>
+          </div>
         </div>
 
         <!-- もっと見るボタン -->
@@ -1187,18 +1197,20 @@
         <h2 id="upload-heading" class="visually-hidden">URL投稿</h2>
         
         <!-- 広告4：フォーム前（修正済み） -->
-        <div class="ad-container ad-content-between" id="ad-upload-top">
-          <div class="ad-placeholder"></div>
-          <script>
-            atOptions = {
-              'key' : '231e5c9092a3f60264c9edcc16e5374f',
-              'format' : 'iframe',
-              'height' : 250,
-              'width' : 300,
-              'params' : {}
-            };
-          </script>
-          <script defer src="https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js"></script>
+        <div class="ad-wrapper">
+          <div class="ad-container ad-content-between" id="ad-upload-top">
+            <div class="ad-placeholder"></div>
+            <script>
+              atOptions = {
+                'key' : '231e5c9092a3f60264c9edcc16e5374f',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+              };
+            </script>
+            <script defer src="https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js"></script>
+          </div>
         </div>
 
         <div class="upload-card card">
@@ -1228,9 +1240,11 @@
         </div>
 
         <!-- 広告5：フォーム間（修正済み） -->
-        <div class="ad-container ad-content-between" id="ad-upload-mid">
-          <div class="ad-placeholder"></div>
-          <script defer data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
+        <div class="ad-wrapper">
+          <div class="ad-container ad-content-between" id="ad-upload-mid">
+            <div class="ad-placeholder"></div>
+            <script defer data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
+          </div>
         </div>
 
         <div class="scrape-card card">
@@ -1260,10 +1274,12 @@
         <h2 id="sites-heading" class="visually-hidden">関連サイト</h2>
         
         <!-- 広告6：サイトリスト前（修正済み） -->
-        <div class="ad-container ad-premium-top" id="ad-sites-top">
-          <div class="ad-placeholder"></div>
-          <script defer type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
-          <ins class="eas6a97888e2" data-zoneid="5829212"></ins> 
+        <div class="ad-wrapper">
+          <div class="ad-container ad-premium-top" id="ad-sites-top">
+            <div class="ad-placeholder"></div>
+            <script defer type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
+            <ins class="eas6a97888e2" data-zoneid="5829212"></ins> 
+          </div>
         </div>
 
         <div class="sites-grid" id="sites-grid" role="list" aria-label="関連サイトリスト"></div>
@@ -1271,18 +1287,20 @@
     </main>
 
     <!-- 広告7：フッター前（修正済み） -->
-    <div class="ad-container ad-footer ad-adult-premium" id="ad-footer-top" aria-label="おすすめ広告">
-      <div class="ad-placeholder"></div>
-      <script>
-        atOptions = {
-          'key' : '231e5c9092a3f60264c9edcc16e5374f',
-          'format' : 'iframe',
-          'height' : 90,
-          'width' : 728,
-          'params' : {}
-        };
-      </script>
-      <script defer src="https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js"></script>
+    <div class="ad-wrapper">
+      <div class="ad-container ad-footer ad-adult-premium" id="ad-footer-top" aria-label="おすすめ広告">
+        <div class="ad-placeholder"></div>
+        <script>
+          atOptions = {
+            'key' : '231e5c9092a3f60264c9edcc16e5374f',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+          };
+        </script>
+        <script defer src="https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js"></script>
+      </div>
     </div>
   </div>
 
@@ -1930,12 +1948,7 @@
       function showLoadingState() {
         const grid = document.getElementById('ranking-grid');
         if (grid && AppState.currentPage === 0) {
-          grid.innerHTML = `
-            <div class="loading-state" role="status" aria-live="polite">
-              <div class="spinner" aria-hidden="true"></div>
-              <p>ランキングを読み込んでいます...</p>
-            </div>
-          `;
+          grid.innerHTML = '';
         }
       }
       
