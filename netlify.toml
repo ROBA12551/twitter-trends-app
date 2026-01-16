@@ -1,6 +1,7 @@
 [build]
   publish = "."
   functions = "netlify/functions"
+  command = ""
 
 [build.environment]
   NODE_VERSION = "18"
@@ -16,3 +17,45 @@
 
 [context.branch-deploy.environment]
   MODE = "branch"
+
+# ========== CSS ファイルのキャッシュ ========== 
+[[headers]]
+  for = "/styles/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "text/css; charset=utf-8"
+
+# ========== JS ファイルのキャッシュ ========== 
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "application/javascript; charset=utf-8"
+
+# ========== HTML キャッシュ（短期） ========== 
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
+    Content-Type = "text/html; charset=utf-8"
+
+# ========== セキュリティヘッダー ========== 
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# ========== API リダイレクト ========== 
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# ========== 404 処理 ========== 
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

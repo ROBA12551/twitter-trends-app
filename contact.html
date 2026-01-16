@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" prefix="og: https://ogp.me/ns#">
 <head>
   <meta charset="utf-8">
   <title>お問い合わせ・報告フォーム | Twitter保存ランキング - TwiiterChan</title>
   <meta name="description" content="不適切なコンテンツの報告、著作権侵害の通報、バグ報告など、TwiiterChanへのお問い合わせはこちらから。24時間以内に対応いたします。">
   <meta name="keywords" content="お問い合わせ,報告フォーム,不適切コンテンツ報告,著作権侵害,バグ報告,Twitter保存,Gofileランキング">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  
+  <!-- Canonical -->
   <link rel="canonical" href="https://twitchan.com/contact.html">
   
   <!-- OGP -->
@@ -16,6 +18,22 @@
   <meta property="og:url" content="https://twitchan.com/contact.html">
   <meta property="og:site_name" content="TwiiterChan">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://twitchan.com/images/og-contact.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="TwiiterChan お問い合わせフォーム">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="お問い合わせ・報告フォーム - TwiiterChan">
+  <meta name="twitter:description" content="不適切なコンテンツの報告やお問い合わせはこちらから">
+  <meta name="twitter:image" content="https://twitchan.com/images/twitter-contact.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
 
   <!-- 構造化データ -->
   <script type="application/ld+json">
@@ -24,38 +42,425 @@
     "@type": "ContactPage",
     "name": "お問い合わせ・報告フォーム",
     "url": "https://twitchan.com/contact.html",
-    "description": "TwiiterChanへのお問い合わせ・不適切コンテンツの報告",
+    "description": "TwiiterChanへのお問い合わせ・不適切コンテンツの報告フォーム",
+    "mainEntity": {
+      "@type": "WebPageElement",
+      "name": "報告フォーム",
+      "description": "不適切コンテンツや著作権侵害などの報告フォーム"
+    },
     "isPartOf": {
       "@type": "WebSite",
+      "name": "TwiiterChan",
+      "url": "https://twitchan.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://twitchan.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
       "name": "TwiiterChan",
       "url": "https://twitchan.com/"
     }
   }
   </script>
 
-  <!-- Adsterra Popunder -->
-  <script src="https://pl28484782.effectivegatecpm.com/14/29/79/142979e47a62210d83ef5275ac4060ca.js"></script>
-
-  <meta http-equiv="Delegate-CH" content="Sec-CH-UA https://s.pemsrv.com; Sec-CH-UA-Mobile https://s.pemsrv.com; Sec-CH-UA-Arch https://s.pemsrv.com; Sec-CH-UA-Model https://s.pemsrv.com; Sec-CH-UA-Platform https://s.pemsrv.com; Sec-CH-UA-Platform-Version https://s.pemsrv.com; Sec-CH-UA-Bitness https://s.pemsrv.com; Sec-CH-UA-Full-Version-List https://s.pemsrv.com; Sec-CH-UA-Full-Version https://s.pemsrv.com;">
-  <meta http-equiv="Delegate-CH" content="Sec-CH-UA https://s.magsrv.com; Sec-CH-UA-Mobile https://s.magsrv.com; Sec-CH-UA-Arch https://s.magsrv.com; Sec-CH-UA-Model https://s.magsrv.com; Sec-CH-UA-Platform https://s.magsrv.com; Sec-CH-UA-Platform-Version https://s.magsrv.com; Sec-CH-UA-Bitness https://s.magsrv.com; Sec-CH-UA-Full-Version-List https://s.magsrv.com; Sec-CH-UA-Full-Version https://s.magsrv.com;">
-
-  <!-- Push Notification Script -->
-  <script type="application/javascript">
-    pn_idzone = 5829204;
-    pn_sleep_seconds = 0;
-    pn_is_self_hosted = 1;
-    pn_soft_ask = 0;
-    pn_filename = "/worker.js"; 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ホーム",
+        "item": "https://twitchan.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "お問い合わせ・報告",
+        "item": "https://twitchan.com/contact.html"
+      }
+    ]
+  }
   </script>
-  <script type="application/javascript" src="https://js.wpnsrv.com/pn.php"></script>
 
-  <!-- Desktop Fullpage Interstitial Ad -->
-  <script async type="application/javascript" src="https://a.pemsrv.com/ad-provider.js"></script>
+  <!-- クリティカルCSS -->
+  <style>
+    /* クリティカルなスタイルのみインライン化 */
+    :root {
+      --primary: #ff7f9c;
+      --primary-hover: #ff6b8f;
+      --secondary: #b8d8e8;
+      --dark: #2a2a2a;
+      --text-light: #7a7a7a;
+      --border: #e8e0e5;
+      --success: #66d9a8;
+      --error: #ff6b8f;
+      --surface: #fff;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+      background: var(--surface);
+      color: var(--dark);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+    
+    /* 広告エリアのCLS対策 */
+    .ad-placeholder {
+      min-height: 120px;
+      background: linear-gradient(135deg, #fff9f0 0%, #fff5f8 100%);
+      margin: 30px 0;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .ad-placeholder::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, #fff9f0 0%, #fff5f8 50%, #fff9f0 100%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+    }
+    
+    @keyframes loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+  </style>
+
+  <!-- 遅延読み込みCSS -->
+  <link rel="stylesheet" href="./css/main.min.css?ver=1.0" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="./css/main.min.css?ver=1.0"></noscript>
+
+  <!-- Preconnect for critical domains -->
+  <link rel="preconnect" href="https://twitchan.com">
+  <link rel="preconnect" href="https://pl28484782.effectivegatecpm.com" crossorigin>
+  <link rel="preconnect" href="https://js.wpnsrv.com" crossorigin>
+  <link rel="preconnect" href="https://a.pemsrv.com" crossorigin>
+</head>
+<body>
+  <!-- スクリーンリーダー用スキップリンク -->
+  <a href="#main-content" class="skip-to-content">メインコンテンツへスキップ</a>
+
+  <!-- ヘッダー広告1 -->
+  <div class="ad-placeholder" id="ad-premium-1" aria-label="広告エリア">
+    <script async data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
+    <div id="container-c450e9b4b86a15429281d6d1bb83b6f2"></div>
+  </div>
+
+  <div class="container">
+    <header role="banner">
+      <div class="header-content">
+        <h1 class="page-title">お問い合わせ・報告</h1>
+        <nav aria-label="ページナビゲーション">
+          <button class="btn btn-secondary" onclick="window.location.href='index.html'" aria-label="ホームページに戻る">
+            <span aria-hidden="true">←</span> ホームに戻る
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" role="main">
+      <!-- スマートリンク -->
+      <section class="smartlink-section" aria-label="おすすめコンテンツ">
+        <div class="ad-smartlink">
+          <a href="https://www.effectivegatecpm.com/qst8wwse?key=385ee7d478d037878c615a8416a3507a" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="smartlink-button"
+             aria-label="おすすめコンテンツをチェック（新しいウィンドウで開きます）">
+            <span class="smartlink-icon" aria-hidden="true">🎯</span>
+            <span class="smartlink-text">おすすめコンテンツをチェック</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 情報ボックス -->
+      <section class="info-section" aria-labelledby="page-info-heading">
+        <div class="info-card">
+          <h2 id="page-info-heading" class="visually-hidden">このページについて</h2>
+          <div class="info-content">
+            <p class="info-text">不適切なコンテンツを発見した場合や、報告したい問題がある場合は、このフォームをご利用ください。報告内容は、Discord Webhookを介してモデレーションチームに送信され、確認されます。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 広告配置1 -->
+      <div class="ad-placeholder" id="ad-banner-1" aria-label="広告エリア">
+        <script>
+          atOptions = {
+            'key' : '231e5c9092a3f60264c9edcc16e5374f',
+            'format' : 'iframe',
+            'height' : 50,
+            'width' : 320,
+            'params' : {}
+          };
+        </script>
+        <script async src="https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js"></script>
+      </div>
+
+      <!-- アラート表示エリア -->
+      <div id="alert" class="alert" role="alert" aria-live="polite" aria-atomic="true"></div>
+      
+      <!-- 報告フォーム -->
+      <section class="form-section" aria-labelledby="form-heading">
+        <div class="card">
+          <h2 id="form-heading">報告フォーム</h2>
+          
+          <form id="reportForm" method="POST" aria-label="報告フォーム">
+            <div class="form-group">
+              <label for="reportType" class="required-label">
+                報告の種類
+                <span class="required-mark" aria-hidden="true">*</span>
+              </label>
+              <select id="reportType" name="reportType" required aria-required="true" aria-describedby="reportTypeHelp">
+                <option value="" disabled selected>-- 報告の種類を選択 --</option>
+                <option value="inappropriate-content">不適切なコンテンツ</option>
+                <option value="copyright">著作権侵害</option>
+                <option value="spam">スパム</option>
+                <option value="illegal">違法コンテンツ</option>
+                <option value="bug">バグ報告</option>
+                <option value="other">その他</option>
+              </select>
+              <small id="reportTypeHelp" class="form-help">報告する問題の種類を選択してください</small>
+            </div>
+            
+            <div class="form-group">
+              <label for="contentUrl">コンテンツURL</label>
+              <input type="url" 
+                     id="contentUrl" 
+                     name="contentUrl" 
+                     placeholder="https://example.com/video"
+                     aria-describedby="contentUrlHelp"
+                     pattern="https?://.+"
+                     inputmode="url">
+              <small id="contentUrlHelp" class="form-help">報告するファイルまたはコンテンツのURLを入力してください</small>
+            </div>
+            
+            <div class="form-group">
+              <label for="description" class="required-label">
+                詳細説明
+                <span class="required-mark" aria-hidden="true">*</span>
+              </label>
+              <textarea id="description" 
+                        name="description" 
+                        placeholder="このコンテンツが報告されるべき理由を詳しく説明してください..." 
+                        required 
+                        aria-required="true"
+                        rows="6"
+                        aria-describedby="descriptionHelp"></textarea>
+              <small id="descriptionHelp" class="form-help">具体的な理由や状況を詳しく説明してください</small>
+            </div>
+
+            <!-- 広告配置2 -->
+            <div class="ad-placeholder" id="ad-inline-1" aria-label="広告エリア">
+              <script async data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
+              <div id="container-c450e9b4b86a15429281d6d1bb83b6f2"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">メールアドレス（任意）</label>
+              <input type="email" 
+                     id="email" 
+                     name="email" 
+                     placeholder="your@email.com"
+                     aria-describedby="emailHelp"
+                     inputmode="email">
+              <small id="emailHelp" class="form-help">追加情報が必要な場合にご連絡することがあります</small>
+            </div>
+            
+            <div class="form-group">
+              <label for="imageUpload">スクリーンショット（任意）</label>
+              <div class="file-upload-wrapper">
+                <input type="file" 
+                       id="imageUpload" 
+                       name="imageUpload"
+                       accept="image/png, image/jpeg, image/webp"
+                       multiple
+                       aria-describedby="imageUploadHelp">
+                <label for="imageUpload" class="file-upload-label">
+                  <span class="upload-icon" aria-hidden="true">📎</span>
+                  <span class="upload-text">クリックしてファイルをアップロード</span>
+                  <span class="upload-note">（PNG, JPG, WebP - 1ファイル最大5MB）</span>
+                </label>
+                <div class="file-upload-hint" id="imageUploadHelp">
+                  複数ファイルを選択できます。各ファイルは5MB以下にしてください。
+                </div>
+              </div>
+              <div id="fileList" class="file-list" role="region" aria-label="アップロードされたファイル一覧"></div>
+            </div>
+
+            <!-- 広告配置3 -->
+            <div class="ad-placeholder" id="ad-banner-2" aria-label="広告エリア">
+              <script>
+                atOptions = {
+                  'key' : '231e5c9092a3f60264c9edcc16e5374f',
+                  'format' : 'iframe',
+                  'height' : 50,
+                  'width' : 320,
+                  'params' : {}
+                };
+              </script>
+              <script async src="https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js"></script>
+            </div>
+            
+            <div class="form-group">
+              <label for="reporterName">お名前（任意）</label>
+              <input type="text" 
+                     id="reporterName" 
+                     name="reporterName" 
+                     placeholder="お名前またはユーザー名"
+                     aria-describedby="reporterNameHelp">
+              <small id="reporterNameHelp" class="form-help">匿名で報告する場合は空欄にしてください</small>
+            </div>
+            
+            <div class="form-group form-checkbox">
+              <input type="checkbox" 
+                     id="agreePolicy" 
+                     name="agreePolicy" 
+                     required 
+                     aria-required="true"
+                     aria-describedby="policyHelp">
+              <label for="agreePolicy">
+                <a href="policy.html" target="_blank" rel="noopener noreferrer">利用規約とコンテンツポリシー</a>に同意します
+                <span class="required-mark" aria-hidden="true">*</span>
+              </label>
+              <small id="policyHelp" class="form-help">フォーム送信には規約への同意が必要です</small>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" id="submitBtn" class="btn btn-primary">
+                <span class="btn-text">報告を送信</span>
+              </button>
+              <button type="reset" class="btn btn-secondary">
+                <span class="btn-text">フォームをクリア</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- 広告配置4 -->
+      <div class="ad-placeholder" id="ad-premium-2" aria-label="広告エリア">
+        <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+        <ins id="1109235" data-width="300" data-height="100"></ins>
+        <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
+      </div>
+
+      <!-- FAQセクション -->
+      <section class="faq-section" aria-labelledby="faq-heading">
+        <div class="card">
+          <h2 id="faq-heading">よくある質問</h2>
+          
+          <div class="faq-list" role="list">
+            <div class="faq-item" role="listitem">
+              <h3>Q: 報告への対応にはどのくらい時間がかかりますか？</h3>
+              <p>通常、報告は24時間以内に確認します。重大度や複雑さによっては、さらに時間が必要な場合があります。</p>
+            </div>
+
+            <!-- 広告配置5 -->
+            <div class="ad-placeholder faq-ad" id="ad-inline-2" aria-label="広告エリア">
+              <script async data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
+              <div id="container-c450e9b4b86a15429281d6d1bb83b6f2"></div>
+            </div>
+            
+            <div class="faq-item" role="listitem">
+              <h3>Q: 個人情報は安全ですか？</h3>
+              <p>はい、個人情報は報告への対応にのみ使用され、第三者と共有されることはありません。Discord Webhookを介して安全に送信されます。</p>
+            </div>
+            
+            <div class="faq-item" role="listitem">
+              <h3>Q: 匿名で報告できますか？</h3>
+              <p>はい。メールアドレスや名前を提供せずに報告を送信できます。</p>
+            </div>
+            
+            <div class="faq-item" role="listitem">
+              <h3>Q: 複数の画像をアップロードできますか？</h3>
+              <p>はい、複数の画像を選択してアップロードできます。各ファイルは5MB以下である必要があります。</p>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <h3>Q: どのような種類のコンテンツを報告できますか？</h3>
+              <p>不適切なコンテンツ、著作権侵害、スパム、違法コンテンツ、バグ、その他の問題を報告できます。フォームで適切なカテゴリを選択してください。</p>
+            </div>
+            
+            <div class="faq-item" role="listitem">
+              <h3>Q: 報告後、どうなりますか？</h3>
+              <p>モデレーションチームが報告を確認し、適切な措置を講じます。これには、コンテンツの削除、ユーザーへの警告、必要に応じて当局への通報などが含まれます。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 広告配置6 -->
+      <div class="ad-placeholder" id="ad-premium-3" aria-label="広告エリア">
+        <script async data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
+        <div id="container-c450e9b4b86a15429281d6d1bb83b6f2"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- ソーシャルバー -->
+  <footer class="social-footer" role="contentinfo" aria-label="ソーシャルメディアバー">
+    <div class="social-container">
+      <script async src="https://pl28484808.effectivegatecpm.com/d2/d3/3b/d2d33b5038b795c6408dcadeef8784ba.js"></script>
+    </div>
+  </footer>
+  
+  <!-- 遅延読み込みスクリプト -->
+  <script defer src="./js/form-handler.min.js?ver=1.0"></script>
+  
+  <!-- Adsterra Popunder (遅延読み込み) -->
+  <script defer data-cfasync="false" src="https://pl28484782.effectivegatecpm.com/14/29/79/142979e47a62210d83ef5275ac4060ca.js"></script>
+
+  <!-- Push Notification Script (遅延読み込み) -->
+  <script defer>
+    window.pn_idzone = 5829204;
+    window.pn_sleep_seconds = 0;
+    window.pn_is_self_hosted = 1;
+    window.pn_soft_ask = 0;
+    window.pn_filename = "/worker.js";
+  </script>
+  <script defer src="https://js.wpnsrv.com/pn.php"></script>
+
+  <!-- Desktop Fullpage Interstitial Ad (遅延読み込み) -->
+  <script defer src="https://a.pemsrv.com/ad-provider.js"></script>
   <ins class="eas6a97888e35" data-zoneid="5829220"></ins>
   <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
 
-  <!-- Popunder Script -->
-  <script type="application/javascript">
+  <!-- Popunder Script (遅延読み込み) -->
+  <script defer>
 (function() {
     var adConfig = {
     "ads_host": "a.pemsrv.com",
@@ -80,759 +485,8 @@ var popMagic={version:7,cookie_name:"",url:"",config:{},open_count:0,top:null,br
 })();
   </script>
 
- <style>
-    /* 広告エリア最適化 */
-    .ad-premium {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 25px;
-      background: linear-gradient(135deg, #fff9f0 0%, #fff5f8 100%);
-      margin: 30px 0;
-      border-radius: 16px;
-      border: 2px solid #ffe8ee;
-      min-height: 120px;
-      box-shadow: 0 4px 12px rgba(255, 127, 156, 0.1);
-    }
-
-    .ad-content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      background: linear-gradient(135deg, #fff 0%, #fff9fc 100%);
-      margin: 25px 0;
-      border-radius: 14px;
-      border: 2px solid #ffe8f0;
-      min-height: 100px;
-      box-shadow: 0 3px 10px rgba(255, 127, 156, 0.08);
-    }
-
-    .ad-inline {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-      padding: 20px;
-      background: linear-gradient(135deg, #fff5f0 0%, #fff0f5 100%);
-      margin: 20px 0;
-      border-radius: 12px;
-      border: 2px solid #ffd9e8;
-      min-height: 100px;
-    }
-
-    .ad-smartlink {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 25px 0;
-      padding: 20px;
-      background: #fff;
-      border-radius: 12px;
-      min-height: 90px;
-    }
-
-    .ad-social-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 999;
-      background: white;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: center;
-      padding: 10px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    :root {
-      --primary: #ff7f9c;
-      --primary-hover: #ff6b8f;
-      --secondary: #b8d8e8;
-      --dark: #2a2a2a;
-      --text-light: #7a7a7a;
-      --border: #e8e0e5;
-      --success: #66d9a8;
-      --error: #ff6b8f;
-    }
-    
-    html { scroll-behavior: smooth; }
-    
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
-      background: #fff;
-      color: var(--dark);
-      line-height: 1.7;
-      padding-bottom: 80px;
-    }
-    
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    
-    header {
-      text-align: center;
-      margin-bottom: 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    
-    h1 {
-      font-size: 36px;
-      font-weight: 700;
-      color: var(--primary);
-      flex: 1;
-    }
-    
-    .back-link {
-      padding: 12px 24px;
-      background: var(--secondary);
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-    }
-    
-    .back-link:hover {
-      background: #a0cce0;
-      transform: translateY(-2px);
-    }
-    
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 28px;
-      border: 2px solid var(--border);
-      margin-bottom: 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    }
-    
-    .card h2 {
-      font-size: 20px;
-      margin-bottom: 20px;
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    .card h3 {
-      font-size: 18px;
-      margin-top: 28px;
-      margin-bottom: 14px;
-      color: var(--dark);
-      font-weight: 700;
-    }
-
-    .card p {
-      margin-bottom: 16px;
-      line-height: 1.8;
-    }
-    
-    .form-group {
-      margin-bottom: 24px;
-    }
-    
-    label {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: 600;
-      color: var(--dark);
-    }
-    
-    label.required::after {
-      content: ' *';
-      color: var(--error);
-    }
-    
-    input[type="text"],
-    input[type="email"],
-    input[type="url"],
-    textarea,
-    select {
-      width: 100%;
-      padding: 14px 18px;
-      border: 2px solid var(--border);
-      border-radius: 10px;
-      background: white;
-      color: var(--dark);
-      font-size: 15px;
-      font-family: inherit;
-      transition: all 0.3s ease;
-    }
-    
-    textarea {
-      min-height: 140px;
-      resize: vertical;
-    }
-    
-    input:focus,
-    textarea:focus,
-    select:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 4px rgba(255, 127, 156, 0.1);
-    }
-    
-    .file-upload {
-      position: relative;
-      overflow: hidden;
-      display: inline-block;
-      width: 100%;
-    }
-    
-    .file-upload input[type="file"] {
-      position: absolute;
-      left: -9999px;
-    }
-    
-    .file-upload-label {
-      display: block;
-      padding: 20px;
-      background: white;
-      border: 3px dashed var(--border);
-      border-radius: 12px;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      color: var(--text-light);
-    }
-    
-    .file-upload-label:hover {
-      background: #fafafa;
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-    
-    .file-list {
-      margin-top: 14px;
-      padding: 14px;
-      background: #f9f9f9;
-      border-radius: 8px;
-      font-size: 13px;
-    }
-    
-    .file-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    
-    .file-item:last-child {
-      border-bottom: none;
-    }
-    
-    .file-remove {
-      background: none;
-      border: none;
-      color: var(--error);
-      cursor: pointer;
-      font-size: 14px;
-      padding: 0 10px;
-      font-weight: 600;
-    }
-    
-    .button-group {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 32px;
-    }
-    
-    button[type="submit"],
-    button[type="reset"] {
-      padding: 14px 32px;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      min-height: 50px;
-    }
-    
-    button[type="submit"]:hover {
-      background: var(--primary-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(255, 107, 143, 0.3);
-    }
-    
-    button[type="reset"] {
-      background: var(--text-light);
-    }
-    
-    button[type="reset"]:hover {
-      background: #6a6a6a;
-    }
-    
-    button:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-      transform: none;
-    }
-    
-    .alert {
-      padding: 18px 24px;
-      border-radius: 10px;
-      margin-bottom: 24px;
-      display: none;
-      font-weight: 500;
-    }
-    
-    .alert.show {
-      display: block;
-      animation: slideDown 0.3s ease;
-    }
-    
-    .alert.success {
-      background: #f0fdf4;
-      border: 2px solid var(--success);
-      color: #166534;
-    }
-    
-    .alert.error {
-      background: #fef2f2;
-      border: 2px solid var(--error);
-      color: #991b1b;
-    }
-    
-    .alert.warning {
-      background: #fff9e6;
-      border: 2px solid #ffc107;
-      color: #856404;
-    }
-    
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .info-box {
-      background: #f0f8ff;
-      border-left: 5px solid var(--secondary);
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 24px;
-    }
-    
-    .info-box h3 {
-      color: var(--secondary);
-      margin-bottom: 10px;
-      font-weight: 700;
-      font-size: 16px;
-    }
-    
-    .info-box p {
-      color: #1565c0;
-      font-size: 14px;
-      margin: 0;
-      line-height: 1.7;
-    }
-    
-    .spinner {
-      display: inline-block;
-      width: 18px;
-      height: 18px;
-      border: 3px solid var(--border);
-      border-top-color: var(--primary);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-      margin-right: 10px;
-    }
-    
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-    
-    @media (max-width: 768px) {
-      h1 { font-size: 28px; }
-      header { flex-direction: column; }
-      .button-group { flex-direction: column; }
-      button { width: 100%; }
-      
-      .ad-premium,
-      .ad-content,
-      .ad-inline,
-      .ad-smartlink {
-        margin: 15px 0;
-        padding: 15px;
-        min-height: 80px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<!-- ヘッダー広告1: Native Banner -->
-<div class="ad-premium">
-  <script async="async" data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
-  <div id="container-c450e9b4b86a15429281d6d1bb83b6f2"></div>
-</div>
-
-  <div class="container">
-    <header>
-      <h1>お問い合わせ・報告</h1>
-      <button class="back-link" onclick="window.location.href='index.html'">← ホームに戻る</button>
-    </header>
-
-    <!-- スマートリンク -->
-    <div class="ad-smartlink">
-      <a href="https://www.effectivegatecpm.com/qst8wwse?key=385ee7d478d037878c615a8416a3507a" target="_blank" style="text-decoration: none; color: inherit; display: block; width: 100%; text-align: center;">
-        <div style="padding: 20px; background: linear-gradient(135deg, #ff7f9c 0%, #b8d8e8 100%); color: white; border-radius: 12px; font-weight: 600; font-size: 16px;">
-          🎯 おすすめコンテンツをチェック
-        </div>
-      </a>
-    </div>
-
-    <div class="info-box">
-      <h3>このページについて</h3>
-      <p>不適切なコンテンツを発見した場合や、報告したい問題がある場合は、このフォームをご利用ください。報告内容は、Discord Webhookを介してモデレーションチームに送信され、確認されます。</p>
-    </div>
-
-    <!-- 広告配置1: Banner -->
-    <div class="ad-content">
-      <script>
-        atOptions = {
-          'key' : '231e5c9092a3f60264c9edcc16e5374f',
-          'format' : 'iframe',
-          'height' : 50,
-          'width' : 320,
-          'params' : {}
-        };
-      </script>
-      <script src="https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js"></script>
-    </div>
-
-    <div id="alert" class="alert"></div>
-    
-    <div class="card">
-      <h2>報告フォーム</h2>
-      
-      <form id="reportForm">
-        <div class="form-group">
-          <label for="reportType" class="required">報告の種類</label>
-          <select id="reportType" required>
-            <option value="">-- 報告の種類を選択 --</option>
-            <option value="inappropriate-content">不適切なコンテンツ</option>
-            <option value="copyright">著作権侵害</option>
-            <option value="spam">スパム</option>
-            <option value="illegal">違法コンテンツ</option>
-            <option value="bug">バグ報告</option>
-            <option value="other">その他</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label for="contentUrl">コンテンツURL</label>
-          <input type="url" id="contentUrl" placeholder="https://example.com/video" />
-          <small style="color: var(--text-light); font-size: 13px;">報告するファイルまたはコンテンツのURL</small>
-        </div>
-        
-        <div class="form-group">
-          <label for="description" class="required">詳細説明</label>
-          <textarea id="description" placeholder="このコンテンツが報告されるべき理由を詳しく説明してください..." required></textarea>
-        </div>
-
-        <!-- 広告配置2: フォーム中間 -->
-        <div class="ad-inline">
-          <script async="async" data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
-          <div id="container-c450e9b4b86a15429281d6d1bb83b6f2"></div>
-        </div>
-        
-        <div class="form-group">
-          <label for="email">メールアドレス（任意）</label>
-          <input type="email" id="email" placeholder="your@email.com" />
-          <small style="color: var(--text-light); font-size: 13px;">追加情報が必要な場合にご連絡することがあります</small>
-        </div>
-        
-        <div class="form-group">
-          <label for="imageUpload">スクリーンショット（任意）</label>
-          <div class="file-upload">
-            <input type="file" id="imageUpload" accept="image/*" multiple />
-            <label for="imageUpload" class="file-upload-label">
-              クリックしてファイルをアップロード<br>
-              <small>（PNG, JPG, WebP - 1ファイル最大5MB）</small>
-            </label>
-          </div>
-          <div id="fileList" class="file-list" style="display: none;"></div>
-        </div>
-
-        <!-- 広告配置3: ファイルアップロード後 -->
-        <div class="ad-content">
-          <script>
-            atOptions = {
-              'key' : '231e5c9092a3f60264c9edcc16e5374f',
-              'format' : 'iframe',
-              'height' : 50,
-              'width' : 320,
-              'params' : {}
-            };
-          </script>
-          <script src="https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js"></script>
-        </div>
-        
-        <div class="form-group">
-          <label for="reporterName">お名前（任意）</label>
-          <input type="text" id="reporterName" placeholder="お名前またはユーザー名" />
-        </div>
-        
-        <div class="form-group">
-          <input type="checkbox" id="agreePolicy" required style="width: auto; margin-right: 8px;" />
-          <label for="agreePolicy" style="display: inline;">
-            <a href="policy.html" target="_blank" style="color: var(--primary); text-decoration: underline;">利用規約とコンテンツポリシー</a>に同意します
-          </label>
-        </div>
-        
-        <div class="button-group">
-          <button type="submit" id="submitBtn">報告を送信</button>
-          <button type="reset">クリア</button>
-        </div>
-      </form>
-    </div>
-
-    <!-- 広告配置4: フォーム後 -->
-    <div class="ad-premium">
-      <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-      <ins id="1109235" data-width="300" data-height="100"></ins>
-      <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1109235});</script>
-    </div>
-
-    <div class="card">
-      <h2>よくある質問</h2>
-      
-      <h3>Q: 報告への対応にはどのくらい時間がかかりますか？</h3>
-      <p>通常、報告は24時間以内に確認します。重大度や複雑さによっては、さらに時間が必要な場合があります。</p>
-      
-      <h3>Q: 個人情報は安全ですか？</h3>
-      <p>はい、個人情報は報告への対応にのみ使用され、第三者と共有されることはありません。Discord Webhookを介して安全に送信されます。</p>
-
-      <!-- 広告配置5: FAQ中間 -->
-      <div class="ad-inline">
-        <script async="async" data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
-        <div id="container-c450e9b4b86a15429281d6d1bb83b6f2"></div>
-      </div>
-      
-      <h3>Q: 匿名で報告できますか？</h3>
-      <p>はい。メールアドレスや名前を提供せずに報告を送信できます。</p>
-      
-      <h3>Q: 複数の画像をアップロードできますか？</h3>
-      <p>はい、複数の画像を選択してアップロードできます。各ファイルは5MB以下である必要があります。</p>
-
-      <h3>Q: どのような種類のコンテンツを報告できますか？</h3>
-      <p>不適切なコンテンツ、著作権侵害、スパム、違法コンテンツ、バグ、その他の問題を報告できます。フォームで適切なカテゴリを選択してください。</p>
-      
-      <h3>Q: 報告後、どうなりますか？</h3>
-      <p>モデレーションチームが報告を確認し、適切な措置を講じます。これには、コンテンツの削除、ユーザーへの警告、必要に応じて当局への通報などが含まれます。</p>
-    </div>
-
-    <!-- 広告配置6: コンテンツ終了後 -->
-    <div class="ad-premium">
-      <script async="async" data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
-      <div id="container-c450e9b4b86a15429281d6d1bb83b6f2"></div>
-    </div>
-  </div>
-
-  <!-- ソーシャルバー（画面下部固定） -->
-  <div class="ad-social-bar">
-    <script src="https://pl28484808.effectivegatecpm.com/d2/d3/3b/d2d33b5038b795c6408dcadeef8784ba.js"></script>
-  </div>
-  
-  <script>
-    // ファイルアップロード処理
-    const imageUpload = document.getElementById('imageUpload');
-    const fileList = document.getElementById('fileList');
-    let uploadedFiles = [];
-    
-    imageUpload.addEventListener('change', function(e) {
-      const files = Array.from(e.target.files);
-      uploadedFiles = [];
-      fileList.innerHTML = '';
-      
-      if (files.length === 0) {
-        fileList.style.display = 'none';
-        return;
-      }
-      
-      files.forEach(function(file, index) {
-        // ファイルサイズチェック（5MB）
-        if (file.size > 5 * 1024 * 1024) {
-          showAlert('ファイル「' + file.name + '」は5MBを超えています', 'error');
-          return;
-        }
-        
-        // ファイル形式チェック
-        if (!['image/png', 'image/jpeg', 'image/webp'].includes(file.type)) {
-          showAlert('ファイル「' + file.name + '」はサポートされていない形式です', 'error');
-          return;
-        }
-        
-        uploadedFiles.push(file);
-        
-        // プレビュー追加
-        const fileItem = document.createElement('div');
-        fileItem.className = 'file-item';
-        fileItem.innerHTML = '<span>' + file.name + ' (' + (file.size / 1024).toFixed(2) + ' KB)</span><button type="button" class="file-remove" onclick="removeFile(' + (uploadedFiles.length - 1) + ')">削除</button>';
-        fileList.appendChild(fileItem);
-      });
-      
-      fileList.style.display = uploadedFiles.length > 0 ? 'block' : 'none';
-    });
-    
-    // ファイル削除
-    window.removeFile = function(index) {
-      uploadedFiles.splice(index, 1);
-      imageUpload.value = '';
-      
-      if (uploadedFiles.length === 0) {
-        fileList.style.display = 'none';
-      } else {
-        // ファイルリスト更新
-        fileList.innerHTML = '';
-        uploadedFiles.forEach(function(file, idx) {
-          const fileItem = document.createElement('div');
-          fileItem.className = 'file-item';
-          fileItem.innerHTML = '<span>' + file.name + ' (' + (file.size / 1024).toFixed(2) + ' KB)</span><button type="button" class="file-remove" onclick="removeFile(' + idx + ')">削除</button>';
-          fileList.appendChild(fileItem);
-        });
-      }
-    };
-    
-    // アラート表示
-    function showAlert(message, type) {
-      type = type || 'success';
-      const alert = document.getElementById('alert');
-      alert.className = 'alert show ' + type;
-      alert.textContent = message;
-      setTimeout(function() { alert.classList.remove('show'); }, 5000);
-    }
-    
-    // フォーム送信
-    document.getElementById('reportForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      const submitBtn = document.getElementById('submitBtn');
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span class="spinner"></span>送信中...';
-      
-      try {
-        // フォームデータ取得
-        const formData = {
-          reportType: document.getElementById('reportType').value,
-          contentUrl: document.getElementById('contentUrl').value,
-          description: document.getElementById('description').value,
-          email: document.getElementById('email').value,
-          reporterName: document.getElementById('reporterName').value,
-          timestamp: new Date().toISOString()
-        };
-        
-        // 重複チェック（localStorageを使用した簡易版）
-        const lastReport = localStorage.getItem('lastReport');
-        if (lastReport) {
-          const lastTime = new Date(lastReport).getTime();
-          const now = new Date().getTime();
-          if (now - lastTime < 60000) { // 60秒以内の重複報告を防止
-            showAlert('別の報告を送信するまでしばらくお待ちください（スパム防止）', 'warning');
-            submitBtn.disabled = false;
-            submitBtn.textContent = '報告を送信';
-            return;
-          }
-        }
-        
-        // Discord Webhookに送信（Netlify Function経由）
-        const webhookPayload = {
-          content: '**新しい報告が送信されました**',
-          embeds: [{
-            title: '報告の種類: ' + formData.reportType,
-            description: formData.description,
-            fields: [
-              {
-                name: 'コンテンツURL',
-                value: formData.contentUrl || '未提供',
-                inline: false
-              },
-              {
-                name: 'メールアドレス',
-                value: formData.email || '未提供',
-                inline: true
-              },
-              {
-                name: '報告者名',
-                value: formData.reporterName || '匿名',
-                inline: true
-              },
-              {
-                name: '報告日時',
-                value: new Date().toLocaleString('ja-JP'),
-                inline: false
-              }
-            ],
-            color: 16711680 // 赤
-          }]
-        };
-        
-        // Netlify Functionを使用してDiscordに送信
-        const response = await fetch('/.netlify/functions/send-report', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(webhookPayload)
-        });
-        
-        if (response.ok) {
-          showAlert('報告を正常に送信しました。ご協力ありがとうございます！', 'success');
-          localStorage.setItem('lastReport', new Date().toISOString());
-          document.getElementById('reportForm').reset();
-          fileList.style.display = 'none';
-          uploadedFiles = [];
-        } else {
-          throw new Error('報告の送信に失敗しました');
-        }
-      } catch (error) {
-        console.error('エラー:', error);
-        showAlert('エラー: ' + error.message, 'error');
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = '報告を送信';
-      }
-    });
-    
-    // ドラッグ＆ドロップサポート
-    const fileUploadLabel = document.querySelector('.file-upload-label');
-    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(function(eventName) {
-      fileUploadLabel.addEventListener(eventName, function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        if (eventName === 'dragover') {
-          fileUploadLabel.style.background = '#f0f0f0';
-          fileUploadLabel.style.borderColor = 'var(--primary)';
-        }
-        if (eventName === 'dragleave' || eventName === 'drop') {
-          fileUploadLabel.style.background = '';
-          fileUploadLabel.style.borderColor = '';
-        }
-      });
-    });
-    
-    fileUploadLabel.addEventListener('drop', function(e) {
-      const files = e.dataTransfer.files;
-      imageUpload.files = files;
-      imageUpload.dispatchEvent(new Event('change'));
-    });
-  </script>
+  <!-- Client Hints Delegation -->
+  <meta http-equiv="Delegate-CH" content="Sec-CH-UA https://s.pemsrv.com; Sec-CH-UA-Mobile https://s.pemsrv.com; Sec-CH-UA-Arch https://s.pemsrv.com; Sec-CH-UA-Model https://s.pemsrv.com; Sec-CH-UA-Platform https://s.pemsrv.com; Sec-CH-UA-Platform-Version https://s.pemsrv.com; Sec-CH-UA-Bitness https://s.pemsrv.com; Sec-CH-UA-Full-Version-List https://s.pemsrv.com; Sec-CH-UA-Full-Version https://s.pemsrv.com;">
+  <meta http-equiv="Delegate-CH" content="Sec-CH-UA https://s.magsrv.com; Sec-CH-UA-Mobile https://s.magsrv.com; Sec-CH-UA-Arch https://s.magsrv.com; Sec-CH-UA-Model https://s.magsrv.com; Sec-CH-UA-Platform https://s.magsrv.com; Sec-CH-UA-Platform-Version https://s.magsrv.com; Sec-CH-UA-Bitness https://s.magsrv.com; Sec-CH-UA-Full-Version-List https://s.magsrv.com; Sec-CH-UA-Full-Version https://s.magsrv.com;">
 </body>
 </html>
