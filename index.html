@@ -131,6 +131,16 @@
       flex: 1;
     }
     
+    /* ==================== AD WRAPPER ==================== */
+    .ad-wrapper {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 30px auto;
+      padding: 0 20px;
+      min-height: 100px;
+    }
+    
     /* ==================== HEADER ==================== */
     header[role="banner"] {
       padding: 40px 0 30px;
@@ -335,12 +345,6 @@
     
     .status-label {
       color: var(--text-light);
-    }
-    
-    .status-bar.success {
-      background: #f0fdf4;
-      border-color: var(--success);
-      color: #166534;
     }
     
     /* ==================== GRID ==================== */
@@ -650,14 +654,6 @@
       animation: slideIn 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     }
     
-    .notification.success {
-      background: var(--success);
-    }
-    
-    .notification.error {
-      background: var(--error);
-    }
-    
     @keyframes slideIn {
       from {
         transform: translateX(400px);
@@ -714,6 +710,11 @@
   <!-- スキップリンク -->
   <a href="#main-content" class="skip-to-content">メインコンテンツへスキップ</a>
 
+  <!-- 広告1：ヘッダー（遅延読み込み）-->
+  <div class="ad-wrapper" id="ad-header-container">
+    <div id="container-c450e9b4b86a15429281d6d1bb83b6f2"></div>
+  </div>
+
   <div class="container">
     <header role="banner">
       <div class="header-content">
@@ -769,6 +770,11 @@
           </div>
         </div>
 
+        <!-- 広告2：コントロール下（遅延読み込み）-->
+        <div class="ad-wrapper" id="ad-middle-container">
+          <div id="container-231e5c9092a3f60264c9edcc16e5374f"></div>
+        </div>
+
         <!-- ステータス表示 -->
         <div class="status-bar" role="status" aria-live="polite">
           <div class="status-item">
@@ -788,6 +794,11 @@
             <div class="spinner"></div>
             <p>ランキング読み込み中...</p>
           </div>
+        </div>
+
+        <!-- 広告3：ランキング後（遅延読み込み）-->
+        <div class="ad-wrapper" id="ad-ranking-container">
+          <div id="container-ad-ranking"></div>
         </div>
 
         <!-- もっと見るボタン -->
@@ -819,6 +830,11 @@
           </form>
         </div>
 
+        <!-- 広告4：フォーム間（遅延読み込み）-->
+        <div class="ad-wrapper" id="ad-form-container">
+          <div id="container-ad-form"></div>
+        </div>
+
         <div class="scrape-card card">
           <h3 class="card-title">Webスクレイピング</h3>
           <form id="scrapeForm">
@@ -840,6 +856,11 @@
         <div class="sites-grid" id="sites-grid"></div>
       </section>
     </main>
+
+    <!-- 広告5：フッター前（遅延読み込み）-->
+    <div class="ad-wrapper" id="ad-footer-container">
+      <div id="container-ad-footer"></div>
+    </div>
   </div>
 
   <!-- 通知 -->
@@ -905,11 +926,67 @@
         description: 'Twitter履歴検索'
       }
     ];
+
+    /**
+     * Adsterra広告の遅延読み込み
+     * ページ読み込み後に広告スクリプトを実行
+     */
+    function loadAdsWithDelay() {
+      // 100ms待機してから広告を読み込み（ページレンダリング優先）
+      setTimeout(() => {
+        // Adsterra Popunder（遅延読み込み）
+        const popunderScript = document.createElement('script');
+        popunderScript.defer = true;
+        popunderScript.src = 'https://pl28484782.effectivegatecpm.com/14/29/79/142979e47a62210d83ef5275ac4060ca.js';
+        document.body.appendChild(popunderScript);
+
+        // Adsterra Header広告
+        const headerScript = document.createElement('script');
+        headerScript.defer = true;
+        headerScript.src = 'https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js';
+        headerScript.setAttribute('data-cfasync', 'false');
+        document.body.appendChild(headerScript);
+
+        // Adsterra Middle広告
+        const middleScript = document.createElement('script');
+        middleScript.defer = true;
+        middleScript.innerHTML = `
+          atOptions = {
+            'key' : '231e5c9092a3f60264c9edcc16e5374f',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+          };
+        `;
+        document.body.appendChild(middleScript);
+
+        const middleInvokeScript = document.createElement('script');
+        middleInvokeScript.defer = true;
+        middleInvokeScript.src = 'https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js';
+        document.body.appendChild(middleInvokeScript);
+
+      }, 100);
+
+      // 3秒後にさらに広告を読み込み（ユーザーがページを閲覧している時）
+      setTimeout(() => {
+        // Adsterra Social Bar
+        const socialScript = document.createElement('script');
+        socialScript.defer = true;
+        socialScript.src = 'https://pl28484808.effectivegatecpm.com/d2/d3/3b/d2d33b5038b795c6408dcadeef8784ba.js';
+        document.body.appendChild(socialScript);
+
+      }, 3000);
+    }
     
     document.addEventListener('DOMContentLoaded', function() {
+      // ページ構造を優先して読み込み
       setupEventListeners();
       loadInitialData();
       renderRelatedSites();
+
+      // 広告は後から読み込み
+      loadAdsWithDelay();
     });
     
     function setupEventListeners() {
@@ -931,7 +1008,14 @@
       try {
         showLoadingState();
         
-
+        // サンプルデータを使用
+        const sampleData = {
+          byNewest: [
+            { id: '1', name: 'サンプルファイル1', url: 'https://gofile.io/d/sample1', downloads: 150, size: 1024000, added_at: new Date().toISOString() },
+            { id: '2', name: 'サンプルファイル2', url: 'https://gofile.io/d/sample2', downloads: 120, size: 512000, added_at: new Date().toISOString() },
+            { id: '3', name: 'サンプルファイル3', url: 'https://gofile.io/d/sample3', downloads: 98, size: 256000, added_at: new Date().toISOString() }
+          ]
+        };
         
         AppState.ranking = {
           byNewest: sampleData.byNewest,
