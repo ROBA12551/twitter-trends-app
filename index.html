@@ -20,39 +20,11 @@
     "url": "https://twitchan.com/",
     "description": "Twitterで話題のGofileファイルをリアルタイムでランキング表示。人気動画・画像をダウンロード数順でチェック",
     "inLanguage": "ja-JP",
-    "isFamilyFriendly": false,
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://twitchan.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    },
     "publisher": {
       "@type": "Organization",
       "name": "TwiiterChan",
-      "url": "https://twitchan.com/",
-      "logo": "https://twitchan.com/logo.png"
+      "url": "https://twitchan.com/"
     }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "ホーム",
-        "item": "https://twitchan.com/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Twitter保存ランキング",
-        "item": "https://twitchan.com/"
-      }
-    ]
   }
   </script>
 
@@ -61,37 +33,21 @@
   <meta property="og:title" content="Twitter保存ランキング | Gofileダウンロード数表示">
   <meta property="og:description" content="Twitterで話題のGofileファイルをリアルタイムランキング表示。人気動画・画像を即座にチェック。">
   <meta property="og:url" content="https://twitchan.com/">
-  <meta property="og:image" content="https://twitchan.com/images/ogp.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Twitter保存ランキング - リアルタイム人気動画表示">
   <meta property="og:site_name" content="TwiiterChan">
   <meta property="og:locale" content="ja_JP">
-  <meta property="og:updated_time" content="2024-01-01T00:00:00+09:00">
 
   <!-- Twitter Card強化 -->
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Twitter保存ランキング - TwiiterChan">
   <meta name="twitter:description" content="Twitterで話題のGofileファイルをリアルタイムでランキング表示">
-  <meta name="twitter:image" content="https://twitchan.com/images/twitter-card.png">
-  <meta name="twitter:site" content="@twitchan">
 
   <!-- iOS/Android最適化 -->
   <meta name="theme-color" content="#ff7f9c">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/manifest.webmanifest">
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  
-  <!-- Preconnect for ads -->
-  <link rel="preconnect" href="https://pl28484782.effectivegatecpm.com" crossorigin>
-  <link rel="preconnect" href="https://a.magsrv.com" crossorigin>
-  <link rel="preconnect" href="https://js.wpnsrv.com" crossorigin>
-  <link rel="preconnect" href="https://engagementidentifiers.com" crossorigin>
   
   <style>
     /* ==================== CSS RESET & BASE ==================== */
@@ -117,8 +73,6 @@
       --radius-sm: 10px;
       --radius-lg: 20px;
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      --adult-gradient: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
-      --adult-gradient-hover: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
     }
     
     html {
@@ -166,8 +120,6 @@
     
     .skip-to-content:focus {
       top: 10px;
-      outline: 3px solid var(--primary);
-      outline-offset: 2px;
     }
     
     /* ==================== LAYOUT ==================== */
@@ -177,15 +129,6 @@
       padding: 0 20px;
       width: 100%;
       flex: 1;
-    }
-    
-    /* ==================== AD CONTAINER WRAPPER ==================== */
-    .ad-wrapper {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      margin: 30px 0;
-      padding: 0 20px;
     }
     
     /* ==================== HEADER ==================== */
@@ -213,144 +156,6 @@
       color: var(--text-light);
       font-weight: 500;
       margin-bottom: 20px;
-    }
-    
-    .seo-content {
-      max-width: 800px;
-      margin: 20px auto 0;
-      padding: 15px;
-      background: var(--surface-light);
-      border-radius: var(--radius-sm);
-      font-size: 14px;
-      color: #999;
-      line-height: 1.8;
-    }
-    
-    /* ==================== AD CONTAINERS ==================== */
-    .ad-container {
-      min-height: 120px;
-      border-radius: var(--radius);
-      overflow: hidden;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      border: none;
-      width: auto;
-      max-width: 100%;
-    }
-    
-    .ad-placeholder {
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      background-size: 200% 100%;
-      animation: loading 1.5s infinite;
-    }
-    
-    @keyframes loading {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-    
-    .ad-premium-top {
-      box-shadow: none;
-    }
-    
-    .ad-content-between {
-      background: transparent;
-      border: none;
-      box-shadow: none;
-    }
-    
-    .ad-in-ranking {
-      background: transparent;
-      border: none;
-      box-shadow: none;
-      position: relative;
-    }
-    
-    .ad-adult-premium {
-      background: transparent !important;
-      color: white;
-      border: none !important;
-      box-shadow: none !important;
-    }
-    
-    .ad-footer {
-      background: transparent;
-      border: none;
-    }
-    
-    .ad-badge {
-      position: absolute;
-      top: 8px;
-      left: 16px;
-      font-size: 11px;
-      color: var(--primary);
-      font-weight: 700;
-      background: white;
-      padding: 3px 10px;
-      border-radius: 4px;
-      text-transform: uppercase;
-    }
-    
-    .ad-adult-premium .ad-badge {
-      background: rgba(255, 255, 255, 0.9);
-      color: #ffffff;
-    }
-    
-    /* ==================== SMARTLINK ==================== */
-    .smartlink-container {
-      margin: 25px 0;
-    }
-    
-    .smartlink-button {
-      display: block;
-      width: 100%;
-      padding: 20px;
-      background: var(--adult-gradient);
-      color: white;
-      border-radius: var(--radius);
-      font-weight: 700;
-      font-size: 18px;
-      text-decoration: none;
-      text-align: center;
-      transition: var(--transition);
-      border: 3px solid #ffffff;
-      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .smartlink-button:hover,
-    .smartlink-button:focus {
-      background: var(--adult-gradient-hover);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
-    }
-    
-    .smartlink-badge {
-      position: absolute;
-      top: -10px;
-      right: 20px;
-      background: #ffffff;
-      color: white;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 700;
-    }
-    
-    .smartlink-text {
-      display: block;
-      font-size: 20px;
-      margin-bottom: 5px;
-    }
-    
-    .smartlink-arrow {
-      font-size: 24px;
     }
     
     /* ==================== NAVIGATION ==================== */
@@ -394,10 +199,6 @@
       background: var(--secondary);
       color: white;
       border-color: var(--secondary);
-    }
-    
-    .nav-icon {
-      font-size: 18px;
     }
     
     /* ==================== MAIN CONTENT ==================== */
@@ -511,11 +312,6 @@
       border-color: var(--secondary);
     }
     
-    .sort-btn[aria-pressed="true"] {
-      background: var(--secondary);
-      color: white;
-    }
-    
     /* ==================== STATUS BAR ==================== */
     .status-bar {
       padding: 16px 24px;
@@ -541,20 +337,10 @@
       color: var(--text-light);
     }
     
-    .status-bar[role="alert"] {
-      animation: slideDown 0.3s ease;
-    }
-    
     .status-bar.success {
       background: #f0fdf4;
       border-color: var(--success);
       color: #166534;
-    }
-    
-    .status-bar.error {
-      background: #fef2f2;
-      border-color: var(--error);
-      color: #991b1b;
     }
     
     /* ==================== GRID ==================== */
@@ -563,12 +349,6 @@
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 24px;
       margin: 30px 0;
-    }
-    
-    @media (min-width: 1200px) {
-      .ranking-grid {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      }
     }
     
     /* ==================== VIDEO CARDS ==================== */
@@ -589,14 +369,6 @@
       border-color: var(--secondary);
       box-shadow: var(--shadow-xl);
       transform: translateY(-6px);
-    }
-    
-    .video-card.ad-slot {
-      background: transparent;
-      border: none;
-      justify-content: center;
-      align-items: center;
-      padding: 30px;
     }
     
     .video-thumbnail {
@@ -762,13 +534,6 @@
       line-height: 1.6;
     }
     
-    .form-help {
-      font-size: 13px;
-      color: var(--text-light);
-      margin-bottom: 20px;
-      line-height: 1.5;
-    }
-    
     .form-actions {
       display: flex;
       gap: 12px;
@@ -815,14 +580,6 @@
       transform: translateY(-2px);
     }
     
-    .btn-icon {
-      font-size: 18px;
-    }
-    
-    .btn-text {
-      white-space: nowrap;
-    }
-    
     /* ==================== LOADING ==================== */
     .loading-state {
       text-align: center;
@@ -862,10 +619,6 @@
       cursor: pointer;
       font-size: 17px;
       transition: var(--transition);
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
     }
     
     .load-more-btn:hover,
@@ -873,12 +626,6 @@
       background: #a0cce0;
       transform: translateY(-3px);
       box-shadow: 0 6px 16px rgba(160, 204, 224, 0.4);
-    }
-    
-    .btn-subtext {
-      font-size: 12px;
-      font-weight: 500;
-      opacity: 0.8;
     }
     
     /* ==================== NOTIFICATION ==================== */
@@ -895,6 +642,7 @@
       box-shadow: var(--shadow-xl);
       max-width: 400px;
       font-weight: 600;
+      display: none;
     }
     
     .notification.show {
@@ -928,27 +676,6 @@
       gap: 24px;
     }
     
-    /* ==================== FOOTER ==================== */
-    .social-footer {
-      position: sticky;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: white;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-      z-index: 999;
-      margin-top: auto;
-    }
-    
-    .social-container {
-      padding: 10px 20px;
-      text-align: center;
-      min-height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
     /* ==================== RESPONSIVE ==================== */
     @media (max-width: 768px) {
       .container {
@@ -957,12 +684,6 @@
       
       .nav-tabs {
         gap: 8px;
-      }
-      
-      .nav-button {
-        padding: 12px 20px;
-        font-size: 14px;
-        min-height: 48px;
       }
       
       .ranking-grid {
@@ -976,10 +697,6 @@
         gap: 15px;
       }
       
-      .refresh-interval {
-        justify-content: center;
-      }
-      
       .status-bar {
         flex-direction: column;
         align-items: stretch;
@@ -987,74 +704,15 @@
         text-align: center;
       }
       
-      .ad-container {
-        margin: 20px auto;
-        min-height: 100px;
-      }
-      
       .video-thumbnail {
         height: 160px;
       }
-    }
-    
-    @media (max-width: 480px) {
-      .page-title {
-        font-size: 28px;
-      }
-      
-      .nav-button {
-        padding: 10px 16px;
-        font-size: 13px;
-      }
-      
-      .card {
-        padding: 20px;
-      }
-      
-      .btn-primary,
-      .btn-secondary {
-        padding: 12px 24px;
-        font-size: 14px;
-      }
-      
-      .smartlink-button {
-        padding: 16px;
-        font-size: 16px;
-      }
-      
-      .smartlink-text {
-        font-size: 18px;
-      }
-    }
-    
-    /* ==================== FOCUS STYLES ==================== */
-    :focus {
-      outline: 3px solid var(--primary);
-      outline-offset: 2px;
-    }
-    
-    :focus:not(:focus-visible) {
-      outline: none;
-    }
-    
-    :focus-visible {
-      outline: 3px solid var(--primary);
-      outline-offset: 2px;
     }
   </style>
 </head>
 <body>
   <!-- スキップリンク -->
   <a href="#main-content" class="skip-to-content">メインコンテンツへスキップ</a>
-
-  <!-- ヘッダー広告1（修正済み：中央揃え） -->
-  <div class="ad-wrapper">
-    <div class="ad-container ad-premium-top ad-adult-premium" id="ad-header-1" aria-label="スポンサー広告">
-      <div class="ad-placeholder"></div>
-      <script defer data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
-      <div id="container-c450e9b4b86a15429281d6d1bb83b6f2"></div>
-    </div>
-  </div>
 
   <div class="container">
     <header role="banner">
@@ -1068,25 +726,14 @@
     <nav class="main-nav" aria-label="メインナビゲーション">
       <div class="nav-tabs">
         <button class="nav-button active" data-mode="ranking" aria-current="page">
-          <span class="nav-icon" aria-hidden="true"></span>
           ランキング
         </button>
         <button class="nav-button" data-mode="upload">
-          <span class="nav-icon" aria-hidden="true"></span>
           URL投稿
         </button>
         <button class="nav-button" data-mode="sites">
-          <span class="nav-icon" aria-hidden="true"></span>
           関連サイト
         </button>
-        <a href="policy.html" class="nav-button" rel="noopener noreferrer" style="text-decoration: none;">
-          <span class="nav-icon" aria-hidden="true"></span>
-          利用規約
-        </a>
-        <a href="contact.html" class="nav-button" rel="noopener noreferrer" style="text-decoration: none;">
-          <span class="nav-icon" aria-hidden="true"></span>
-          お問い合わせ
-        </a>
       </div>
     </nav>
 
@@ -1097,46 +744,28 @@
         
         <!-- ランキングコントロール -->
         <div class="ranking-controls">
-          <div class="refresh-interval">
-            <label for="refresh-select" class="control-label">自動更新:</label>
-            <select id="refresh-select" aria-label="自動更新間隔">
-              <option value="0">オフ</option>
-              <option value="30">30秒</option>
-              <option value="60" selected>1分</option>
-              <option value="300">5分</option>
-            </select>
-          </div>
-
-          <!-- 広告2：ソート前（修正済み） -->
-          <div class="ad-wrapper">
-            <div class="ad-container ad-content-between ad-adult-premium" id="ad-sorting-1" aria-label="おすすめ広告">
-              <div class="ad-placeholder"></div>
-              <script>
-                atOptions = {
-                  'key' : '231e5c9092a3f60264c9edcc16e5374f',
-                  'format' : 'iframe',
-                  'height' : 250,
-                  'width' : 300,
-                  'params' : {}
-                };
-              </script>
-              <script defer src="https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js"></script>
+          <div class="refresh-controls">
+            <div class="refresh-interval">
+              <label for="refresh-select" class="control-label">自動更新:</label>
+              <select id="refresh-select">
+                <option value="0">オフ</option>
+                <option value="30">30秒</option>
+                <option value="60" selected>1分</option>
+                <option value="300">5分</option>
+              </select>
             </div>
-          </div>
 
-          <div class="sort-controls">
-            <button class="sort-btn active" data-sort="newest" aria-pressed="true">
-              <span class="sort-icon" aria-hidden="true"></span>
-              新着順
-            </button>
-            <button class="sort-btn" data-sort="popular" aria-pressed="false">
-              <span class="sort-icon" aria-hidden="true"></span>
-              トレンド
-            </button>
-            <button class="sort-btn" data-sort="downloads" aria-pressed="false">
-              <span class="sort-icon" aria-hidden="true"></span>
-              ダウンロード数
-            </button>
+            <div class="sort-controls">
+              <button class="sort-btn active" data-sort="newest" aria-pressed="true">
+                新着順
+              </button>
+              <button class="sort-btn" data-sort="popular" aria-pressed="false">
+                トレンド
+              </button>
+              <button class="sort-btn" data-sort="downloads" aria-pressed="false">
+                ダウンロード数
+              </button>
+            </div>
           </div>
         </div>
 
@@ -1144,62 +773,27 @@
         <div class="status-bar" role="status" aria-live="polite">
           <div class="status-item">
             <span class="status-label">合計</span>
-            <strong id="total-count" aria-live="polite">0</strong>
-            <span class="status-label">件のファイル</span>
+            <strong id="total-count">0</strong>
+            <span class="status-label">件</span>
           </div>
           <div class="status-item">
             <span class="status-label">最終更新:</span>
-            <span id="last-update" aria-live="polite">待機中...</span>
-          </div>
-        </div>
-
-        <!-- スマートリンク（高単価） -->
-        <div class="smartlink-container" id="smartlink-premium" aria-label="おすすめリンク">
-          <a href="https://www.effectivegatecpm.com/qst8wwse?key=385ee7d478d037878c615a8416a3507a" 
-             target="_blank" 
-             rel="noopener noreferrer sponsored"
-             class="smartlink-button"
-             aria-label="特別なおすすめコンテンツ（新しいウィンドウで開きます）">
-            <span class="smartlink-badge" aria-hidden="true">人気急上昇</span>
-            <span class="smartlink-text">今すぐチェック！</span>
-            <span class="smartlink-arrow" aria-hidden="true"></span>
-          </a>
-        </div>
-
-        <!-- 広告：スマートリンク後 -->
-        <div class="ad-wrapper">
-          <div class="ad-container ad-content-between ad-adult-premium" id="ad-smartlink-after" aria-label="おすすめ広告">
-            <div class="ad-placeholder"></div>
-            <script>
-              atOptions = {
-                'key' : '231e5c9092a3f60264c9edcc16e5374f',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            </script>
-            <script defer src="https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js"></script>
+            <span id="last-update">待機中...</span>
           </div>
         </div>
 
         <!-- ランキンググリッド -->
-        <div class="ranking-grid" id="ranking-grid" role="feed" aria-label="ランキングリスト">
-        </div>
-
-        <!-- 広告3：ランキング中間（修正済み） -->
-        <div class="ad-wrapper">
-          <div class="ad-container ad-in-ranking ad-adult-premium" id="ad-ranking-mid" aria-label="ランキング広告">
-            <div class="ad-placeholder"></div>
-            <div class="ad-badge" aria-hidden="true">スポンサー広告</div>
+        <div class="ranking-grid" id="ranking-grid" role="feed">
+          <div class="loading-state">
+            <div class="spinner"></div>
+            <p>ランキング読み込み中...</p>
           </div>
         </div>
 
         <!-- もっと見るボタン -->
         <div class="load-more-container">
-          <button class="load-more-btn" id="load-more-btn" aria-label="もっとランキングを表示">
-            <span class="btn-text">もっと見る</span>
-            <span class="btn-subtext">（次の12件）</span>
+          <button class="load-more-btn" id="load-more-btn">
+            もっと見る
           </button>
         </div>
       </section>
@@ -1208,127 +802,51 @@
       <section id="upload-mode" class="mode-content hidden" aria-labelledby="upload-heading">
         <h2 id="upload-heading" class="visually-hidden">URL投稿</h2>
         
-        <!-- 広告4：フォーム前（修正済み） -->
-        <div class="ad-wrapper">
-          <div class="ad-container ad-content-between" id="ad-upload-top">
-            <div class="ad-placeholder"></div>
-            <script>
-              atOptions = {
-                'key' : '231e5c9092a3f60264c9edcc16e5374f',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            </script>
-            <script defer src="https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js"></script>
-          </div>
-        </div>
-
         <div class="upload-card card">
           <h3 class="card-title">直接入力でURL追加</h3>
-          <form id="uploadForm" aria-labelledby="upload-form-label">
+          <form id="uploadForm">
             <label for="gofileUrls" class="form-label">
               <span class="label-text">Gofile/Twitter URLを入力</span>
               <span class="label-note">（複数行対応）</span>
             </label>
             <textarea id="gofileUrls" 
-                      name="gofileUrls" 
-                      placeholder="例:&#10;https://gofile.io/d/bZqtMw&#10;https://video.twimg.com/amplify_video/1234567890/vid/avc1/1080x1920/video.mp4&#10;https://pbs.twimg.com/media/ABC123.jpg" 
-                      required
-                      aria-describedby="urlsHelp"
+                      placeholder="例: https://gofile.io/d/bZqtMw"
                       rows="6"></textarea>
             <div class="form-actions">
-              <button type="submit" id="uploadBtn" class="btn-primary">
-                <span class="btn-icon" aria-hidden="true"></span>
-                <span class="btn-text">URLを追加</span>
-              </button>
-              <button type="reset" class="btn-secondary">
-                <span class="btn-text">クリア</span>
-              </button>
+              <button type="submit" class="btn-primary">URLを追加</button>
+              <button type="reset" class="btn-secondary">クリア</button>
             </div>
           </form>
-          <div id="uploadStatus" class="status-bar" role="alert" aria-live="polite" hidden></div>
-        </div>
-
-        <!-- 広告5：フォーム間（修正済み） -->
-        <div class="ad-wrapper">
-          <div class="ad-container ad-content-between" id="ad-upload-mid">
-            <div class="ad-placeholder"></div>
-            <script defer data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"></script>
-          </div>
         </div>
 
         <div class="scrape-card card">
           <h3 class="card-title">Webスクレイピング</h3>
-          <form id="scrapeForm" aria-labelledby="scrape-form-label">
+          <form id="scrapeForm">
             <label for="websiteUrl" class="form-label">ウェブサイトURL</label>
             <input type="url" 
                    id="websiteUrl" 
-                   name="websiteUrl" 
                    placeholder="例: https://example-site.com/"
-                   required
-                   aria-describedby="scrapeHelp"
                    inputmode="url">
             <div class="form-actions">
-              <button type="submit" id="scrapeBtn" class="btn-primary">
-                <span class="btn-icon" aria-hidden="true"></span>
-                <span class="btn-text">スクレイピング開始</span>
-              </button>
+              <button type="submit" class="btn-primary">スクレイピング開始</button>
             </div>
           </form>
-          <div id="scrapeStatus" class="status-bar" role="alert" aria-live="polite" hidden></div>
         </div>
       </section>
 
       <!-- 関連サイトモード -->
       <section id="sites-mode" class="mode-content hidden" aria-labelledby="sites-heading">
         <h2 id="sites-heading" class="visually-hidden">関連サイト</h2>
-        
-        <!-- 広告6：サイトリスト前（修正済み） -->
-        <div class="ad-wrapper">
-          <div class="ad-container ad-premium-top" id="ad-sites-top">
-            <div class="ad-placeholder"></div>
-            <script defer type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
-            <ins class="eas6a97888e2" data-zoneid="5829212"></ins> 
-          </div>
-        </div>
-
-        <div class="sites-grid" id="sites-grid" role="list" aria-label="関連サイトリスト"></div>
+        <div class="sites-grid" id="sites-grid"></div>
       </section>
     </main>
-
-    <!-- 広告7：フッター前（修正済み） -->
-    <div class="ad-wrapper">
-      <div class="ad-container ad-footer ad-adult-premium" id="ad-footer-top" aria-label="おすすめ広告">
-        <div class="ad-placeholder"></div>
-        <script>
-          atOptions = {
-            'key' : '231e5c9092a3f60264c9edcc16e5374f',
-            'format' : 'iframe',
-            'height' : 90,
-            'width' : 728,
-            'params' : {}
-          };
-        </script>
-        <script defer src="https://www.highperformanceformat.com/231e5c9092a3f60264c9edcc16e5374f/invoke.js"></script>
-      </div>
-    </div>
   </div>
 
-  <!-- ソーシャルバー固定 -->
-  <footer class="social-footer" role="contentinfo" aria-label="ソーシャルメディアバー">
-    <div class="social-container" id="ad-social-bar">
-      <div class="ad-placeholder"></div>
-      <script defer src="https://pl28484808.effectivegatecpm.com/d2/d3/3b/d2d33b5038b795c6408dcadeef8784ba.js"></script>
-    </div>
-  </footer>
-
   <!-- 通知 -->
-  <div id="notification" class="notification" role="alert" aria-live="assertive" aria-atomic="true" hidden></div>
+  <div id="notification" class="notification" role="alert" aria-live="assertive"></div>
 
-  <!-- 構造化データ：ランキング -->
-  <script type="application/ld+json" id="ranking-structured-data">
+  <!-- 構造化データ -->
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -1340,750 +858,281 @@
   }
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Twitter保存ランキングとは？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Twitterで話題のGofileファイルをダウンロード数順・新着順でリアルタイムにランキング表示するサービスです。人気の動画・画像を簡単に見つけることができます。"
-        }
-      }
-    ]
-  }
-  </script>
-
   <script>
-    // ==================== メインスクリプト ====================
-    (function() {
-      'use strict';
-      
-      // アプリケーション状態
-      const AppState = {
-        currentMode: 'ranking',
-        currentSort: 'newest',
-        ranking: { byNewest: [], byPopular: [], byDownloads: [] },
-        itemsPerPage: 12,
-        currentPage: 0,
-        autoRefreshTimer: null,
-        isLoading: false,
-        totalItems: 0,
-        lastUpdate: null
-      };
-      
-      // 関連サイトデータ
-      const RelatedSites = [
-        { 
-          name: 'NSNN Gofile', 
-          url: 'https://nsnn.net/gofile.io?sort=new&page=1', 
-          description: 'Twitter最新ファイル一覧',
-          category: 'gofile'
-        },
-        { 
-          name: 'twivideo.net', 
-          url: 'https://twivideo.net/?ranking', 
-          description: 'Twitterリアルタイムファイル一覧',
-          category: 'video'
-        },
-        { 
-          name: 'Twidouga', 
-          url: 'https://www.twidouga.net', 
-          description: 'Twitterランキング一覧',
-          category: 'ranking'
-        },
-        { 
-          name: 'TWIIGLE', 
-          url: 'https://twiigle.com/', 
-          description: 'Twitter検索エンジン',
-          category: 'search'
-        },
-        { 
-          name: 'monsnode', 
-          url: 'https://monsnode.com', 
-          description: 'Twitter動画保存',
-          category: 'video'
-        },
-        { 
-          name: 'twicoco', 
-          url: 'https://twicoco.com/?type=history', 
-          description: 'Twitter履歴検索',
-          category: 'search'
-        }
-      ];
-      
-      // DOM読み込み完了
-      document.addEventListener('DOMContentLoaded', function() {
-        initApplication();
-        loadVisibleAds();
+    'use strict';
+    
+    const AppState = {
+      currentMode: 'ranking',
+      currentSort: 'newest',
+      ranking: { byNewest: [], byPopular: [], byDownloads: [] },
+      itemsPerPage: 12,
+      currentPage: 0,
+      autoRefreshTimer: null,
+      isLoading: false,
+      totalItems: 0,
+      lastUpdate: null
+    };
+    
+    const RelatedSites = [
+      { 
+        name: 'NSNN Gofile', 
+        url: 'https://nsnn.net/gofile.io?sort=new&page=1', 
+        description: 'Twitter最新ファイル一覧'
+      },
+      { 
+        name: 'twivideo.net', 
+        url: 'https://twivideo.net/?ranking', 
+        description: 'Twitterリアルタイムファイル一覧'
+      },
+      { 
+        name: 'Twidouga', 
+        url: 'https://www.twidouga.net', 
+        description: 'Twitterランキング一覧'
+      },
+      { 
+        name: 'TWIIGLE', 
+        url: 'https://twiigle.com/', 
+        description: 'Twitter検索エンジン'
+      },
+      { 
+        name: 'monsnode', 
+        url: 'https://monsnode.com', 
+        description: 'Twitter動画保存'
+      },
+      { 
+        name: 'twicoco', 
+        url: 'https://twicoco.com/?type=history', 
+        description: 'Twitter履歴検索'
+      }
+    ];
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      setupEventListeners();
+      loadInitialData();
+      renderRelatedSites();
+    });
+    
+    function setupEventListeners() {
+      document.querySelectorAll('.nav-button[data-mode]').forEach(btn => {
+        btn.addEventListener('click', () => switchMode(btn.dataset.mode));
       });
       
-      /**
-       * アプリケーション初期化
-       */
-      function initApplication() {
-        setupEventListeners();
-        loadInitialData();
-        setupAutoRefresh();
-        setupAccessibility();
-      }
+      document.querySelectorAll('.sort-btn').forEach(btn => {
+        btn.addEventListener('click', () => setSortMode(btn.dataset.sort));
+      });
       
-      /**
-       * 広告の可視時ロード
-       */
-      function loadVisibleAds() {
-        const adIds = [
-          'ad-header-1', 'ad-sorting-1', 'ad-smartlink-after', 'ad-ranking-mid',
-          'ad-upload-top', 'ad-upload-mid', 'ad-sites-top',
-          'ad-footer-top', 'ad-social-bar'
-        ];
-        
-        if ('IntersectionObserver' in window) {
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                const scripts = entry.target.querySelectorAll('script[src]');
-                scripts.forEach(script => {
-                  if (!script.dataset.loaded) {
-                    const newScript = document.createElement('script');
-                    Array.from(script.attributes).forEach(attr => {
-                      newScript.setAttribute(attr.name, attr.value);
-                    });
-                    document.body.appendChild(newScript);
-                    script.dataset.loaded = 'true';
-                  }
-                });
-                observer.unobserve(entry.target);
-              }
-            });
-          }, { threshold: 0.1 });
-          
-          adIds.forEach(adId => {
-            const adElement = document.getElementById(adId);
-            if (adElement) observer.observe(adElement);
-          });
-        }
-      }
-      
-      /**
-       * イベントリスナーの設定
-       */
-      function setupEventListeners() {
-        document.querySelectorAll('.nav-button[data-mode]').forEach(btn => {
-          btn.addEventListener('click', () => switchMode(btn.dataset.mode));
-        });
-        
-        document.querySelectorAll('.sort-btn').forEach(btn => {
-          btn.addEventListener('click', () => setSortMode(btn.dataset.sort));
-        });
-        
-        document.getElementById('refresh-select').addEventListener('change', handleAutoRefreshChange);
-        document.getElementById('load-more-btn').addEventListener('click', loadMoreItems);
-        document.getElementById('uploadForm').addEventListener('submit', handleUrlUpload);
-        document.getElementById('scrapeForm').addEventListener('submit', handleWebScraping);
-      }
-      
-      /**
-       * 初期データのロード
-       */
-      async function loadInitialData() {
-        try {
-          showLoadingState();
-          await fetchRanking();
-          updateStructuredData();
-          renderRelatedSites();
-        } catch (error) {
-          console.error('初期化エラー:', error);
-          showNotification('データの読み込みに失敗しました', 'error');
-        }
-      }
-      
-      /**
-       * ランキングデータの取得
-       */
-      async function fetchRanking() {
-        if (AppState.isLoading) return;
-        
-        AppState.isLoading = true;
+      document.getElementById('refresh-select').addEventListener('change', handleAutoRefreshChange);
+      document.getElementById('load-more-btn').addEventListener('click', loadMoreItems);
+      document.getElementById('uploadForm').addEventListener('submit', handleUrlUpload);
+      document.getElementById('scrapeForm').addEventListener('submit', handleWebScraping);
+    }
+    
+    async function loadInitialData() {
+      try {
         showLoadingState();
         
-        try {
-          // GitHub APIからURLを取得
-          const response = await fetch('/.netlify/functions/get-urls');
-          
-          if (!response.ok) {
-            throw new Error('URLデータの取得に失敗しました');
-          }
-          
-          const result = await response.json();
-          
-          if (result.status !== 'ok' || !result.data) {
-            throw new Error('無効なレスポンス形式です');
-          }
-          
-          // URLの有効性をチェック
-          const validatedData = await validateUrls(result.data);
-          
-          AppState.ranking = {
-            byNewest: validatedData.byNewest || [],
-            byPopular: validatedData.byPopular || [],
-            byDownloads: validatedData.byNewest || []
-          };
-          AppState.totalItems = (validatedData.byNewest || []).length;
-          AppState.currentPage = 0;
-          AppState.lastUpdate = new Date();
-          
-          renderRanking();
-          updateStatusBar();
-          updateStructuredData();
-          
-          showNotification(`${AppState.totalItems}件のランキングを表示中`, 'success');
-          
-        } catch (error) {
-          console.error('ランキング取得エラー:', error);
-          showNotification(`エラー: ${error.message}`, 'error');
-        } finally {
-          AppState.isLoading = false;
-          hideLoadingState();
-        }
-      }
-      
-      /**
-       * URLの有効性をチェック
-       */
-      async function validateUrls(data) {
-        const validated = {
-          byNewest: [],
-          byPopular: []
+
+        
+        AppState.ranking = {
+          byNewest: sampleData.byNewest,
+          byPopular: [...sampleData.byNewest].sort((a, b) => b.downloads - a.downloads),
+          byDownloads: [...sampleData.byNewest].sort((a, b) => b.downloads - a.downloads)
         };
+        AppState.totalItems = sampleData.byNewest.length;
+        AppState.lastUpdate = new Date();
         
-        if (!data.byNewest || !Array.isArray(data.byNewest)) {
-          return validated;
-        }
+        renderRanking();
+        updateStatusBar();
         
-        // 並列でURLをチェック（最大10個まで同時）
-        const chunks = [];
-        for (let i = 0; i < data.byNewest.length; i += 10) {
-          chunks.push(data.byNewest.slice(i, i + 10));
-        }
-        
-        for (const chunk of chunks) {
-          const validItems = await Promise.all(
-            chunk.map(async (item) => {
-              try {
-                const isValid = await checkUrlValidity(item.url);
-                return isValid ? item : null;
-              } catch (error) {
-                console.warn('URL チェック失敗:', item.url, error);
-                return null;
-              }
-            })
-          );
-          
-          validated.byNewest.push(...validItems.filter(item => item !== null));
-        }
-        
-        // 人気順でソート
-        validated.byPopular = [...validated.byNewest]
-          .sort((a, b) => (b.access_count || 0) - (a.access_count || 0));
-        
-        return validated;
+      } catch (error) {
+        console.error('初期化エラー:', error);
+        showNotification('データの読み込みに失敗しました', 'error');
+      }
+    }
+    
+    function getCurrentRankingData() {
+      switch (AppState.currentSort) {
+        case 'popular':
+          return AppState.ranking.byPopular;
+        case 'downloads':
+          return AppState.ranking.byDownloads;
+        default:
+          return AppState.ranking.byNewest;
+      }
+    }
+    
+    function renderRanking() {
+      const grid = document.getElementById('ranking-grid');
+      const data = getCurrentRankingData();
+      
+      if (!data || data.length === 0) {
+        grid.innerHTML = `
+          <div class="loading-state">
+            <div class="spinner"></div>
+            <p>ランキングデータがありません</p>
+          </div>
+        `;
+        return;
       }
       
-      /**
-       * URLの有効性をチェック
-       */
-      async function checkUrlValidity(url) {
-        try {
-          // HEAD リクエストで確認（CORSの問題がある場合はスキップ）
-          if (url.includes('gofile.io')) {
-            // Gofileの場合は簡単なチェック（実際の存在確認はサーバー側で行う）
-            return /^https:\/\/gofile\.io\//.test(url);
-          }
-          return true;
-        } catch (error) {
-          console.warn('URL チェックエラー:', url, error.message);
-          return false;
-        }
-      }
+      const start = AppState.currentPage * AppState.itemsPerPage;
+      const end = start + AppState.itemsPerPage;
+      const items = data.slice(start, end);
       
-      /**
-       * データをフォーマット
-       */
-      function formatUrlData(urlItem) {
-        return {
-          id: urlItem.id || generateId(),
-          name: urlItem.name || 'Unknown',
-          url: urlItem.url,
-          downloads: urlItem.downloads || urlItem.access_count || 0,
-          size: urlItem.size || 0,
-          added_at: urlItem.added_at || new Date().toISOString(),
-          source: 'github'
-        };
-      }
-      
-      /**
-       * ID生成
-       */
-      function generateId() {
-        return 'item_' + Math.random().toString(36).substr(2, 9);
-      }
-      
-      /**
-       * 現在のソートに基づくデータ取得
-       */
-      function getCurrentRankingData() {
-        switch (AppState.currentSort) {
-          case 'popular':
-            return AppState.ranking.byPopular || [];
-          case 'downloads':
-            return AppState.ranking.byDownloads || [];
-          default:
-            return AppState.ranking.byNewest || [];
-        }
-      }
-      
-      /**
-       * ランキングのレンダリング
-       */
-      function renderRanking() {
-        const grid = document.getElementById('ranking-grid');
-        if (!grid) return;
+      let html = '';
+      items.forEach((item, index) => {
+        const rank = start + index + 1;
+        const dateStr = new Date(item.added_at).toLocaleDateString('ja-JP');
         
-        const data = getCurrentRankingData();
-        
-        if (!data || data.length === 0) {
-          grid.innerHTML = `
-            <div class="loading-state" role="alert" aria-live="polite">
-              <div class="spinner" aria-hidden="true"></div>
-              <p>ランキングデータがありません</p>
-              <p class="help-text">URLを投稿してランキングを表示しましょう</p>
+        html += `
+          <article class="video-card">
+            <div class="video-thumbnail" onclick="window.open('${item.url}', '_blank', 'noopener,noreferrer')" style="cursor:pointer;">
+              <div class="video-rank">${rank}</div>
+              <div class="play-icon"></div>
             </div>
-          `;
-          document.getElementById('load-more-btn').style.display = 'none';
-          return;
-        }
-        
-        const start = AppState.currentPage * AppState.itemsPerPage;
-        const end = start + AppState.itemsPerPage;
-        const items = data.slice(start, end);
-        
-        let html = '';
-        
-        items.forEach((item, index) => {
-          const rank = start + index + 1;
-          const addedDate = new Date(item.added_at);
-          const dateStr = addedDate.toLocaleDateString('ja-JP');
-          const timeStr = addedDate.toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit' });
-          
-          html += `
-            <article class="video-card" role="article" aria-labelledby="video-${item.id}">
-              <div class="video-thumbnail" role="button" tabindex="0" 
-                   onclick="window.open('${item.url}', '_blank', 'noopener,noreferrer')"
-                   onkeypress="if(event.key === 'Enter') window.open('${item.url}', '_blank', 'noopener,noreferrer')"
-                   aria-label="${item.name}を開く">
-                <div class="video-rank" aria-hidden="true">${rank}</div>
-                <div class="play-icon" aria-hidden="true"></div>
+            <div class="video-info">
+              <h3 class="video-title">#${rank} ${escapeHtml(item.name)}</h3>
+              <div class="video-meta">
+                <span>追加: ${dateStr}</span>
+                <span>DL数: ${item.downloads.toLocaleString()}</span>
               </div>
-              <div class="video-info">
-                <h3 class="video-title" id="video-${item.id}">
-                  #${rank} ${escapeHtml(item.name)}
-                </h3>
-                <div class="video-meta">
-                  <span class="meta-item">追加: ${dateStr} ${timeStr}</span>
-                  <span class="meta-item">DL数: ${item.downloads.toLocaleString()}</span>
-                  <span class="meta-item">サイズ: ${formatFileSize(item.size)}</span>
-                </div>
-                <div class="video-actions">
-                  <button class="video-btn" 
-                          onclick="copyToClipboard('${item.id}')"
-                          aria-label="${item.id}をコピー">
-                    コピー
-                  </button>
-                  <button class="video-btn" 
-                          onclick="window.open('${item.url}', '_blank', 'noopener,noreferrer')"
-                          aria-label="${item.name}を開く">
-                    開く
-                  </button>
-                </div>
-              </div>
-            </article>
-          `;
-          
-          if (index === 3) {
-            html += `
-              <div class="video-card ad-slot" role="complementary" aria-label="スポンサー広告">
-                <div class="ad-placeholder"></div>
-                <script defer data-cfasync="false" src="https://pl28484803.effectivegatecpm.com/c450e9b4b86a15429281d6d1bb83b6f2/invoke.js"><\/script>
-                <div id="container-ad-inline-1"></div>
-              </div>
-            `;
-          }
-        });
-        
-        grid.innerHTML = html;
-        
-        const loadMoreBtn = document.getElementById('load-more-btn');
-        if (loadMoreBtn) {
-          loadMoreBtn.style.display = end < data.length ? 'block' : 'none';
-        }
-      }
-      
-      /**
-       * 関連サイトのレンダリング
-       */
-      function renderRelatedSites() {
-        const grid = document.getElementById('sites-grid');
-        if (!grid) return;
-        
-        let html = '';
-        
-        RelatedSites.forEach((site) => {
-          html += `
-            <div class="video-card" role="listitem">
-              <div class="video-thumbnail" onclick="window.open('${site.url}', '_blank', 'noopener,noreferrer')"
-                   role="button" tabindex="0"
-                   onkeypress="if(event.key === 'Enter') window.open('${site.url}', '_blank', 'noopener,noreferrer')">
-                <div class="play-icon" aria-hidden="true"></div>
-              </div>
-              <div class="video-info">
-                <h3 class="video-title">${escapeHtml(site.name)}</h3>
-                <div class="video-meta">${escapeHtml(site.description)}</div>
-                <div class="video-actions">
-                  <a href="${site.url}" 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     class="video-btn"
-                     aria-label="${site.name}へ移動">
-                    サイトへ移動
-                  </a>
-                </div>
+              <div class="video-actions">
+                <button class="video-btn" onclick="copyToClipboard('${item.url}')">コピー</button>
+                <button class="video-btn" onclick="window.open('${item.url}', '_blank', 'noopener,noreferrer')">開く</button>
               </div>
             </div>
-          `;
+          </article>
+        `;
+      });
+      
+      grid.innerHTML = html;
+      
+      const loadMoreBtn = document.getElementById('load-more-btn');
+      loadMoreBtn.style.display = end < data.length ? 'block' : 'none';
+    }
+    
+    function renderRelatedSites() {
+      const grid = document.getElementById('sites-grid');
+      let html = '';
+      
+      RelatedSites.forEach((site) => {
+        html += `
+          <div class="video-card">
+            <div class="video-thumbnail" onclick="window.open('${site.url}', '_blank', 'noopener,noreferrer')" style="cursor:pointer;">
+              <div class="play-icon"></div>
+            </div>
+            <div class="video-info">
+              <h3 class="video-title">${escapeHtml(site.name)}</h3>
+              <div class="video-meta">${escapeHtml(site.description)}</div>
+              <div class="video-actions">
+                <a href="${site.url}" target="_blank" rel="noopener noreferrer" class="video-btn" style="text-decoration:none;color:inherit;">サイトへ移動</a>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      
+      grid.innerHTML = html;
+    }
+    
+    function updateStatusBar() {
+      const totalCount = document.getElementById('total-count');
+      const lastUpdate = document.getElementById('last-update');
+      
+      if (totalCount) totalCount.textContent = AppState.totalItems.toLocaleString();
+      if (lastUpdate && AppState.lastUpdate) {
+        const timeStr = AppState.lastUpdate.toLocaleTimeString('ja-JP', { 
+          hour: '2-digit', 
+          minute: '2-digit'
         });
-        
-        grid.innerHTML = html;
+        lastUpdate.textContent = timeStr;
       }
+    }
+    
+    function switchMode(mode) {
+      if (AppState.currentMode === mode) return;
       
-      /**
-       * ステータスバーの更新
-       */
-      function updateStatusBar() {
-        const totalCount = document.getElementById('total-count');
-        const lastUpdate = document.getElementById('last-update');
-        
-        if (totalCount) {
-          totalCount.textContent = AppState.totalItems.toLocaleString();
-          totalCount.setAttribute('aria-label', `${AppState.totalItems}件`);
-        }
-        
-        if (lastUpdate && AppState.lastUpdate) {
-          const timeStr = AppState.lastUpdate.toLocaleTimeString('ja-JP', { 
-            hour: '2-digit', 
-            minute: '2-digit',
-            second: '2-digit'
-          });
-          lastUpdate.textContent = `最終更新: ${timeStr}`;
-        }
+      document.querySelectorAll('.mode-content').forEach(content => {
+        content.classList.add('hidden');
+      });
+      
+      document.querySelectorAll('.nav-button').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.mode === mode);
+      });
+      
+      const newMode = document.getElementById(`${mode}-mode`);
+      if (newMode) newMode.classList.remove('hidden');
+      
+      AppState.currentMode = mode;
+    }
+    
+    function setSortMode(sort) {
+      if (AppState.currentSort === sort) return;
+      
+      document.querySelectorAll('.sort-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.sort === sort);
+      });
+      
+      AppState.currentSort = sort;
+      AppState.currentPage = 0;
+      renderRanking();
+    }
+    
+    function handleAutoRefreshChange() {
+      if (AppState.autoRefreshTimer) clearInterval(AppState.autoRefreshTimer);
+      
+      const interval = parseInt(document.getElementById('refresh-select').value);
+      if (interval > 0) {
+        AppState.autoRefreshTimer = setInterval(() => {
+          loadInitialData();
+        }, interval * 1000);
       }
+    }
+    
+    function loadMoreItems() {
+      AppState.currentPage++;
+      renderRanking();
+    }
+    
+    function handleUrlUpload(event) {
+      event.preventDefault();
+      showNotification('URLを保存しました', 'success');
+      document.getElementById('gofileUrls').value = '';
+      setTimeout(loadInitialData, 500);
+    }
+    
+    function handleWebScraping(event) {
+      event.preventDefault();
+      showNotification('スクレイピング完了', 'success');
+      document.getElementById('websiteUrl').value = '';
+      setTimeout(loadInitialData, 500);
+    }
+    
+    function showNotification(message, type = 'success') {
+      const notification = document.getElementById('notification');
+      notification.textContent = message;
+      notification.className = `notification show ${type}`;
       
-      /**
-       * 構造化データの更新
-       */
-      function updateStructuredData() {
-        const data = getCurrentRankingData();
-        if (!data || data.length === 0) return;
-        
-        const itemList = {
-          "@context": "https://schema.org",
-          "@type": "ItemList",
-          "name": "Twitter保存ランキング",
-          "description": `Twitterで話題のGofileファイルランキング（${AppState.totalItems}件）`,
-          "numberOfItems": AppState.totalItems,
-          "itemListOrder": "Descending",
-          "url": window.location.href,
-          "itemListElement": data.slice(0, 10).map((item, index) => ({
-            "@type": "ListItem",
-            "position": index + 1,
-            "item": {
-              "@type": "VideoObject",
-              "name": item.name,
-              "description": `Twitter保存ファイル - ${item.name}`,
-              "uploadDate": item.added_at,
-              "contentUrl": item.url,
-              "interactionStatistic": {
-                "@type": "InteractionCounter",
-                "interactionType": "https://schema.org/DownloadAction",
-                "userInteractionCount": item.downloads
-              }
-            }
-          }))
-        };
-        
-        const existingScript = document.getElementById('ranking-structured-data');
-        if (existingScript) {
-          existingScript.textContent = JSON.stringify(itemList);
-        }
-      }
-      
-      /**
-       * モード切り替え
-       */
-      function switchMode(mode) {
-        if (AppState.currentMode === mode) return;
-        
-        document.querySelectorAll('.mode-content').forEach(content => {
-          content.classList.add('hidden');
-        });
-        
-        document.querySelectorAll('.nav-button').forEach(btn => {
-          const isActive = btn.dataset.mode === mode;
-          btn.classList.toggle('active', isActive);
-          btn.setAttribute('aria-current', isActive ? 'page' : 'false');
-        });
-        
-        const newMode = document.getElementById(`${mode}-mode`);
-        if (newMode) {
-          newMode.classList.remove('hidden');
-          newMode.setAttribute('aria-hidden', 'false');
-        }
-        
-        AppState.currentMode = mode;
-        AppState.currentPage = 0;
-      }
-      
-      /**
-       * ソートモード設定
-       */
-      function setSortMode(sort) {
-        if (AppState.currentSort === sort) return;
-        
-        document.querySelectorAll('.sort-btn').forEach(btn => {
-          const isActive = btn.dataset.sort === sort;
-          btn.classList.toggle('active', isActive);
-          btn.setAttribute('aria-pressed', isActive);
-        });
-        
-        AppState.currentSort = sort;
-        AppState.currentPage = 0;
-        renderRanking();
-        updateStructuredData();
-      }
-      
-      /**
-       * 自動更新の設定
-       */
-      function setupAutoRefresh() {
-        const interval = parseInt(document.getElementById('refresh-select').value);
-        if (interval > 0) {
-          handleAutoRefreshChange();
-        }
-      }
-      
-      function handleAutoRefreshChange() {
-        if (AppState.autoRefreshTimer) {
-          clearInterval(AppState.autoRefreshTimer);
-        }
-        
-        const interval = parseInt(document.getElementById('refresh-select').value);
-        if (interval > 0) {
-          AppState.autoRefreshTimer = setInterval(fetchRanking, interval * 1000);
-          showNotification(`${interval}秒ごとに自動更新します`, 'success');
-        }
-      }
-      
-      /**
-       * もっと見る
-       */
-      function loadMoreItems() {
-        AppState.currentPage++;
-        renderRanking();
-        
-        const grid = document.getElementById('ranking-grid');
-        if (grid) {
-          const lastItem = grid.lastElementChild;
-          if (lastItem) {
-            lastItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          }
-        }
-      }
-      
-      /**
-       * URLアップロード処理
-       */
-      async function handleUrlUpload(event) {
-        event.preventDefault();
-        
-        const urlsText = document.getElementById('gofileUrls').value.trim();
-        if (!urlsText) {
-          showStatus('uploadStatus', 'URLを入力してください', 'error');
-          return;
-        }
-        
-        const uploadBtn = document.getElementById('uploadBtn');
-        uploadBtn.disabled = true;
-        uploadBtn.innerHTML = '<span class="btn-icon" aria-hidden="true"></span><span class="btn-text">処理中...</span>';
-        
-        try {
-          await new Promise(resolve => setTimeout(resolve, 1000));
-          
-          showStatus('uploadStatus', '3件のURLを追加しました', 'success');
-          document.getElementById('gofileUrls').value = '';
-          showNotification('URLを保存しました', 'success');
-          
-          setTimeout(fetchRanking, 500);
-          
-        } catch (error) {
-          console.error('URL保存エラー:', error);
-          showStatus('uploadStatus', `エラー: ${error.message}`, 'error');
-          showNotification('保存に失敗しました', 'error');
-        } finally {
-          uploadBtn.disabled = false;
-          uploadBtn.innerHTML = '<span class="btn-icon" aria-hidden="true"></span><span class="btn-text">URLを追加</span>';
-        }
-      }
-      
-      /**
-       * ウェブスクレイピング処理
-       */
-      async function handleWebScraping(event) {
-        event.preventDefault();
-        
-        const websiteUrl = document.getElementById('websiteUrl').value.trim();
-        if (!websiteUrl) {
-          showStatus('scrapeStatus', 'URLを入力してください', 'error');
-          return;
-        }
-        
-        const scrapeBtn = document.getElementById('scrapeBtn');
-        scrapeBtn.disabled = true;
-        scrapeBtn.innerHTML = '<span class="btn-icon" aria-hidden="true"></span><span class="btn-text">スクレイピング中...</span>';
-        
-        try {
-          await new Promise(resolve => setTimeout(resolve, 1500));
-          
-          showStatus('scrapeStatus', '5件のURLを追加しました (8件見つかり、3件は重複)', 'success');
-          document.getElementById('websiteUrl').value = '';
-          showNotification('スクレイピング完了', 'success');
-          
-          setTimeout(fetchRanking, 500);
-          
-        } catch (error) {
-          console.error('スクレイピングエラー:', error);
-          showStatus('scrapeStatus', `エラー: ${error.message}`, 'error');
-          showNotification('スクレイピングに失敗しました', 'error');
-        } finally {
-          scrapeBtn.disabled = false;
-          scrapeBtn.innerHTML = '<span class="btn-icon" aria-hidden="true"></span><span class="btn-text">スクレイピング開始</span>';
-        }
-      }
-      
-      /**
-       * アクセシビリティ設定
-       */
-      function setupAccessibility() {
-        document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape') {
-            const notification = document.getElementById('notification');
-            if (notification && !notification.hidden) {
-              notification.hidden = true;
-            }
-          }
-        });
-      }
-      
-      /**
-       * ユーティリティ関数
-       */
-      function showNotification(message, type = 'success') {
-        const notification = document.getElementById('notification');
-        if (!notification) return;
-        
-        notification.textContent = message;
-        notification.className = `notification show ${type}`;
-        notification.hidden = false;
-        notification.setAttribute('role', 'alert');
-        
-        setTimeout(() => {
-          notification.hidden = true;
-          notification.className = 'notification';
-        }, 5000);
-      }
-      
-      function showStatus(elementId, message, type = 'success') {
-        const element = document.getElementById(elementId);
-        if (!element) return;
-        
-        element.textContent = message;
-        element.className = `status-bar ${type}`;
-        element.hidden = false;
-        element.setAttribute('role', 'alert');
-        
-        setTimeout(() => {
-          element.hidden = true;
-        }, 10000);
-      }
-      
-      function showLoadingState() {
-        const grid = document.getElementById('ranking-grid');
-        if (grid && AppState.currentPage === 0) {
-          grid.innerHTML = '';
-        }
-      }
-      
-      function hideLoadingState() {
-        // 既にレンダリングされている場合は何もしない
-      }
-      
-      function formatFileSize(bytes) {
-        if (bytes === 0) return '0 Bytes';
-        const k = 1024;
-        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-      }
-      
-      function escapeHtml(text) {
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
-      }
-      
-      /**
-       * グローバル関数のエクスポート
-       */
-      window.copyToClipboard = function(text) {
-        navigator.clipboard.writeText(text)
-          .then(() => showNotification('クリップボードにコピーしました', 'success'))
-          .catch(err => {
-            console.error('コピー失敗:', err);
-            showNotification('コピーに失敗しました', 'error');
-          });
-      };
-      
-      window.AppState = AppState;
-      
-    })();
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 5000);
+    }
+    
+    function showLoadingState() {
+      // Already handled by HTML
+    }
+    
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+    
+    window.copyToClipboard = function(text) {
+      navigator.clipboard.writeText(text)
+        .then(() => showNotification('クリップボードにコピーしました', 'success'))
+        .catch(err => showNotification('コピーに失敗しました', 'error'));
+    };
   </script>
-
-  <!-- Adsterra Popunder (遅延読み込み) -->
-  <script defer data-cfasync="false" src="https://pl28484782.effectivegatecpm.com/14/29/79/142979e47a62210d83ef5275ac4060ca.js"></script>
-  
-  <!-- JuicyAds Push通知 (遅延読み込み) -->
-  <script defer>
-    window.pn_idzone = 5829204;
-    window.pn_sleep_seconds = 0;
-    window.pn_is_self_hosted = 1;
-    window.pn_soft_ask = 0;
-    window.pn_filename = "/worker.js";
-  </script>
-  <script defer src="https://js.wpnsrv.com/pn.php"></script>
-
-  <!-- スマートリンク -->
-  <script defer src="https://engagementidentifiers.com/14/29/79/142979e47a62210d83ef5275ac4060ca.js"></script>
 </body>
 </html>
